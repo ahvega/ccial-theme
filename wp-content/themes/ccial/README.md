@@ -1,6 +1,31 @@
 # CCIAL Theme
 
+[![WordPress](https://img.shields.io/badge/WordPress-5.0%2B-blue.svg)](https://wordpress.org/)
+[![PHP](https://img.shields.io/badge/PHP-7.4%2B-purple.svg)](https://php.net/)
+[![Avada](https://img.shields.io/badge/Avada-Theme-orange.svg)](https://theme-fusion.com/avada/)
+[![License](https://img.shields.io/badge/License-GPL%20v2%2B-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+[![Version](https://img.shields.io/badge/Version-1.1.0-brightgreen.svg)](https://github.com/ahvega/ccial-theme/releases)
+[![Magazine Modal](https://img.shields.io/badge/Magazine%20Modal-Enabled-success.svg)](#magazine-modal-system)
+[![Translation](https://img.shields.io/badge/Translation-Ready-yellow.svg)](#translation)
+[![Security](https://img.shields.io/badge/Security-Hardened-red.svg)](#security-features)
+
 A custom child theme for the Avada WordPress theme, specifically designed for CCIAL.
+
+## 📋 Table of Contents
+
+- [Description](#description)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Customization](#customization)
+- [Magazine Modal System](#magazine-modal-system)
+- [File Structure](#file-structure)
+- [Development](#development)
+- [Security Features](#security-features)
+- [Performance Features](#performance-features)
+- [Support](#support)
+- [License](#license)
+- [Changelog](#changelog)
 
 ## Description
 
