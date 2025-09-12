@@ -1,0 +1,109 @@
+/**
+ * CCIAL Theme Admin Styles
+ * 
+ * Custom styling for WordPress admin area
+ */
+
+
+/* Custom admin footer styling */
+
+
+/* Custom admin footer styling */
+
+#footer-thankyou {
+    color: #0073aa;
+    font-weight: 600;
+}
+
+
+/* Custom admin body class styling */
+
+body.ccial-theme-admin {
+    background-color: #f9f9f9;
+}
+
+
+/* Custom admin header styling */
+
+.wp-header-end {
+    background: linear-gradient(135deg, #0073aa 0%, #005a87 100%);
+}
+
+
+/* Custom admin sidebar styling */
+
+#adminmenu li.current a.menu-top {
+    background-color: #0073aa;
+}
+
+
+/* Custom admin button styling */
+
+.wp-core-ui .button-primary {
+    background-color: #0073aa;
+    border-color: #005a87;
+}
+
+.wp-core-ui .button-primary:hover {
+    background-color: #005a87;
+    border-color: #004a6f;
+}
+
+
+/* Custom admin form styling */
+
+.wp-core-ui input[type="text"],
+.wp-core-ui input[type="password"],
+.wp-core-ui input[type="email"],
+.wp-core-ui input[type="url"],
+.wp-core-ui input[type="number"],
+.wp-core-ui input[type="tel"],
+.wp-core-ui textarea {
+    border-color: #ddd;
+}
+
+.wp-core-ui input[type="text"]:focus,
+.wp-core-ui input[type="password"]:focus,
+.wp-core-ui input[type="email"]:focus,
+.wp-core-ui input[type="url"]:focus,
+.wp-core-ui input[type="number"]:focus,
+.wp-core-ui input[type="tel"]:focus,
+.wp-core-ui textarea:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 0 1px #0073aa;
+}
+
+
+/* Custom admin table styling */
+
+.wp-list-table th {
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #0073aa;
+}
+
+.wp-list-table tr:hover {
+    background-color: #f0f8ff;
+}
+
+
+/* Custom admin notice styling */
+
+.notice {
+    border-left-color: #0073aa;
+}
+
+.notice-success {
+    border-left-color: #46b450;
+}
+
+.notice-warning {
+    border-left-color: #ffb900;
+}
+
+.notice-error {
+    border-left-color: #dc3232;
+}
+
+.notice-info {
+    border-left-color: #0073aa;
+}

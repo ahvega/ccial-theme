@@ -1,0 +1,80 @@
+# WordPress Core Files
+wp-admin/
+wp-includes/
+wp-*.php
+xmlrpc.php
+index.php
+license.txt
+readme.html
+
+# WordPress Configuration
+wp-config.php
+wp-config-sample.php
+
+# WordPress Uploads
+wp-content/uploads/
+
+# WordPress Cache
+wp-content/cache/
+wp-content/w3tc-config/
+
+# WordPress Plugins (exclude from version control)
+wp-content/plugins/
+
+# WordPress Themes (exclude parent themes)
+wp-content/themes/Avada/
+wp-content/themes/Avada-Child-Theme/
+
+# WordPress Debug
+wp-content/debug.log
+
+# Database
+*.sql
+*.sqlite
+
+# Environment Files
+.env
+.env.local
+.env.production
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Project-specific directories
+.source/
+.strategy/
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+
+# Backup Files
+*.bak
+*.backup
+
+# Node Modules (if any)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Composer
+vendor/
+composer.lock
+
+# Build Files
+dist/
+build/
+
+# Local Development
+local-config.php
+wp-content/mu-plugins/local-dev.php

@@ -1,0 +1,898 @@
+/*
+Theme Name: CCIAL Theme
+Description: Child theme for Avada - Custom theme for CCIAL with enhanced functionality
+Author: CCIAL Development Team
+Author URI: https://ccial.org
+Template: Avada
+Version: 1.0.0
+Text Domain: ccial
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+
+/* Import parent theme styles */
+
+@import url("../Avada/style.css");
+
+/* Custom styles for CCIAL theme */
+
+
+/* SVG handling and display - Frontend only */
+
+
+/* Target only frontend SVG elements, not admin */
+
+.fusion-main-wrapper svg,
+.fusion-main-wrapper .wp-block-image svg,
+.fusion-main-wrapper .entry-content svg,
+.fusion-main-wrapper .widget svg,
+.fusion-main-wrapper .icon svg,
+.fusion-main-wrapper .svg-icon {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Ensure SVG icons are properly sized - Frontend only */
+
+.fusion-main-wrapper .icon svg,
+.fusion-main-wrapper .svg-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+
+/* Responsive SVG handling - Frontend only */
+
+@media (max-width: 768px) {
+    .fusion-main-wrapper svg {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/* Admin SVG elements are now handled properly by the functions.php fix */
+
+
+/* ========================================
+   MODERN TYPESCALE SYSTEM WITH CLAMP()
+   ======================================== */
+
+
+/* 
+ * Modern Responsive Typescale using CSS clamp()
+ * Based on recommendations from clampgenerator.com
+ * Viewport range: 320px (mobile) to 1440px (desktop)
+ * Base font: 16px to 20px for optimal readability
+ */
+
+
+/* Root font size setup */
+
+html {
+    font-size: 14px;
+}
+
+
+/* Typography Sizes with clamp() for fluid scaling */
+
+h1,
+.cg-h1 {
+    font-size: clamp(2rem, calc(1.5rem + 2.5vw), 3.5rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h2,
+.cg-h2 {
+    font-size: clamp(1.75rem, calc(1.375rem + 1.875vw), 2.75rem);
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 0.875rem;
+}
+
+h3,
+.cg-h3 {
+    font-size: clamp(1.5rem, calc(1.25rem + 1.25vw), 2.25rem);
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+h4,
+.cg-h4 {
+    font-size: clamp(1.25rem, calc(1.125rem + 0.625vw), 1.875rem);
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 0.625rem;
+}
+
+h5,
+.cg-h5 {
+    font-size: clamp(1.125rem, calc(1.0625rem + 0.3125vw), 1.5rem);
+    line-height: 1.1;
+    font-weight: 300;
+}
+
+h6,
+.cg-h6 {
+    font-size: clamp(1rem, calc(0.9375rem + 0.3125vw), 1.25rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Body text with fluid scaling */
+
+body,
+.cg-base,
+p {
+    font-size: clamp(1rem, calc(0.875rem + 0.625vw), 1.25rem);
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+
+/* Small text */
+
+small,
+.cg-small {
+    font-size: clamp(0.875rem, calc(0.8125rem + 0.3125vw), 1.125rem);
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+
+/* Tiny text for captions, labels */
+
+.tiny,
+.cg-tiny {
+    font-size: clamp(0.75rem, calc(0.6875rem + 0.3125vw), 1rem);
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+
+/* Code text */
+
+code,
+.cg-code,
+pre {
+    font-size: clamp(0.875rem, calc(0.8125rem + 0.3125vw), 1.125rem);
+    line-height: 1.5;
+    font-family: "Roboto Mono", "Monaco", "Consolas", monospace;
+    font-weight: 400;
+}
+
+
+/* Lead paragraph for emphasis */
+
+.lead {
+    font-size: clamp(1.125rem, calc(1rem + 0.625vw), 1.5rem);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+
+/* Display text for hero sections */
+
+.display-1,
+.display-1 h1 {
+    font-size: clamp(2.5rem, calc(1.875rem + 3.125vw), 4rem);
+    margin: 0;
+}
+
+.display-2,
+.display-2 h2 {
+    font-size: clamp(2.25rem, calc(1.75rem + 2.5vw), 3.5rem);
+    margin: 0;
+}
+
+
+/* Responsive spacing adjustments */
+
+@media (max-width: 768px) {
+    h1,
+    .cg-h1 {
+        margin-bottom: 0.75rem;
+    }
+    h2,
+    .cg-h2 {
+        margin-bottom: 0.625rem;
+    }
+    h3,
+    .cg-h3 {
+        margin-bottom: 0.5rem;
+    }
+    h4,
+    .cg-h4 {
+        margin-bottom: 0.5rem;
+    }
+    h5,
+    .cg-h5 {
+        margin-bottom: 0.375rem;
+    }
+    h6,
+    .cg-h6 {
+        margin-bottom: 0.375rem;
+    }
+    body,
+    .cg-base,
+    p {
+        margin-bottom: 0.875rem;
+    }
+}
+
+
+/* Typography utility classes */
+
+.text-xs {
+    font-size: clamp(0.75rem, calc(0.6875rem + 0.3125vw), 1rem);
+}
+
+.text-sm {
+    font-size: clamp(0.875rem, calc(0.8125rem + 0.3125vw), 1.125rem);
+}
+
+.text-base {
+    font-size: clamp(1rem, calc(0.875rem + 0.625vw), 1.25rem);
+}
+
+.text-lg {
+    font-size: clamp(1.125rem, calc(1rem + 0.625vw), 1.5rem);
+}
+
+.text-xl {
+    font-size: clamp(1.25rem, calc(1.125rem + 0.625vw), 1.875rem);
+}
+
+.text-2xl {
+    font-size: clamp(1.5rem, calc(1.25rem + 1.25vw), 2.25rem);
+}
+
+.text-3xl {
+    font-size: clamp(1.75rem, calc(1.375rem + 1.875vw), 2.75rem);
+}
+
+.text-4xl {
+    font-size: clamp(2rem, calc(1.5rem + 2.5vw), 3.5rem);
+}
+
+
+/* Font weight utilities */
+
+.font-light {
+    font-weight: 300;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-extrabold {
+    font-weight: 800;
+}
+
+
+/* Line height utilities */
+
+.leading-tight {
+    line-height: 1.25;
+}
+
+.leading-snug {
+    line-height: 1.375;
+}
+
+.leading-normal {
+    line-height: 1.5;
+}
+
+.leading-relaxed {
+    line-height: 1.625;
+}
+
+.leading-loose {
+    line-height: 2;
+}
+
+
+/* Add your custom CSS here */
+
+:root {
+    --border-radius-shaded: .125rem;
+    --box-shaded: 0px 0px 3px 2px rgba(0, 0, 0, 0.175), 2px 0px 6px 4px rgba(0, 0, 0, 0.1), 0px 2px 9px 6px rgba(0, 0, 0, 0.075);
+    --text-shade: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+.highlighted strong {
+    font-family: "Crimson Pro";
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
+    color: black;
+}
+
+
+/* ========================================
+   CUSTOM BULLET REPLACEMENT WITH FONTAWESOME
+   ======================================== */
+
+
+/* Replace default bullets with FontAwesome icons */
+
+.fusion-main-wrapper ul:not(.fusion-menu),
+.fusion-main-wrapper .entry-content ul,
+.fusion-main-wrapper .widget ul,
+.fusion-main-wrapper .fusion-content ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+
+.fusion-main-wrapper ul:not(.fusion-menu) li,
+.fusion-main-wrapper .entry-content ul li,
+.fusion-main-wrapper .widget ul li,
+.fusion-main-wrapper .fusion-content ul li {
+    position: relative;
+    padding-left: 1.5em !important;
+    margin-bottom: 0.5em;
+}
+
+
+/* FontAwesome 5+ (recommended) */
+
+.fusion-main-wrapper ul:not(.fusion-menu) li::before,
+.fusion-main-wrapper .entry-content ul li::before,
+.fusion-main-wrapper .widget ul li::before,
+.fusion-main-wrapper .fusion-content ul li::before {
+    content: "\f046";
+    /* fa-check-square-o (open box with checkmark) */
+    font-family: "Font Awesome 4", "Fontawesome";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    color: var(--primary_color, #333);
+    font-size: 0.9em;
+}
+
+.checks ul li::marker {
+    color: var(--awb-color6);
+    font-family: "Font Awesome 5 Free", "FontAwesome";
+    font-weight: unset;
+    content: "\f046";
+}
+
+.checks li,
+.panel-body.pricing-row ul.list-group li {
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem !important;
+}
+
+.finger ul li::marker {
+    color: var(--awb-color6);
+    font-family: "Font Awesome 5 Free", "FontAwesome";
+    font-weight: unset;
+    content: "\f0a4";
+}
+
+.finger li,
+.panel-body.pricing-row ul.list-group li {
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem !important;
+}
+
+
+/* Alternative: pointing hand icon */
+
+.fusion-main-wrapper ul:not(.fusion-menu).pointing li::before,
+.fusion-main-wrapper .entry-content ul.pointing li::before,
+.fusion-main-wrapper .widget ul.pointing li::before,
+.fusion-main-wrapper .fusion-content ul.pointing li::before {
+    content: "\f0a4";
+}
+
+
+/* FontAwesome 4 fallback */
+
+.fusion-main-wrapper ul:not(.fusion-menu) li::before {
+    font-family: "FontAwesome", "Font Awesome 5 Free";
+}
+
+
+/* ========================================
+   AVADA BUTTON TEXT WRAPPING FIX
+   ======================================== */
+
+
+/* Prevent text wrapping in all Avada buttons */
+
+.fusion-button,
+.fusion-button-default,
+.fusion-button-small,
+.fusion-button-medium,
+.fusion-button-large,
+.fusion-button-xlarge,
+.fusion-button-3d,
+.fusion-button-border,
+.fusion-button-minimal,
+.fusion-button-pill,
+.fusion-button-square,
+.fusion-button-round,
+.fusion-button-clean,
+.fusion-button-highlight,
+.fusion-button-lowlight,
+.fusion-button-outline,
+.fusion-button-outline-highlight,
+.fusion-button-outline-lowlight,
+.fusion-button-outline-pill,
+.fusion-button-outline-square,
+.fusion-button-outline-round,
+.fusion-button-outline-clean,
+.fusion-button-outline-highlight-pill,
+.fusion-button-outline-highlight-square,
+.fusion-button-outline-highlight-round,
+.fusion-button-outline-highlight-clean,
+.fusion-button-outline-lowlight-pill,
+.fusion-button-outline-lowlight-square,
+.fusion-button-outline-lowlight-round,
+.fusion-button-outline-lowlight-clean,
+.fusion-button-outline-pill-square,
+.fusion-button-outline-pill-round,
+.fusion-button-outline-pill-clean,
+.fusion-button-outline-square-round,
+.fusion-button-outline-square-clean,
+.fusion-button-outline-round-clean,
+.fusion-button-outline-highlight-pill-square,
+.fusion-button-outline-highlight-pill-round,
+.fusion-button-outline-highlight-pill-clean,
+.fusion-button-outline-highlight-square-round,
+.fusion-button-outline-highlight-square-clean,
+.fusion-button-outline-highlight-round-clean,
+.fusion-button-outline-lowlight-pill-square,
+.fusion-button-outline-lowlight-pill-round,
+.fusion-button-outline-lowlight-pill-clean,
+.fusion-button-outline-lowlight-square-round,
+.fusion-button-outline-lowlight-square-clean,
+.fusion-button-outline-lowlight-round-clean,
+.fusion-button-outline-pill-square-round,
+.fusion-button-outline-pill-square-clean,
+.fusion-button-outline-pill-round-clean,
+.fusion-button-outline-square-round-clean,
+.fusion-button-outline-highlight-pill-square-round,
+.fusion-button-outline-highlight-pill-square-clean,
+.fusion-button-outline-highlight-pill-round-clean,
+.fusion-button-outline-highlight-square-round-clean,
+.fusion-button-outline-lowlight-pill-square-round,
+.fusion-button-outline-lowlight-pill-square-clean,
+.fusion-button-outline-lowlight-pill-round-clean,
+.fusion-button-outline-lowlight-square-round-clean,
+.fusion-button-outline-pill-square-round-clean,
+.fusion-button-outline-highlight-pill-square-round-clean,
+.fusion-button-outline-lowlight-pill-square-round-clean {
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+    overflow-wrap: normal !important;
+}
+
+
+/* Also target button text spans specifically */
+
+.fusion-button .fusion-button-text,
+.fusion-button span,
+.fusion-button .fusion-button-text span {
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+    overflow-wrap: normal !important;
+}
+
+
+/* ========================================
+   CUSTOM CSS FROM AVADA OPTIONS
+   ======================================== */
+
+.hidden {
+    display: none;
+}
+
+.caps * {
+    text-transform: uppercase;
+}
+
+.content-box-percentage.content-box-counter {
+    font-weight: 800;
+    color: var(--awb-color);
+}
+
+a.fusion-sb-toggle {
+    display: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    text-rendering: optimizeLegibility;
+}
+
+
+/* overrides */
+
+#main {
+    padding-bottom: 0 !important;
+}
+
+
+/* Remove the orange border on the left side of .fusion-reading-box-container */
+
+.fusion-reading-box-container .reading-box {
+    border-left: none !important;
+}
+
+
+/* If you want to remove all borders */
+
+.fusion-reading-box-container .reading-box {
+    border: none !important;
+}
+
+
+/* If you want to change the border color */
+
+.fusion-reading-box-container .reading-box {
+    border-left-color: transparent !important;
+}
+
+
+/* If you need to override with more specificity */
+
+body .fusion-reading-box-container .reading-box {
+    border-left: none !important;
+}
+
+
+/* Heading overrides to work with the new typescale */
+
+H2 {
+    text-transform: uppercase;
+    /* The typescale will automatically handle the font-size */
+}
+
+
+/* Ensure easy-read classes work with the new typescale */
+
+.easy-read p,
+.easy-read h1,
+.easy-read h2,
+.easy-read h3,
+.easy-read h4,
+.easy-read h5,
+.easy-read h6,
+.easy-read span,
+.easy-read li,
+.easy-read a,
+.easy-read blockquote,
+.easy-read figcaption {
+    max-width: 64ch;
+    /* Font sizes are now handled by the typescale system */
+}
+
+.easy-read-center p,
+.easy-read-center h1,
+.easy-read-center h2,
+.easy-read-center h3,
+.easy-read-center h4,
+.easy-read-center h5,
+.easy-read-center h6,
+.easy-read-center span,
+.easy-read-center a,
+.easy-read-center blockquote,
+.easy-read-center figcaption,
+.easy-read-center :not(img) {
+    max-width: 62ch;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    /* Font sizes are now handled by the typescale system */
+}
+
+.svg-image img,
+.svg-image svg {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.easy-read ul {
+    font-size: inherit;
+    line-height: unset;
+    max-width: 64ch;
+}
+
+.easy-read p,
+.easy-read h1,
+.easy-read h2,
+.easy-read h3,
+.easy-read h4,
+.easy-read h5,
+.easy-read h6,
+.easy-read span,
+.easy-read li,
+.easy-read a,
+.easy-read blockquote,
+.easy-read figcaption {
+    max-width: 64ch;
+}
+
+.easy-read-list ul,
+.easy-read-list li {
+    font-size: unset;
+    line-height: unset;
+    max-width: 64ch;
+}
+
+.easy-read,
+.easy-read-center {
+    display: flex;
+    justify-content: center;
+}
+
+.easy-read-center p,
+.easy-read-center h1,
+.easy-read-center h2,
+.easy-read-center h3,
+.easy-read-center h4,
+.easy-read-center h5,
+.easy-read-center h6,
+.easy-read-center span,
+.easy-read-center a,
+.easy-read-center blockquote,
+.easy-read-center figcaption,
+.easy-read-center :not(img) {
+    max-width: 62ch;
+    text-align: center;
+}
+
+.logo-home-svg img,
+.logo-home-svg svg {
+    max-width: 280px;
+}
+
+.white,
+.white a,
+.white h1,
+.white h2,
+.white h3,
+.white h4,
+.white h5,
+.white h6 {
+    color: #fff !important;
+}
+
+.shadow {
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Cards */
+
+.card,
+.book,
+.card-in img,
+.book-in img {
+    border-radius: var(--border-radius-shaded);
+    box-shadow: var(--box-shaded);
+    box-shadow: 2px 4px 8px 0px lightslategray;
+}
+
+.fusion-content-widget-area .fusion-tabs-widget .fusion-tabs-nav ul li.active a {
+    border-top: 6px solid var(--primary_color);
+}
+
+.fusion-image-wrapper .fusion-rollover {
+    background-image: linear-gradient( to top, rgba(0, 0, 0, 0.25) 0, rgba(0, 0, 0, 0.25) 100%);
+    border-radius: 4px;
+}
+
+.fusion-image-wrapper:hover .fusion-rollover {
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+.catalog-ordering a,
+.order-dropdown ul li a,
+.order-dropdown>li:after,
+.searchform .fusion-search-form-content .fusion-search-field input,
+.select2-container--default .select2-selection--single .select2-selection__rendered,
+#comment-input input,
+#comment-textarea textarea,
+.avada-select .select2-container .select2-choice,
+.avada-select .select2-container .select2-choice .select2-arrow,
+.avada-select .select2-container .select2-choice2 .select2-arrow,
+.chzn-container .chzn-drop,
+.chzn-container-single .chzn-single,
+.comment-form-comment textarea,
+.fusion-body .avada-select-parent .select-arrow,
+.fusion-body .avada-select-parent select,
+.fusion-body .gift-cards-list button.ywgc-amount-buttons,
+.gravity-select-parent .select-arrow,
+.input-text,
+.main-nav-search-form input,
+.post-password-form label input[type="password"],
+.search-page-search-form input,
+.searchform .fusion-search-form-content .fusion-search-field input,
+.select-arrow,
+.select2-container .select2-selection .select2-selection__arrow,
+.select2-container--default .select2-dropdown .select2-search,
+.select2-container--default .select2-search--dropdown .select2-search__field,
+.select2-container--default .select2-selection--single,
+.select2-dropdown,
+input.s,
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+select,
+textarea {
+    color: #000;
+    font-weight: 500;
+    background-color: #dedede;
+    border-radius: 50px;
+}
+
+.cart-collaterals .shipping-coupon .coupon #avada_coupon_code,
+.cart-collaterals .shipping-coupon .coupon #avada_coupon_code::placeholder,
+textarea#order_comments,
+input#coupon_code.input-text,
+input#billing_address_2.input-text,
+input#coupon_code.input-text,
+input#billing_address_2.input-text,
+textarea#order_comments::placeholder,
+input#coupon_code.input-text::placeholder,
+input#billing_address_2.input-text::placeholder {
+    color: black;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.awb-menu .fusion-menu-cart-checkout:hover {
+    background-color: var(--awb-color4);
+}
+
+li.awb-menu__li.awb-menu__sub-li.current-menu-item.current_page_item {
+    background-color: var(--awb-color4);
+}
+
+nav.woocommerce-MyAccount-navigation,
+nav.woocommerce-MyAccount-navigation a {
+    font-weight: 500;
+    color: black !important;
+    background-color: #dedede;
+}
+
+li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--downloads.is-active {
+    border-top: 1px solid #dedede !important;
+}
+
+table.woocommerce-table {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.shop_table td {
+    padding: 8px 0;
+}
+
+table.woocommerce-table thead tr th {
+    font-weight: 700;
+    border-bottom: 1px solid black;
+}
+
+.paypal-button-container {
+    min-width: 250px;
+    max-width: 352px;
+    margin: auto;
+    float: right;
+}
+
+.payment_methods li label {
+    display: inline;
+    font-family: "Inter Tight";
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.avada-myaccount-user .view-cart a {
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 50px;
+    color: var(--awb-color6);
+}
+
+.wc-proceed-to-checkout a.fusion-button {
+    width: 300px;
+}
+
+.crossfade-images {
+    border-radius: 18px;
+}
+
+.cart-loading i {
+    background-color: var(--awb-color4);
+}
+
+.highlighted strong {
+    font-family: "Crimson Pro";
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
+}
+
+.checks ul li::marker {
+    color: var(--awb-color6);
+    font-family: "Font Awesome 5 Free", "FontAwesome";
+    font-weight: unset;
+    content: "\f046";
+}
+
+.checks li,
+.panel-body.pricing-row ul.list-group li {
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem !important;
+}
+
+.finger ul li::marker {
+    color: var(--awb-color6);
+    font-family: "Font Awesome 5 Free", "FontAwesome";
+    font-weight: unset;
+    content: "\f0a4";
+}
+
+.finger li,
+.panel-body.pricing-row ul.list-group li {
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem !important;
+}
+
+.secondary {
+    --button_border_width-top: 1.5px;
+    --button_border_width-right: 1.5px;
+    --button_border_width-bottom: 1.5px;
+    --button_border_width-left: 1.5px;
+    --button_gradient_top_color: rgba(27, 107, 77, 0) !important;
+    --button_gradient_bottom_color: rgba(0, 107, 0, 0) !important;
+    --button_gradient_top_color_hover: var(--awb-color1) !important;
+    --button_gradient_bottom_color_hover: var(--awb-color1) !important;
+}
+
+.clmbrnd {
+    display: none;
+}

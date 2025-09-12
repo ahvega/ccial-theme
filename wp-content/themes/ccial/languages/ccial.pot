@@ -1,0 +1,31 @@
+# Copyright (C) 2025 CCIAL Development Team
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: CCIAL Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: https://ccial.org\n"
+"POT-Creation-Date: 2025-02-09 17:26+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: functions.php:89
+msgid "Developed with ❤️ for CCIAL"
+msgstr ""
+
+#: inc/magazine-modal.php:159
+msgid "Revista Hoguera vol: "
+msgstr ""
+
+#: functions.php:95
+msgid "CCIAL Sidebar"
+msgstr ""
+
+#: functions.php:96
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
