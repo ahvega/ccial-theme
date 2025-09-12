@@ -29,6 +29,7 @@ The magazine modal system allows visitors to click on magazine cover images and 
    - **Save** the attachment
 
    **Example Calameo embed code:**
+
    ```html
    <div style="text-align:center;">
        <iframe src="//v.calameo.com/?bkcode=0080347544d6ff6e4266d&mode=viewer&view=book&showsharemenu=false" 
@@ -70,7 +71,8 @@ The magazine modal system allows visitors to click on magazine cover images and 
    - **Save** the element
 
    **Example:**
-   ```
+
+   ```bash
    [modalview id="1234"]
    ```
 
@@ -109,11 +111,13 @@ The magazine modal system allows visitors to click on magazine cover images and 
 ### Modal Doesn't Open
 
 **Possible Causes:**
+
 - Modal name is not exactly "magazine"
 - Shortcode syntax is incorrect
 - JavaScript errors in browser console
 
 **Solutions:**
+
 - Verify modal name is "magazine" (case-sensitive)
 - Check shortcode syntax: `[modalview id="123"]`
 - Check browser console for JavaScript errors
@@ -121,11 +125,13 @@ The magazine modal system allows visitors to click on magazine cover images and 
 ### Empty Modal Content
 
 **Possible Causes:**
+
 - No Calameo embed code in image description
 - Invalid attachment ID
 - Calameo embed code is malformed
 
 **Solutions:**
+
 - Verify embed code is in the image's Description field
 - Check that attachment ID exists in Media Library
 - Ensure Calameo embed code is complete and valid
@@ -133,19 +139,23 @@ The magazine modal system allows visitors to click on magazine cover images and 
 ### Modal Title Issues
 
 **Expected Title Format:**
+
 - `"Revista Hoguera vol: filename-without-extension"`
 
 **If Title is Wrong:**
+
 - Check image filename in Media Library
 - Verify translation settings if using non-Spanish language
 
 ### Mobile Issues
 
 **Common Problems:**
+
 - Modal too small on mobile
 - Touch interactions not working
 
 **Solutions:**
+
 - Modal automatically adjusts for mobile
 - Ensure touch events are enabled in browser
 

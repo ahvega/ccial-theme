@@ -13,7 +13,7 @@ The magazine modal system consists of four main components:
 
 ## File Structure
 
-```
+```bash
 wp-content/themes/ccial/
 ├── inc/
 │   └── magazine-modal.php       # Core PHP functionality
@@ -48,6 +48,7 @@ class CCIAL_Magazine_Modal {
 ### Key Methods
 
 #### `init()`
+
 - Registers the `[modalview]` shortcode
 - Sets up AJAX handlers for both logged-in and non-logged-in users
 - Enqueues scripts and styles
@@ -55,12 +56,14 @@ class CCIAL_Magazine_Modal {
 - Processes shortcodes in Avada Image Link fields
 
 #### `modalview_shortcode($atts)`
+
 - Processes shortcode attributes
 - Supports `id` parameter for explicit attachment ID
 - Returns custom URL scheme: `magazine-modal://{attachment_id}`
 - Handles `auto` mode for automatic ID detection
 
 #### `ajax_get_magazine_embed()`
+
 - Validates nonce for security
 - Retrieves attachment from database
 - Checks user permissions
@@ -71,6 +74,7 @@ class CCIAL_Magazine_Modal {
 ### Security Features
 
 1. **Nonce Validation**
+
    ```php
    if (!wp_verify_nonce($_POST['nonce'], 'magazine_modal_nonce')) {
        wp_die('Security check failed');
@@ -78,6 +82,7 @@ class CCIAL_Magazine_Modal {
    ```
 
 2. **Permission Checks**
+
    ```php
    if (!current_user_can('read_post', $attachment_id)) {
        wp_send_json_error('Access denied');
@@ -85,6 +90,7 @@ class CCIAL_Magazine_Modal {
    ```
 
 3. **HTML Sanitization**
+
    ```php
    $allowed_html = array(
        'iframe' => array(
@@ -127,6 +133,7 @@ var CCIALMagazineModal = {
 ### Event Handling
 
 #### Click Interception
+
 ```javascript
 $(document).on('click', 'a[href^="magazine-modal://"]', function(e) {
     e.preventDefault();
@@ -135,6 +142,7 @@ $(document).on('click', 'a[href^="magazine-modal://"]', function(e) {
 ```
 
 #### Modal Events
+
 ```javascript
 $(document).on('show.bs.modal', '.fusion-modal.magazine', function() {
     self.onModalShow($(this));
@@ -271,22 +279,26 @@ $formatted_title = $title_prefix . $filename_without_ext;
 ### WordPress Hooks
 
 1. **Shortcode Registration**
+
    ```php
    add_shortcode('modalview', array($this, 'modalview_shortcode'));
    ```
 
 2. **AJAX Handlers**
+
    ```php
    add_action('wp_ajax_get_magazine_embed', array($this, 'ajax_get_magazine_embed'));
    add_action('wp_ajax_nopriv_get_magazine_embed', array($this, 'ajax_get_magazine_embed'));
    ```
 
 3. **Image Attributes**
+
    ```php
    add_filter('wp_get_attachment_image_attributes', array($this, 'add_attachment_id_attribute'), 10, 3);
    ```
 
 4. **Avada Integration**
+
    ```php
    add_filter('fusion_attr_imageframe-link', array($this, 'process_link_shortcodes'));
    add_filter('the_content', array($this, 'process_content_shortcodes'));
@@ -309,6 +321,7 @@ The system integrates with Avada's Bootstrap-based modal system:
 ### Input Validation
 
 1. **Attachment ID Validation**
+
    ```php
    $attachment_id = intval($_POST['attachment_id']);
    if ($attachment_id <= 0) {
@@ -332,6 +345,7 @@ The system integrates with Avada's Bootstrap-based modal system:
    - Server validates nonce before processing
 
 2. **HTML Escaping**
+
    ```javascript
    escapeHtml: function(text) {
        var map = {
@@ -350,6 +364,7 @@ The system integrates with Avada's Bootstrap-based modal system:
 ### Script Loading
 
 1. **Conditional Enqueuing**
+
    ```php
    if (is_admin() || wp_doing_ajax()) {
        return;
@@ -357,6 +372,7 @@ The system integrates with Avada's Bootstrap-based modal system:
    ```
 
 2. **Localized Data**
+
    ```php
    wp_localize_script('ccial-magazine-modal', 'ccialMagazineModal', array(
        'ajaxUrl' => admin_url('admin-ajax.php'),

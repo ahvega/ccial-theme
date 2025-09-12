@@ -5,6 +5,7 @@ This functionality implements a "click cover → open modal with embedded Calame
 ## Overview
 
 The system allows editors to:
+
 1. Upload magazine cover images to the Media Library
 2. Paste Calameo embed HTML into the image's Description field
 3. Use a shortcode in Avada Image elements to make covers clickable
@@ -20,6 +21,7 @@ The system allows editors to:
 4. Save the attachment
 
 **Example Calameo embed HTML:**
+
 ```html
 <iframe src="https://view.calameo.com/1234567890abcdef" width="100%" height="600" frameborder="0" allowfullscreen="true" allow="autoplay"></iframe>
 ```
@@ -36,6 +38,7 @@ The system allows editors to:
 ### Step 3: Add Clickable Covers
 
 #### Option A: Using Shortcode in Link Field (Recommended)
+
 1. Add an **Image** element in Avada Builder
 2. Select your magazine cover image
 3. In the **Link** field, enter: `[modalview id="ATTACHMENT_ID"]`
@@ -43,6 +46,7 @@ The system allows editors to:
 4. Save the element
 
 #### Option B: Auto-Detection in Link Field
+
 1. Add an **Image** element in Avada Builder
 2. Select your magazine cover image
 3. In the **Link** field, enter: `[modalview]`
@@ -50,7 +54,9 @@ The system allows editors to:
 5. Save the element
 
 #### Option C: Using Shortcode in Content (Alternative)
+
 If the Link field doesn't process shortcodes:
+
 1. Add an **Image** element in Avada Builder
 2. Select your magazine cover image
 3. In the **Caption** or **Description** field, enter: `[modalview id="ATTACHMENT_ID"]`
@@ -61,11 +67,13 @@ If the Link field doesn't process shortcodes:
 ## Finding Attachment IDs
 
 ### Method 1: Media Library
+
 1. Go to **Media Library**
 2. Click on an image to view details
 3. The attachment ID is in the URL: `post.php?post=123&action=edit` (ID is 123)
 
 ### Method 2: Browser Developer Tools
+
 1. Right-click on an image in Media Library
 2. Select **Inspect Element**
 3. Look for `data-attachment-id` attribute in the HTML
@@ -73,21 +81,25 @@ If the Link field doesn't process shortcodes:
 ## Usage Examples
 
 ### Single Magazine Cover
-```
+
+```bash
 Link: [modalview id="123"]
 ```
 
 ### Multiple Covers with Auto-Detection
-```
+
+```bash
 Link: [modalview]
 ```
 
 **Generated URL:** The shortcode will output:
-```
+
+```bash
 magazine-modal://123
 ```
 
 JavaScript then converts this to the proper Avada modal format:
+
 ```html
 <a class="fusion-modal-text-link" data-toggle="modal" data-target=".fusion-modal.magazine" href="#">
 ```
@@ -104,16 +116,19 @@ JavaScript then converts this to the proper Avada modal format:
 ## Troubleshooting
 
 ### Modal Not Opening
+
 - Ensure you created a modal element named `magazine` in Avada
 - Check browser console for JavaScript errors
 - Verify the shortcode syntax is correct
 
 ### No Embed Content
+
 - Check that Calameo embed HTML is pasted in the image's Description field
 - Verify the embed HTML is valid
 - Ensure the attachment ID is correct
 
 ### Auto-Detection Not Working
+
 - Use explicit attachment ID: `[modalview id="123"]`
 - Check that the image has a `data-attachment-id` attribute
 - Verify the image URL contains the attachment ID
@@ -121,17 +136,20 @@ JavaScript then converts this to the proper Avada modal format:
 ## Technical Details
 
 ### Files Modified/Created
+
 - `wp-content/themes/ccial/inc/magazine-modal.php` - Main functionality
 - `wp-content/themes/ccial/js/magazine-modal.js` - Frontend JavaScript
 - `wp-content/themes/ccial/functions.php` - Includes the modal functionality
 
 ### Security Features
+
 - Nonce verification for AJAX requests
 - HTML sanitization using `wp_kses()`
 - User permission checks
 - XSS protection in JavaScript
 
 ### Browser Compatibility
+
 - Modern browsers (Chrome, Firefox, Safari, Edge)
 - Requires JavaScript enabled
 - Uses jQuery (included with WordPress)
@@ -146,18 +164,21 @@ The modal title prefix "Revista Hoguera vol: " is translatable. To translate thi
 4. Create language-specific `.po` and `.mo` files as needed
 
 **Example for English:**
-```
+
+```bash
 msgid "Revista Hoguera vol: "
 msgstr "Hoguera Magazine vol: "
 ```
 
 **Example title display:**
+
 - **Image file:** `hoguera-2024-01.jpg`
 - **Modal title:** `"Revista Hoguera vol: hoguera-2024-01"`
 
 ## Support
 
 For issues or questions:
+
 1. Check browser console for JavaScript errors
 2. Verify all steps in the editor workflow
 3. Test with a simple Calameo embed first

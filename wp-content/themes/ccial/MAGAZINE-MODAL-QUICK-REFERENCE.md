@@ -11,15 +11,19 @@
 ## 📝 Shortcode Usage
 
 ### Basic Shortcode
-```
+
+```bash
 [modalview id="123"]
 ```
+
 Replace `123` with the actual attachment ID from Media Library.
 
 ### Auto-Detection Shortcode
-```
+
+```bash
 [modalview]
 ```
+
 Automatically detects attachment ID from the image.
 
 ## 🔗 Where to Use Shortcodes
@@ -62,16 +66,19 @@ Automatically detects attachment ID from the image.
 ## 🐛 Troubleshooting
 
 ### Modal Won't Open
+
 - ✅ Check modal name is exactly "magazine"
 - ✅ Verify shortcode syntax: `[modalview id="123"]`
 - ✅ Check browser console for errors
 
 ### Empty Modal
+
 - ✅ Verify Calameo embed code in image Description
 - ✅ Check attachment ID exists in Media Library
 - ✅ Ensure embed code is complete and valid
 
 ### Wrong Title
+
 - ✅ Expected format: "Revista Hoguera vol: filename"
 - ✅ Check image filename in Media Library
 - ✅ Verify translation settings if needed
@@ -91,18 +98,21 @@ To translate the title prefix:
 3. Add: `msgstr "Your Translation Here: "`
 
 **Examples:**
+
 - English: `"Hoguera Magazine vol: "`
 - French: `"Revue Hoguera vol: "`
 
 ## 📞 Support
 
 ### Before Contacting Support
+
 1. ✅ Check this quick reference
 2. ✅ Review the full Editor Guide
 3. ✅ Test with a simple setup first
 4. ✅ Check browser console for errors
 
 ### When Contacting Support
+
 - Provide specific error messages
 - Include browser and device information
 - Describe exact steps that led to the issue

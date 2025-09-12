@@ -103,6 +103,7 @@ Excerpt fields are automatically enabled for pages, allowing you to:
 The theme includes a complete magazine viewer system that allows visitors to click on magazine cover images and view the full publication in a modal window. This system integrates with Calameo's embed service.
 
 **Key Features:**
+
 - Click-to-view magazine covers
 - Full-screen modal viewer
 - Dark mode interface
@@ -111,6 +112,7 @@ The theme includes a complete magazine viewer system that allows visitors to cli
 - Secure AJAX implementation
 
 **Documentation:**
+
 - `MAGAZINE-MODAL-README.md` - Technical overview and setup
 - `MAGAZINE-MODAL-EDITOR-GUIDE.md` - Step-by-step editor instructions
 - `MAGAZINE-MODAL-QUICK-REFERENCE.md` - Quick reference for editors
