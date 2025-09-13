@@ -102,9 +102,10 @@ class CCIAL_Magazine_Modal {
             wp_send_json_error('Attachment not found');
         }
         
-        // Check if user can read this attachment
-        if (!current_user_can('read_post', $attachment_id)) {
-            wp_send_json_error('Access denied');
+        // Check if attachment is publicly accessible
+        // For magazine viewing, we allow access to attachments that are not private
+        if ($attachment->post_status !== 'inherit' && $attachment->post_status !== 'publish') {
+            wp_send_json_error('Attachment not publicly accessible');
         }
         
         // Get embed HTML from description

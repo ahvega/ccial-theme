@@ -57,11 +57,11 @@
 }
 
 
-/* Promotional footer hiding temporarily disabled for testing Calameo access restrictions */
+/* Hide only the promotional footer div with the Calameo link */
 
-/* .fusion-modal.magazine #magazine-modal-target div[style*="margin:4px 0px 8px"] {
+.fusion-modal.magazine #magazine-modal-target div[style*="margin:4px 0px 8px"] {
     display: none !important;
-} */
+}
 
 
 /* Loading State */
