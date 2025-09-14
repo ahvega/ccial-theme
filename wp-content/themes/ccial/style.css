@@ -893,6 +893,11 @@ table.woocommerce-table thead tr th {
     --button_gradient_bottom_color_hover: var(--awb-color1) !important;
 }
 
-.clmbrnd {
-    display: none;
+.clmbrnd,
+.clmhdn {
+    display: none !important;
+}
+
+.modal-title {
+    color: white !important;
 }

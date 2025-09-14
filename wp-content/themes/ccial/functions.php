@@ -305,4 +305,6 @@ add_action('init', 'ccial_disable_svg_execution');
 // Include additional functionality files
 // require_once get_stylesheet_directory() . '/inc/custom-post-types.php';
 // require_once get_stylesheet_directory() . '/inc/custom-taxonomies.php';
+require_once get_stylesheet_directory() . '/inc/directory-cpt.php';
+require_once get_stylesheet_directory() . '/inc/academy-cpt.php';
 require_once get_stylesheet_directory() . '/inc/magazine-modal.php';
