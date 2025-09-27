@@ -1,4 +1,4 @@
-# CCIAL Directory Custom Post Type
+# CCI AL Directory Custom Post Type
 
 ## Overview
 

@@ -1,0 +1,1261 @@
+# Copyright (C) 2025 CCI AL Development Team
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: CCI AL Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: https://ccial.org\n"
+"POT-Creation-Date: 2025-02-09 17:26+0000\n"
+"PO-Revision-Date: 2025-02-09 17:30+0000\n"
+"Last-Translator: CCI AL Development Team <dev@ccial.org>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: functions.php:89
+msgid "Developed with ❤️ for CCI AL"
+msgstr "Desarrollado con ❤️ para CCI AL"
+
+#: inc/magazine-modal.php:161
+msgid "Hoguera Magazine vol: "
+msgstr "Revista Hoguera vol: "
+
+#: functions.php:95
+msgid "CCI AL Sidebar"
+msgstr "Barra lateral CCI AL"
+
+#: functions.php:96
+msgid "Add widgets here to appear in your sidebar."
+msgstr "Agrega widgets aquí para que aparezcan en tu barra lateral."
+
+#: inc/academy-cpt.php:29
+msgctxt "Post type general name"
+msgid "Academy"
+msgstr "Academia"
+
+#: inc/academy-cpt.php:30
+msgctxt "Post type singular name"
+msgid "Academic Resource"
+msgstr "Recurso Académico"
+
+#: inc/academy-cpt.php:31
+msgctxt "Admin Menu text"
+msgid "Academy"
+msgstr "Academia"
+
+#: inc/academy-cpt.php:32
+msgctxt "Add New on Toolbar"
+msgid "Academic Resource"
+msgstr "Recurso Académico"
+
+#: inc/academy-cpt.php:33
+msgctxt "Academic Resource"
+msgid "Add New"
+msgstr "Agregar Nuevo"
+
+#: inc/academy-cpt.php:34
+msgid "Add New Academic Resource"
+msgstr "Agregar Nuevo Recurso Académico"
+
+#: inc/academy-cpt.php:35
+msgid "New Academic Resource"
+msgstr "Nuevo Recurso Académico"
+
+#: inc/academy-cpt.php:36
+msgid "Edit Academic Resource"
+msgstr "Editar Recurso Académico"
+
+#: inc/academy-cpt.php:37
+msgid "View Academic Resource"
+msgstr "Ver Recurso Académico"
+
+#: inc/academy-cpt.php:38
+msgid "All Academic Resources"
+msgstr "Todos los Recursos Académicos"
+
+#: inc/academy-cpt.php:39
+msgid "Search Academic Resources"
+msgstr "Buscar Recursos Académicos"
+
+#: inc/academy-cpt.php:40
+msgid "Parent Academic Resources:"
+msgstr "Recursos Académicos Padre:"
+
+#: inc/academy-cpt.php:41
+msgid "No academic resources found."
+msgstr "No se encontraron recursos académicos."
+
+#: inc/academy-cpt.php:42
+msgid "No academic resources found in Trash."
+msgstr "No se encontraron recursos académicos en la Papelera."
+
+#: inc/academy-cpt.php:43
+msgctxt "ccial"
+msgid "Featured Image"
+msgstr "Imagen Destacada"
+
+#: inc/academy-cpt.php:44
+msgctxt "ccial"
+msgid "Set featured image"
+msgstr "Establecer imagen destacada"
+
+#: inc/academy-cpt.php:45
+msgctxt "ccial"
+msgid "Remove featured image"
+msgstr "Eliminar imagen destacada"
+
+#: inc/academy-cpt.php:46
+msgctxt "ccial"
+msgid "Use as featured image"
+msgstr "Usar como imagen destacada"
+
+#: inc/academy-cpt.php:47
+msgid "Academy Archives"
+msgstr "Archivos de Academia"
+
+#: inc/academy-cpt.php:48
+msgid "Insert into academic resource"
+msgstr "Insertar en recurso académico"
+
+#: inc/academy-cpt.php:49
+msgid "Uploaded to this academic resource"
+msgstr "Subido a este recurso académico"
+
+#: inc/academy-cpt.php:50
+msgid "Filter academic resources list"
+msgstr "Filtrar lista de recursos académicos"
+
+#: inc/academy-cpt.php:51
+msgid "Academic resources list navigation"
+msgstr "Navegación de lista de recursos académicos"
+
+#: inc/academy-cpt.php:52
+msgid "Academic resources list"
+msgstr "Lista de recursos académicos"
+
+#: inc/academy-cpt.php:83
+msgctxt "Taxonomy General Name"
+msgid "Academic Categories"
+msgstr "Categorías Académicas"
+
+#: inc/academy-cpt.php:84
+msgctxt "Taxonomy Singular Name"
+msgid "Academic Category"
+msgstr "Categoría Académica"
+
+#: inc/academy-cpt.php:85
+msgctxt "ccial"
+msgid "Academic Categories"
+msgstr "Categorías Académicas"
+
+#: inc/academy-cpt.php:86
+msgid "All Academic Categories"
+msgstr "Todas las Categorías Académicas"
+
+#: inc/academy-cpt.php:87
+msgid "Parent Academic Category"
+msgstr "Categoría Académica Padre"
+
+#: inc/academy-cpt.php:88
+msgid "Parent Academic Category:"
+msgstr "Categoría Académica Padre:"
+
+#: inc/academy-cpt.php:89
+msgid "New Academic Category Name"
+msgstr "Nuevo Nombre de Categoría Académica"
+
+#: inc/academy-cpt.php:90
+msgid "Add New Academic Category"
+msgstr "Agregar Nueva Categoría Académica"
+
+#: inc/academy-cpt.php:91
+msgid "Edit Academic Category"
+msgstr "Editar Categoría Académica"
+
+#: inc/academy-cpt.php:92
+msgid "Update Academic Category"
+msgstr "Actualizar Categoría Académica"
+
+#: inc/academy-cpt.php:93
+msgid "View Academic Category"
+msgstr "Ver Categoría Académica"
+
+#: inc/academy-cpt.php:94
+msgid "Separate academic categories with commas"
+msgstr "Separar categorías académicas con comas"
+
+#: inc/academy-cpt.php:95
+msgid "Add or remove academic categories"
+msgstr "Agregar o eliminar categorías académicas"
+
+#: inc/academy-cpt.php:96
+msgid "Choose from the most used"
+msgstr "Elegir de los más utilizados"
+
+#: inc/academy-cpt.php:97
+msgid "Popular Academic Categories"
+msgstr "Categorías Académicas Populares"
+
+#: inc/academy-cpt.php:98
+msgid "Search Academic Categories"
+msgstr "Buscar Categorías Académicas"
+
+#: inc/academy-cpt.php:99
+msgctxt "ccial"
+msgid "Not Found"
+msgstr "No Encontrado"
+
+#: inc/academy-cpt.php:100
+msgid "No academic categories"
+msgstr "Sin categorías académicas"
+
+#: inc/academy-cpt.php:101
+msgid "Academic categories list"
+msgstr "Lista de categorías académicas"
+
+#: inc/academy-cpt.php:102
+msgid "Academic categories list navigation"
+msgstr "Navegación de lista de categorías académicas"
+
+#: inc/academy-cpt.php:128
+msgctxt "Taxonomy General Name"
+msgid "Competencies"
+msgstr "Competencias"
+
+#: inc/academy-cpt.php:129
+msgctxt "Taxonomy Singular Name"
+msgid "Competency"
+msgstr "Competencia"
+
+#: inc/academy-cpt.php:130
+msgctxt "ccial"
+msgid "Competencies"
+msgstr "Competencias"
+
+#: inc/academy-cpt.php:131
+msgid "All Competencies"
+msgstr "Todas las Competencias"
+
+#: inc/academy-cpt.php:134
+msgid "New Competency Name"
+msgstr "Nuevo Nombre de Competencia"
+
+#: inc/academy-cpt.php:135
+msgid "Add New Competency"
+msgstr "Agregar Nueva Competencia"
+
+#: inc/academy-cpt.php:136
+msgid "Edit Competency"
+msgstr "Editar Competencia"
+
+#: inc/academy-cpt.php:137
+msgid "Update Competency"
+msgstr "Actualizar Competencia"
+
+#: inc/academy-cpt.php:138
+msgid "View Competency"
+msgstr "Ver Competencia"
+
+#: inc/academy-cpt.php:139
+msgid "Separate competencies with commas"
+msgstr "Separar competencias con comas"
+
+#: inc/academy-cpt.php:140
+msgid "Add or remove competencies"
+msgstr "Agregar o eliminar competencias"
+
+#: inc/academy-cpt.php:141
+msgid "Choose from the most used"
+msgstr "Elegir de los más utilizados"
+
+#: inc/academy-cpt.php:142
+msgid "Popular Competencies"
+msgstr "Competencias Populares"
+
+#: inc/academy-cpt.php:143
+msgid "Search Competencies"
+msgstr "Buscar Competencias"
+
+#: inc/academy-cpt.php:144
+msgctxt "ccial"
+msgid "Not Found"
+msgstr "No Encontrado"
+
+#: inc/academy-cpt.php:145
+msgid "No competencies"
+msgstr "Sin competencias"
+
+#: inc/academy-cpt.php:146
+msgid "Competencies list"
+msgstr "Lista de competencias"
+
+#: inc/academy-cpt.php:147
+msgid "Competencies list navigation"
+msgstr "Navegación de lista de competencias"
+
+#: inc/academy-cpt.php:173
+msgctxt "Taxonomy General Name"
+msgid "Topics"
+msgstr "Temas"
+
+#: inc/academy-cpt.php:174
+msgctxt "Taxonomy Singular Name"
+msgid "Topic"
+msgstr "Tema"
+
+#: inc/academy-cpt.php:175
+msgctxt "ccial"
+msgid "Topics"
+msgstr "Temas"
+
+#: inc/academy-cpt.php:176
+msgid "All Topics"
+msgstr "Todos los Temas"
+
+#: inc/academy-cpt.php:179
+msgid "New Topic Name"
+msgstr "Nuevo Nombre de Tema"
+
+#: inc/academy-cpt.php:180
+msgid "Add New Topic"
+msgstr "Agregar Nuevo Tema"
+
+#: inc/academy-cpt.php:181
+msgid "Edit Topic"
+msgstr "Editar Tema"
+
+#: inc/academy-cpt.php:182
+msgid "Update Topic"
+msgstr "Actualizar Tema"
+
+#: inc/academy-cpt.php:183
+msgid "View Topic"
+msgstr "Ver Tema"
+
+#: inc/academy-cpt.php:184
+msgid "Separate topics with commas"
+msgstr "Separar temas con comas"
+
+#: inc/academy-cpt.php:185
+msgid "Add or remove topics"
+msgstr "Agregar o eliminar temas"
+
+#: inc/academy-cpt.php:186
+msgid "Choose from the most used"
+msgstr "Elegir de los más utilizados"
+
+#: inc/academy-cpt.php:187
+msgid "Popular Topics"
+msgstr "Temas Populares"
+
+#: inc/academy-cpt.php:188
+msgid "Search Topics"
+msgstr "Buscar Temas"
+
+#: inc/academy-cpt.php:189
+msgctxt "ccial"
+msgid "Not Found"
+msgstr "No Encontrado"
+
+#: inc/academy-cpt.php:190
+msgid "No topics"
+msgstr "Sin temas"
+
+#: inc/academy-cpt.php:191
+msgid "Topics list"
+msgstr "Lista de temas"
+
+#: inc/academy-cpt.php:192
+msgid "Topics list navigation"
+msgstr "Navegación de lista de temas"
+
+#: inc/academy-cpt.php:218
+msgid "Diplomas"
+msgstr "Diplomados"
+
+#: inc/academy-cpt.php:219
+msgid "Academic degree programs with sequential levels"
+msgstr "Programas de grado académico con niveles secuenciales"
+
+#: inc/academy-cpt.php:221
+msgid "Biblical Counseling in Camps"
+msgstr "Consejería Bíblica en Campamentos"
+
+#: inc/academy-cpt.php:222
+msgid "Camp Program Design"
+msgstr "Diseño de Programas de Campamento"
+
+#: inc/academy-cpt.php:223
+msgid "Biblical Curriculum Design in Camps"
+msgstr "Diseño de Currículo Bíblico en Campamentos"
+
+#: inc/academy-cpt.php:224
+msgid "Experimental Education and Recreation with Purpose"
+msgstr "Educación Experimental y Recreación con Propósito"
+
+#: inc/academy-cpt.php:228
+msgid "Workshops"
+msgstr "Talleres"
+
+#: inc/academy-cpt.php:229
+msgid "Elective workshops that can be taken individually"
+msgstr "Talleres electivos que pueden tomarse individualmente"
+
+#: inc/academy-cpt.php:231
+msgid "Workshops - Counseling"
+msgstr "Talleres - Consejería"
+
+#: inc/academy-cpt.php:232
+msgid "Workshops - Program Design"
+msgstr "Talleres - Diseño de Programas"
+
+#: inc/academy-cpt.php:233
+msgid "Workshops - Curriculum Design"
+msgstr "Talleres - Diseño de Currículo"
+
+#: inc/academy-cpt.php:234
+msgid "Workshops - Experimental Education"
+msgstr "Talleres - Educación Experimental"
+
+#: inc/academy-cpt.php:238
+msgid "Instructor Training Institutes"
+msgstr "Institutos de Formación de Instructores"
+
+#: inc/academy-cpt.php:239
+msgid "Intensive 17-day instructor certification events"
+msgstr "Eventos de certificación intensivos de 17 días"
+
+#: inc/academy-cpt.php:241
+msgid "IFI-1"
+msgstr "IFI-1"
+
+#: inc/academy-cpt.php:242
+msgid "IFI-2"
+msgstr "IFI-2"
+
+#: inc/academy-cpt.php:243
+msgid "IFI-3"
+msgstr "IFI-3"
+
+#: inc/academy-cpt.php:247
+msgid "Textbooks"
+msgstr "Libros de Texto"
+
+#: inc/academy-cpt.php:248
+msgid "Core textbooks used as in-depth courses"
+msgstr "Libros de texto principales utilizados como cursos profundos"
+
+#: inc/academy-cpt.php:250
+msgid "Biblical Counseling Textbook"
+msgstr "Libro de Texto de Consejería Bíblica"
+
+#: inc/academy-cpt.php:251
+msgid "Program Design Textbook"
+msgstr "Libro de Texto de Diseño de Programas"
+
+#: inc/academy-cpt.php:252
+msgid "Curriculum Design Textbook"
+msgstr "Libro de Texto de Diseño de Currículo"
+
+#: inc/academy-cpt.php:253
+msgid "Experimental Education Textbook"
+msgstr "Libro de Texto de Educación Experimental"
+
+#: inc/academy-cpt.php:254
+msgid "Leadership and Team Development Textbook"
+msgstr "Libro de Texto de Liderazgo y Desarrollo de Equipos"
+
+#: inc/academy-cpt.php:258
+msgid "Confidant"
+msgstr "Confiado"
+
+#: inc/academy-cpt.php:259
+msgid "Program Director"
+msgstr "Director de Programa"
+
+#: inc/academy-cpt.php:260
+msgid "Bible Teacher"
+msgstr "Maestro de Biblia"
+
+#: inc/academy-cpt.php:261
+msgid "Experience Facilitator"
+msgstr "Facilitador de Experiencias"
+
+#: inc/academy-cpt.php:262
+msgid "Counseling"
+msgstr "Consejería"
+
+#: inc/academy-cpt.php:263
+msgid "Curriculum Design"
+msgstr "Diseño de Currículo"
+
+#: inc/academy-cpt.php:264
+msgid "Recreation with Purpose"
+msgstr "Recreación con Propósito"
+
+#: inc/academy-cpt.php:265
+msgid "Personal Evangelism"
+msgstr "Evangelismo Personal"
+
+#: inc/academy-cpt.php:266
+msgid "Leadership"
+msgstr "Liderazgo"
+
+#: inc/academy-cpt.php:267
+msgid "Team Development"
+msgstr "Desarrollo de Equipos"
+
+#: inc/academy-cpt.php:271
+msgid "Camp"
+msgstr "Campamento"
+
+#: inc/academy-cpt.php:272
+msgid "Team Building"
+msgstr "Construcción de Equipos"
+
+#: inc/academy-cpt.php:273
+msgid "Evangelism"
+msgstr "Evangelismo"
+
+#: inc/academy-cpt.php:274
+msgid "Spiritual Accompaniment"
+msgstr "Acompañamiento Espiritual"
+
+#: inc/academy-cpt.php:275
+msgid "Outdoor Recreation"
+msgstr "Recreación al Aire Libre"
+
+#: inc/academy-cpt.php:276
+msgid "Leader Training"
+msgstr "Entrenamiento de Líderes"
+
+#: inc/academy-cpt.php:277
+msgid "Community Development"
+msgstr "Desarrollo Comunitario"
+
+#: inc/academy-cpt.php:278
+msgid "Youth Ministry"
+msgstr "Ministerio Juvenil"
+
+#: inc/academy-cpt.php:279
+msgid "Christian Education"
+msgstr "Educación Cristiana"
+
+#: inc/academy-cpt.php:280
+msgid "Discipleship"
+msgstr "Discipulado"
+
+#: inc/directory-cpt.php:21
+msgctxt "Post type general name"
+msgid "Directory"
+msgstr "Directorio"
+
+#: inc/directory-cpt.php:22
+msgctxt "Post type singular name"
+msgid "Directory Entry"
+msgstr "Entrada del Directorio"
+
+#: inc/directory-cpt.php:23
+msgctxt "Admin Menu text"
+msgid "Directory"
+msgstr "Directorio"
+
+#: inc/directory-cpt.php:24
+msgctxt "Add New on Toolbar"
+msgid "Directory Entry"
+msgstr "Entrada del Directorio"
+
+#: inc/directory-cpt.php:25
+msgctxt "Directory Entry"
+msgid "Add New"
+msgstr "Agregar Nuevo"
+
+#: inc/directory-cpt.php:26
+msgid "Add New Directory Entry"
+msgstr "Agregar Nueva Entrada del Directorio"
+
+#: inc/directory-cpt.php:27
+msgid "New Directory Entry"
+msgstr "Nueva Entrada del Directorio"
+
+#: inc/directory-cpt.php:28
+msgid "Edit Directory Entry"
+msgstr "Editar Entrada del Directorio"
+
+#: inc/directory-cpt.php:29
+msgid "View Directory Entry"
+msgstr "Ver Entrada del Directorio"
+
+#: inc/directory-cpt.php:30
+msgid "All Directory Entries"
+msgstr "Todas las Entradas del Directorio"
+
+#: inc/directory-cpt.php:31
+msgid "Search Directory Entries"
+msgstr "Buscar Entradas del Directorio"
+
+#: inc/directory-cpt.php:32
+msgid "Parent Directory Entries:"
+msgstr "Entradas del Directorio Padre:"
+
+#: inc/directory-cpt.php:33
+msgid "No directory entries found."
+msgstr "No se encontraron entradas del directorio."
+
+#: inc/directory-cpt.php:34
+msgid "No directory entries found in Trash."
+msgstr "No se encontraron entradas del directorio en la Papelera."
+
+#: inc/directory-cpt.php:35
+msgctxt "ccial"
+msgid "Featured Image"
+msgstr "Imagen Destacada"
+
+#: inc/directory-cpt.php:36
+msgctxt "ccial"
+msgid "Set featured image"
+msgstr "Establecer imagen destacada"
+
+#: inc/directory-cpt.php:37
+msgctxt "ccial"
+msgid "Remove featured image"
+msgstr "Eliminar imagen destacada"
+
+#: inc/directory-cpt.php:38
+msgctxt "ccial"
+msgid "Use as featured image"
+msgstr "Usar como imagen destacada"
+
+#: inc/directory-cpt.php:39
+msgid "Directory Archives"
+msgstr "Archivos del Directorio"
+
+#: inc/directory-cpt.php:40
+msgid "Insert into directory entry"
+msgstr "Insertar en entrada del directorio"
+
+#: inc/directory-cpt.php:41
+msgid "Uploaded to this directory entry"
+msgstr "Subido a esta entrada del directorio"
+
+#: inc/directory-cpt.php:42
+msgid "Filter directory entries list"
+msgstr "Filtrar lista de entradas del directorio"
+
+#: archive-avada_portfolio.php:17
+msgid "Academy"
+msgstr "Academia"
+
+#: archive-avada_portfolio.php:19
+msgid "Explore our comprehensive academic resources: Diplomas, Workshops, IFIs, and Textbooks designed for camp ministry development."
+msgstr "Explora nuestros recursos académicos integrales: Diplomados, Talleres, IFIs y Libros de Texto diseñados para el desarrollo del ministerio de campamentos."
+
+#: archive-avada_portfolio.php:28
+msgid "Category:"
+msgstr "Categoría:"
+
+#: archive-avada_portfolio.php:30
+msgid "All Categories"
+msgstr "Todas las Categorías"
+
+#: archive-avada_portfolio.php:49
+msgid "Competency:"
+msgstr "Competencia:"
+
+#: archive-avada_portfolio.php:51
+msgid "All Competencies"
+msgstr "Todas las Competencias"
+
+#: archive-avada_portfolio.php:70
+msgid "Topic:"
+msgstr "Tema:"
+
+#: archive-avada_portfolio.php:72
+msgid "All Topics"
+msgstr "Todos los Temas"
+
+#: archive-avada_portfolio.php:91
+msgid "Filter"
+msgstr "Filtrar"
+
+#: archive-avada_portfolio.php:93
+msgid "Reset"
+msgstr "Restablecer"
+
+#: archive-avada_portfolio.php:160
+msgid "View Details"
+msgstr "Ver Detalles"
+
+#: archive-avada_portfolio.php:174
+msgid "Previous"
+msgstr "Anterior"
+
+#: archive-avada_portfolio.php:175
+msgid "Next"
+msgstr "Siguiente"
+
+#: archive-avada_portfolio.php:184
+msgid "No academic resources found"
+msgstr "No se encontraron recursos académicos"
+
+#: archive-avada_portfolio.php:185
+msgid "Try adjusting your filters or check back later for new resources."
+msgstr "Intenta ajustar tus filtros o revisa más tarde para nuevos recursos."
+
+#: single-avada_portfolio.php:67
+msgid "Academic Category"
+msgstr "Categoría Académica"
+
+#: single-avada_portfolio.php:75
+msgid "Competencies Developed"
+msgstr "Competencias Desarrolladas"
+
+#: single-avada_portfolio.php:87
+msgid "Related Topics"
+msgstr "Temas Relacionados"
+
+#: single-avada_portfolio.php:99
+msgid "Description"
+msgstr "Descripción"
+
+#: single-avada_portfolio.php:109
+msgid "← Previous Resource"
+msgstr "← Recurso Anterior"
+
+#: single-avada_portfolio.php:112
+msgid "Next Resource →"
+msgstr "Siguiente Recurso →"
+
+#: inc/directory-cpt.php:29
+msgctxt "Post type general name"
+msgid "Countries/Regions"
+msgstr "Países/Regiones"
+
+#: inc/directory-cpt.php:30
+msgctxt "Post type singular name"
+msgid "Country/Region"
+msgstr "País/Región"
+
+#: inc/directory-cpt.php:31
+msgctxt "Admin Menu text"
+msgid "Countries/Regions"
+msgstr "Países/Regiones"
+
+#: inc/directory-cpt.php:32
+msgctxt "Add New on Toolbar"
+msgid "Country/Region"
+msgstr "País/Región"
+
+#: inc/directory-cpt.php:33
+msgctxt "Add New on Toolbar"
+msgid "Add New"
+msgstr "Agregar Nuevo"
+
+#: inc/directory-cpt.php:34
+msgctxt "Add New on Toolbar"
+msgid "Add New Country/Region"
+msgstr "Agregar Nuevo País/Región"
+
+#: inc/directory-cpt.php:35
+msgctxt "Add New on Toolbar"
+msgid "New Country/Region"
+msgstr "Nuevo País/Región"
+
+#: inc/directory-cpt.php:36
+msgctxt "Add New on Toolbar"
+msgid "Edit Country/Region"
+msgstr "Editar País/Región"
+
+#: inc/directory-cpt.php:37
+msgctxt "Add New on Toolbar"
+msgid "View Country/Region"
+msgstr "Ver País/Región"
+
+#: inc/directory-cpt.php:38
+msgctxt "Add New on Toolbar"
+msgid "All Countries/Regions"
+msgstr "Todos los Países/Regiones"
+
+#: inc/directory-cpt.php:39
+msgctxt "Add New on Toolbar"
+msgid "Search Countries/Regions"
+msgstr "Buscar Países/Regiones"
+
+#: inc/directory-cpt.php:40
+msgctxt "Add New on Toolbar"
+msgid "Parent Countries/Regions:"
+msgstr "Países/Regiones Padre:"
+
+#: inc/directory-cpt.php:41
+msgctxt "Add New on Toolbar"
+msgid "No countries/regions found."
+msgstr "No se encontraron países/regiones."
+
+#: inc/directory-cpt.php:42
+msgctxt "Add New on Toolbar"
+msgid "No countries/regions found in Trash."
+msgstr "No se encontraron países/regiones en la Papelera."
+
+#: inc/directory-cpt.php:43
+msgctxt "Add New on Toolbar"
+msgid "Featured Image"
+msgstr "Imagen Destacada"
+
+#: inc/directory-cpt.php:44
+msgctxt "Add New on Toolbar"
+msgid "Set featured image"
+msgstr "Establecer imagen destacada"
+
+#: inc/directory-cpt.php:45
+msgctxt "Add New on Toolbar"
+msgid "Remove featured image"
+msgstr "Eliminar imagen destacada"
+
+#: inc/directory-cpt.php:46
+msgctxt "Add New on Toolbar"
+msgid "Use as featured image"
+msgstr "Usar como imagen destacada"
+
+#: inc/directory-cpt.php:47
+msgctxt "Add New on Toolbar"
+msgid "Directory Archives"
+msgstr "Archivos del Directorio"
+
+#: inc/directory-cpt.php:48
+msgctxt "Add New on Toolbar"
+msgid "Insert into directory entry"
+msgstr "Insertar en entrada del directorio"
+
+#: inc/directory-cpt.php:49
+msgctxt "Add New on Toolbar"
+msgid "Uploaded to this directory entry"
+msgstr "Subido a esta entrada del directorio"
+
+#: inc/directory-cpt.php:50
+msgctxt "Add New on Toolbar"
+msgid "Filter directory entries list"
+msgstr "Filtrar lista de entradas del directorio"
+
+#: inc/directory-cpt.php:51
+msgctxt "Add New on Toolbar"
+msgid "Directory entries list navigation"
+msgstr "Navegación de lista de entradas del directorio"
+
+#: inc/directory-cpt.php:52
+msgctxt "Add New on Toolbar"
+msgid "Directory entries list"
+msgstr "Lista de entradas del directorio"
+
+#: inc/directory-cpt.php:53
+msgctxt "Taxonomy general name"
+msgid "Directory Types"
+msgstr "Tipos de Directorio"
+
+#: inc/directory-cpt.php:54
+msgctxt "Taxonomy singular name"
+msgid "Directory Type"
+msgstr "Tipo de Directorio"
+
+#: inc/directory-cpt.php:55
+msgctxt "Taxonomy general name"
+msgid "Directory Types"
+msgstr "Tipos de Directorio"
+
+#: inc/directory-cpt.php:56
+msgctxt "Taxonomy general name"
+msgid "All Directory Types"
+msgstr "Todos los Tipos de Directorio"
+
+#: inc/directory-cpt.php:57
+msgctxt "Taxonomy general name"
+msgid "Parent Directory Type"
+msgstr "Tipo de Directorio Padre"
+
+#: inc/directory-cpt.php:58
+msgctxt "Taxonomy general name"
+msgid "Parent Directory Type:"
+msgstr "Tipo de Directorio Padre:"
+
+#: inc/directory-cpt.php:59
+msgctxt "Taxonomy general name"
+msgid "New Directory Type Name"
+msgstr "Nuevo Nombre de Tipo de Directorio"
+
+#: inc/directory-cpt.php:60
+msgctxt "Taxonomy general name"
+msgid "Add New Directory Type"
+msgstr "Agregar Nuevo Tipo de Directorio"
+
+#: inc/directory-cpt.php:61
+msgctxt "Taxonomy general name"
+msgid "Edit Directory Type"
+msgstr "Editar Tipo de Directorio"
+
+#: inc/directory-cpt.php:62
+msgctxt "Taxonomy general name"
+msgid "Update Directory Type"
+msgstr "Actualizar Tipo de Directorio"
+
+#: inc/directory-cpt.php:63
+msgctxt "Taxonomy general name"
+msgid "View Directory Type"
+msgstr "Ver Tipo de Directorio"
+
+#: inc/directory-cpt.php:64
+msgctxt "Taxonomy general name"
+msgid "Separate directory types with commas"
+msgstr "Separar tipos de directorio con comas"
+
+#: inc/directory-cpt.php:65
+msgctxt "Taxonomy general name"
+msgid "Add or remove directory types"
+msgstr "Agregar o eliminar tipos de directorio"
+
+#: inc/directory-cpt.php:66
+msgctxt "Taxonomy general name"
+msgid "Choose from the most used"
+msgstr "Elegir de los más utilizados"
+
+#: inc/directory-cpt.php:67
+msgctxt "Taxonomy general name"
+msgid "Popular Directory Types"
+msgstr "Tipos de Directorio Populares"
+
+#: inc/directory-cpt.php:68
+msgctxt "Taxonomy general name"
+msgid "Search Directory Types"
+msgstr "Buscar Tipos de Directorio"
+
+#: inc/directory-cpt.php:69
+msgctxt "Taxonomy general name"
+msgid "Not Found"
+msgstr "No Encontrado"
+
+#: inc/directory-cpt.php:70
+msgctxt "Taxonomy general name"
+msgid "No directory types"
+msgstr "Sin tipos de directorio"
+
+#: inc/directory-cpt.php:71
+msgctxt "Taxonomy general name"
+msgid "Directory types list"
+msgstr "Lista de tipos de directorio"
+
+#: inc/directory-cpt.php:72
+msgctxt "Taxonomy general name"
+msgid "Directory types list navigation"
+msgstr "Navegación de lista de tipos de directorio"
+
+#: functions.php:313
+msgid "Argentina"
+msgstr "Argentina"
+
+#: functions.php:314
+msgid "Bolivia"
+msgstr "Bolivia"
+
+#: functions.php:315
+msgid "Brazil"
+msgstr "Brasil"
+
+#: functions.php:316
+msgid "Belize"
+msgstr "Belice"
+
+#: functions.php:317
+msgid "Chile"
+msgstr "Chile"
+
+#: functions.php:318
+msgid "Colombia"
+msgstr "Colombia"
+
+#: functions.php:319
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: functions.php:320
+msgid "Cuba"
+msgstr "Cuba"
+
+#: functions.php:321
+msgid "Dominican Republic"
+msgstr "República Dominicana"
+
+#: functions.php:322
+msgid "Ecuador"
+msgstr "Ecuador"
+
+#: functions.php:323
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: functions.php:324
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: functions.php:325
+msgid "Guyana"
+msgstr "Guyana"
+
+#: functions.php:326
+msgid "Haiti"
+msgstr "Haití"
+
+#: functions.php:327
+msgid "Honduras"
+msgstr "Honduras"
+
+#: functions.php:328
+msgid "Jamaica"
+msgstr "Jamaica"
+
+#: functions.php:329
+msgid "Mexico"
+msgstr "México"
+
+#: functions.php:330
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: functions.php:331
+msgid "Panama"
+msgstr "Panamá"
+
+#: functions.php:332
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: functions.php:333
+msgid "Peru"
+msgstr "Perú"
+
+#: functions.php:334
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: functions.php:335
+msgid "Suriname"
+msgstr "Surinam"
+
+#: functions.php:336
+msgid "Trinidad and Tobago"
+msgstr "Trinidad y Tobago"
+
+#: functions.php:337
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: functions.php:338
+msgid "Venezuela"
+msgstr "Venezuela"
+
+#: functions.php:340
+msgid "Canada"
+msgstr "Canadá"
+
+#: functions.php:341
+msgid "United States"
+msgstr "Estados Unidos"
+
+#: functions.php:343
+msgid "Spain"
+msgstr "España"
+
+#: functions.php:344
+msgid "France"
+msgstr "Francia"
+
+#: functions.php:345
+msgid "Italy"
+msgstr "Italia"
+
+#: functions.php:346
+msgid "Portugal"
+msgstr "Portugal"
+
+#: functions.php:347
+msgid "Germany"
+msgstr "Alemania"
+
+#: functions.php:348
+msgid "United Kingdom"
+msgstr "Reino Unido"
+
+#: functions.php:349
+msgid "Netherlands"
+msgstr "Países Bajos"
+
+#: functions.php:350
+msgid "Belgium"
+msgstr "Bélgica"
+
+#: functions.php:351
+msgid "Switzerland"
+msgstr "Suiza"
+
+#: functions.php:352
+msgid "Austria"
+msgstr "Austria"
+
+#: functions.php:353
+msgid "Ireland"
+msgstr "Irlanda"
+
+#: functions.php:354
+msgid "Sweden"
+msgstr "Suecia"
+
+#: functions.php:355
+msgid "Norway"
+msgstr "Noruega"
+
+#: functions.php:356
+msgid "Denmark"
+msgstr "Dinamarca"
+
+#: functions.php:357
+msgid "Finland"
+msgstr "Finlandia"
+
+#: functions.php:359
+msgid "China"
+msgstr "China"
+
+#: functions.php:360
+msgid "Japan"
+msgstr "Japón"
+
+#: functions.php:361
+msgid "South Korea"
+msgstr "Corea del Sur"
+
+#: functions.php:362
+msgid "India"
+msgstr "India"
+
+#: functions.php:363
+msgid "Thailand"
+msgstr "Tailandia"
+
+#: functions.php:364
+msgid "Singapore"
+msgstr "Singapur"
+
+#: functions.php:365
+msgid "Malaysia"
+msgstr "Malasia"
+
+#: functions.php:366
+msgid "Philippines"
+msgstr "Filipinas"
+
+#: functions.php:367
+msgid "Indonesia"
+msgstr "Indonesia"
+
+#: functions.php:368
+msgid "Vietnam"
+msgstr "Vietnam"
+
+#: functions.php:369
+msgid "Taiwan"
+msgstr "Taiwán"
+
+#: functions.php:370
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: functions.php:372
+msgid "South Africa"
+msgstr "Sudáfrica"
+
+#: functions.php:373
+msgid "Egypt"
+msgstr "Egipto"
+
+#: functions.php:374
+msgid "Nigeria"
+msgstr "Nigeria"
+
+#: functions.php:375
+msgid "Kenya"
+msgstr "Kenia"
+
+#: functions.php:376
+msgid "Morocco"
+msgstr "Marruecos"
+
+#: functions.php:377
+msgid "Tunisia"
+msgstr "Túnez"
+
+#: functions.php:378
+msgid "Ghana"
+msgstr "Ghana"
+
+#: functions.php:379
+msgid "Ethiopia"
+msgstr "Etiopía"
+
+#: functions.php:381
+msgid "Australia"
+msgstr "Australia"
+
+#: functions.php:382
+msgid "New Zealand"
+msgstr "Nueva Zelanda"
+
+#: functions.php:383
+msgid "Fiji"
+msgstr "Fiyi"
+
+#: functions.php:385
+msgid "Russia"
+msgstr "Rusia"
+
+#: functions.php:386
+msgid "Turkey"
+msgstr "Turquía"
+
+#: functions.php:387
+msgid "Israel"
+msgstr "Israel"
+
+#: functions.php:388
+msgid "Saudi Arabia"
+msgstr "Arabia Saudita"
+
+#: functions.php:389
+msgid "United Arab Emirates"
+msgstr "Emiratos Árabes Unidos"
+
+#: functions.php:390
+msgid "Qatar"
+msgstr "Catar"
+
+#: functions.php:391
+msgid "Kuwait"
+msgstr "Kuwait"
+
+#: functions.php:392
+msgid "Bahrain"
+msgstr "Baréin"
+
+#: functions.php:393
+msgid "Oman"
+msgstr "Omán"
+
+#: functions.php:394
+msgid "Jordan"
+msgstr "Jordania"
+
+#: functions.php:395
+msgid "Lebanon"
+msgstr "Líbano"
+
+#: functions.php:397
+msgid "Other Country"
+msgstr "Otro País"

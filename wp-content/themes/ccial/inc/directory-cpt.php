@@ -2,7 +2,7 @@
 /**
  * Directory Custom Post Type
  * 
- * @package CCIAL
+ * @package CCI AL
  * @version 1.0.0
  * @since 1.0.0
  */
@@ -57,8 +57,8 @@ function ccial_register_directory_cpt() {
         'hierarchical'       => false,
         'menu_position'      => 20,
         'menu_icon'          => 'dashicons-location-alt',
-        'supports'           => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes'),
-        'show_in_rest'       => true,
+        'supports'           => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes', 'fusion_builder'),
+        'show_in_rest'       => false, // Disable Gutenberg editor
         'rest_base'          => 'directory',
         'rest_controller_class' => 'WP_REST_Posts_Controller',
     );
@@ -316,3 +316,154 @@ function ccial_handle_directory_column_sorting($query) {
     }
 }
 add_action('pre_get_posts', 'ccial_handle_directory_column_sorting');
+
+/**
+ * Register REST API for Directory CPT (even though show_in_rest is false)
+ * This allows API access while keeping the classic editor
+ */
+function ccial_register_directory_rest_api() {
+    register_rest_route('wp/v2', '/directory', array(
+        'methods' => WP_REST_Server::READABLE,
+        'callback' => 'ccial_get_directory_posts',
+        'permission_callback' => '__return_true',
+    ));
+    
+    register_rest_route('wp/v2', '/directory/(?P<id>\d+)', array(
+        'methods' => WP_REST_Server::READABLE,
+        'callback' => 'ccial_get_directory_post',
+        'permission_callback' => '__return_true',
+        'args' => array(
+            'id' => array(
+                'validate_callback' => function($param, $request, $key) {
+                    return is_numeric($param);
+                }
+            ),
+        ),
+    ));
+}
+add_action('rest_api_init', 'ccial_register_directory_rest_api');
+
+/**
+ * Get Directory posts via REST API
+ */
+function ccial_get_directory_posts($request) {
+    $args = array(
+        'post_type' => 'ccial_directory',
+        'post_status' => 'publish',
+        'posts_per_page' => $request->get_param('per_page') ?: 10,
+        'paged' => $request->get_param('page') ?: 1,
+    );
+    
+    // Add taxonomy filters
+    if ($request->get_param('directory_type')) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'directory_type',
+            'field' => 'slug',
+            'terms' => $request->get_param('directory_type'),
+        );
+    }
+    
+    if ($request->get_param('country_region')) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'country_region',
+            'field' => 'slug',
+            'terms' => $request->get_param('country_region'),
+        );
+    }
+    
+    $query = new WP_Query($args);
+    $posts = array();
+    
+    foreach ($query->posts as $post) {
+        $posts[] = ccial_format_directory_post_for_api($post);
+    }
+    
+    return new WP_REST_Response($posts, 200, array(
+        'X-WP-Total' => $query->found_posts,
+        'X-WP-TotalPages' => $query->max_num_pages,
+    ));
+}
+
+/**
+ * Get single Directory post via REST API
+ */
+function ccial_get_directory_post($request) {
+    $post_id = $request->get_param('id');
+    $post = get_post($post_id);
+    
+    if (!$post || $post->post_type !== 'ccial_directory') {
+        return new WP_Error('rest_post_invalid_id', __('Invalid post ID.', 'ccial'), array('status' => 404));
+    }
+    
+    if ($post->post_status !== 'publish') {
+        return new WP_Error('rest_post_invalid_status', __('Post is not published.', 'ccial'), array('status' => 404));
+    }
+    
+    return new WP_REST_Response(ccial_format_directory_post_for_api($post), 200);
+}
+
+/**
+ * Format Directory post for API response
+ */
+function ccial_format_directory_post_for_api($post) {
+    $directory_types = get_the_terms($post->ID, 'directory_type');
+    $country_regions = get_the_terms($post->ID, 'country_region');
+    
+    return array(
+        'id' => $post->ID,
+        'title' => array(
+            'rendered' => get_the_title($post->ID),
+        ),
+        'content' => array(
+            'rendered' => apply_filters('the_content', $post->post_content),
+        ),
+        'excerpt' => array(
+            'rendered' => get_the_excerpt($post->ID),
+        ),
+        'featured_media' => get_post_thumbnail_id($post->ID),
+        'directory_type' => $directory_types ? array_map(function($term) {
+            return array(
+                'id' => $term->term_id,
+                'name' => $term->name,
+                'slug' => $term->slug,
+            );
+        }, $directory_types) : array(),
+        'country_region' => $country_regions ? array_map(function($term) {
+            return array(
+                'id' => $term->term_id,
+                'name' => $term->name,
+                'slug' => $term->slug,
+            );
+        }, $country_regions) : array(),
+        'date' => $post->post_date,
+        'date_gmt' => $post->post_date_gmt,
+        'modified' => $post->post_modified,
+        'modified_gmt' => $post->post_modified_gmt,
+        'slug' => $post->post_name,
+        'status' => $post->post_status,
+        'link' => get_permalink($post->ID),
+    );
+}
+
+/**
+ * Force Classic Editor for Directory CPT
+ */
+function ccial_force_classic_editor_for_directory($use_block_editor, $post) {
+    if ($post && $post->post_type === 'ccial_directory') {
+        return false;
+    }
+    return $use_block_editor;
+}
+add_filter('use_block_editor_for_post', 'ccial_force_classic_editor_for_directory', 10, 2);
+
+/**
+ * Add Avada Live Builder support for Directory CPT
+ */
+function ccial_add_avada_support_for_directory() {
+    // Add Avada Live Builder support
+    add_post_type_support('ccial_directory', 'fusion_builder');
+    
+    // Add Avada page options support
+    add_post_type_support('ccial_directory', 'fusion_page_options');
+}
+add_action('init', 'ccial_add_avada_support_for_directory');

@@ -1,8 +1,8 @@
 <?php
 /**
- * CCIAL Child Theme Functions
+ * CCI AL Child Theme Functions
  * 
- * @package CCIAL
+ * @package CCI AL
  * @version 1.0.0
  * @since 1.0.0
  */
@@ -34,7 +34,7 @@ function ccial_lang_setup() {
 add_action('after_setup_theme', 'ccial_lang_setup');
 
 /**
- * Add custom functionality for CCIAL theme
+ * Add custom functionality for CCI AL theme
  */
 function ccial_theme_setup() {
     // Add theme support for various features
@@ -73,7 +73,7 @@ add_filter('excerpt_more', 'ccial_excerpt_more');
  * Add custom body classes
  */
 function ccial_body_classes($classes) {
-    // Add custom body class for CCIAL theme
+    // Add custom body class for CCI AL theme
     $classes[] = 'ccial-theme';
     
     return $classes;
@@ -110,7 +110,7 @@ add_action('admin_enqueue_scripts', 'ccial_admin_styles');
  * Customize WordPress admin footer
  */
 function ccial_admin_footer() {
-    echo '<span id="footer-thankyou">' . __('Developed with ❤️ for CCIAL', 'ccial') . '</span>';
+    echo '<span id="footer-thankyou">' . __('Developed with ❤️ for CCI AL', 'ccial') . '</span>';
 }
 add_filter('admin_footer_text', 'ccial_admin_footer');
 
@@ -121,7 +121,7 @@ function ccial_widgets_init() {
     // Example: Add a custom widget area
     /*
     register_sidebar(array(
-        'name'          => __('CCIAL Sidebar', 'ccial'),
+        'name'          => __('CCI AL Sidebar', 'ccial'),
         'id'            => 'ccial-sidebar',
         'description'   => __('Add widgets here to appear in your sidebar.', 'ccial'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -302,7 +302,340 @@ function ccial_disable_svg_execution() {
 }
 add_action('init', 'ccial_disable_svg_execution');
 
-// Include additional functionality files
+/**
+ * ACF Field: Load countries list for 'pais' field
+ * Provides a comprehensive list of countries for Directory and User contact info
+ * Supports bilingual site (English/Spanish)
+ */
+function acf_load_latam_countries($field) {
+    $field['choices'] = array(
+        // Latin America and Caribbean
+        'AR' => __('Argentina', 'ccial'),
+        'BO' => __('Bolivia', 'ccial'),
+        'BR' => __('Brazil', 'ccial'),
+        'BZ' => __('Belize', 'ccial'),
+        'CL' => __('Chile', 'ccial'),
+        'CO' => __('Colombia', 'ccial'),
+        'CR' => __('Costa Rica', 'ccial'),
+        'CU' => __('Cuba', 'ccial'),
+        'DO' => __('Dominican Republic', 'ccial'),
+        'EC' => __('Ecuador', 'ccial'),
+        'SV' => __('El Salvador', 'ccial'),
+        'GT' => __('Guatemala', 'ccial'),
+        'GY' => __('Guyana', 'ccial'),
+        'HT' => __('Haiti', 'ccial'),
+        'HN' => __('Honduras', 'ccial'),
+        'JM' => __('Jamaica', 'ccial'),
+        'MX' => __('Mexico', 'ccial'),
+        'NI' => __('Nicaragua', 'ccial'),
+        'PA' => __('Panama', 'ccial'),
+        'PY' => __('Paraguay', 'ccial'),
+        'PE' => __('Peru', 'ccial'),
+        'PR' => __('Puerto Rico', 'ccial'),
+        'SR' => __('Suriname', 'ccial'),
+        'TT' => __('Trinidad and Tobago', 'ccial'),
+        'UY' => __('Uruguay', 'ccial'),
+        'VE' => __('Venezuela', 'ccial'),
+        
+        // North America
+        'CA' => __('Canada', 'ccial'),
+        'US' => __('United States', 'ccial'),
+        
+        // Europe
+        'ES' => __('Spain', 'ccial'),
+        'FR' => __('France', 'ccial'),
+        'IT' => __('Italy', 'ccial'),
+        'PT' => __('Portugal', 'ccial'),
+        'DE' => __('Germany', 'ccial'),
+        'GB' => __('United Kingdom', 'ccial'),
+        'NL' => __('Netherlands', 'ccial'),
+        'BE' => __('Belgium', 'ccial'),
+        'CH' => __('Switzerland', 'ccial'),
+        'AT' => __('Austria', 'ccial'),
+        'IE' => __('Ireland', 'ccial'),
+        'SE' => __('Sweden', 'ccial'),
+        'NO' => __('Norway', 'ccial'),
+        'DK' => __('Denmark', 'ccial'),
+        'FI' => __('Finland', 'ccial'),
+        
+        // Asia
+        'CN' => __('China', 'ccial'),
+        'JP' => __('Japan', 'ccial'),
+        'KR' => __('South Korea', 'ccial'),
+        'IN' => __('India', 'ccial'),
+        'TH' => __('Thailand', 'ccial'),
+        'SG' => __('Singapore', 'ccial'),
+        'MY' => __('Malaysia', 'ccial'),
+        'PH' => __('Philippines', 'ccial'),
+        'ID' => __('Indonesia', 'ccial'),
+        'VN' => __('Vietnam', 'ccial'),
+        'TW' => __('Taiwan', 'ccial'),
+        'HK' => __('Hong Kong', 'ccial'),
+        
+        // Africa
+        'ZA' => __('South Africa', 'ccial'),
+        'EG' => __('Egypt', 'ccial'),
+        'NG' => __('Nigeria', 'ccial'),
+        'KE' => __('Kenya', 'ccial'),
+        'MA' => __('Morocco', 'ccial'),
+        'TN' => __('Tunisia', 'ccial'),
+        'GH' => __('Ghana', 'ccial'),
+        'ET' => __('Ethiopia', 'ccial'),
+        
+        // Oceania
+        'AU' => __('Australia', 'ccial'),
+        'NZ' => __('New Zealand', 'ccial'),
+        'FJ' => __('Fiji', 'ccial'),
+        
+        // Other important countries
+        'RU' => __('Russia', 'ccial'),
+        'TR' => __('Turkey', 'ccial'),
+        'IL' => __('Israel', 'ccial'),
+        'SA' => __('Saudi Arabia', 'ccial'),
+        'AE' => __('United Arab Emirates', 'ccial'),
+        'QA' => __('Qatar', 'ccial'),
+        'KW' => __('Kuwait', 'ccial'),
+        'BH' => __('Bahrain', 'ccial'),
+        'OM' => __('Oman', 'ccial'),
+        'JO' => __('Jordan', 'ccial'),
+        'LB' => __('Lebanon', 'ccial'),
+        
+        // Generic option
+        'XX' => __('Other Country', 'ccial')
+    );
+    
+    return $field;
+}
+add_filter('acf/load_field/name=pais', 'acf_load_latam_countries');
+
+/**
+ * ACF Field: Load academic levels for Academy resources
+ */
+function acf_load_niveles_academia($field) {
+    $field['choices'] = array(
+        __('Diploma', 'ccial') => __('Diploma', 'ccial'),
+        __('Workshop', 'ccial') => __('Workshop', 'ccial'),
+        __('IFI Level 1', 'ccial') => __('IFI Level 1', 'ccial'),
+        __('IFI Level 2', 'ccial') => __('IFI Level 2', 'ccial'),
+        __('IFI Level 3', 'ccial') => __('IFI Level 3', 'ccial'),
+        __('Textbook Course', 'ccial') => __('Textbook Course', 'ccial'),
+        __('Certification', 'ccial') => __('Certification', 'ccial'),
+        __('Specialization', 'ccial') => __('Specialization', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=nivel_academia', 'acf_load_niveles_academia');
+
+/**
+ * ACF Field: Load academic competencies
+ */
+function acf_load_competencias_academia($field) {
+    $field['choices'] = array(
+        __('Biblical Counseling', 'ccial') => __('Biblical Counseling', 'ccial'),
+        __('Program Design', 'ccial') => __('Program Design', 'ccial'),
+        __('Curriculum Design', 'ccial') => __('Curriculum Design', 'ccial'),
+        __('Experimental Education', 'ccial') => __('Experimental Education', 'ccial'),
+        __('Leadership Development', 'ccial') => __('Leadership Development', 'ccial'),
+        __('Team Building', 'ccial') => __('Team Building', 'ccial'),
+        __('Personal Evangelism', 'ccial') => __('Personal Evangelism', 'ccial'),
+        __('Camp Ministry', 'ccial') => __('Camp Ministry', 'ccial'),
+        __('Youth Ministry', 'ccial') => __('Youth Ministry', 'ccial'),
+        __('Christian Education', 'ccial') => __('Christian Education', 'ccial'),
+        __('Discipleship', 'ccial') => __('Discipleship', 'ccial'),
+        __('Community Development', 'ccial') => __('Community Development', 'ccial'),
+        __('Spiritual Accompaniment', 'ccial') => __('Spiritual Accompaniment', 'ccial'),
+        __('Outdoor Recreation', 'ccial') => __('Outdoor Recreation', 'ccial'),
+        __('Recreation with Purpose', 'ccial') => __('Recreation with Purpose', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=competencias_academia', 'acf_load_competencias_academia');
+
+/**
+ * ACF Field: Load academic topics
+ */
+function acf_load_temas_academia($field) {
+    $field['choices'] = array(
+        __('Camp Ministry', 'ccial') => __('Camp Ministry', 'ccial'),
+        __('Team Building', 'ccial') => __('Team Building', 'ccial'),
+        __('Evangelism', 'ccial') => __('Evangelism', 'ccial'),
+        __('Spiritual Accompaniment', 'ccial') => __('Spiritual Accompaniment', 'ccial'),
+        __('Outdoor Recreation', 'ccial') => __('Outdoor Recreation', 'ccial'),
+        __('Leader Training', 'ccial') => __('Leader Training', 'ccial'),
+        __('Community Development', 'ccial') => __('Community Development', 'ccial'),
+        __('Youth Ministry', 'ccial') => __('Youth Ministry', 'ccial'),
+        __('Christian Education', 'ccial') => __('Christian Education', 'ccial'),
+        __('Discipleship', 'ccial') => __('Discipleship', 'ccial'),
+        __('Biblical Counseling', 'ccial') => __('Biblical Counseling', 'ccial'),
+        __('Program Design', 'ccial') => __('Program Design', 'ccial'),
+        __('Curriculum Design', 'ccial') => __('Curriculum Design', 'ccial'),
+        __('Experimental Education', 'ccial') => __('Experimental Education', 'ccial'),
+        __('Leadership', 'ccial') => __('Leadership', 'ccial'),
+        __('Team Development', 'ccial') => __('Team Development', 'ccial'),
+        __('Personal Evangelism', 'ccial') => __('Personal Evangelism', 'ccial'),
+        __('Recreation with Purpose', 'ccial') => __('Recreation with Purpose', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=temas_academia', 'acf_load_temas_academia');
+
+/**
+ * ACF Field: Load academic resource types
+ */
+function acf_load_tipos_recurso_academia($field) {
+    $field['choices'] = array(
+        __('Diploma Program', 'ccial') => __('Diploma Program', 'ccial'),
+        __('Workshop', 'ccial') => __('Workshop', 'ccial'),
+        __('IFI Training', 'ccial') => __('IFI Training', 'ccial'),
+        __('Textbook Course', 'ccial') => __('Textbook Course', 'ccial'),
+        __('Online Course', 'ccial') => __('Online Course', 'ccial'),
+        __('Seminar', 'ccial') => __('Seminar', 'ccial'),
+        __('Conference', 'ccial') => __('Conference', 'ccial'),
+        __('Retreat', 'ccial') => __('Retreat', 'ccial'),
+        __('Certification Program', 'ccial') => __('Certification Program', 'ccial'),
+        __('Specialization Course', 'ccial') => __('Specialization Course', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=tipo_recurso_academia', 'acf_load_tipos_recurso_academia');
+
+/**
+ * ACF Field: Load AN positions/roles
+ */
+function acf_load_cargos_an($field) {
+    $field['choices'] = array(
+        __('President', 'ccial') => __('President', 'ccial'),
+        __('Vice President', 'ccial') => __('Vice President', 'ccial'),
+        __('Secretary', 'ccial') => __('Secretary', 'ccial'),
+        __('Treasurer', 'ccial') => __('Treasurer', 'ccial'),
+        __('Executive Director', 'ccial') => __('Executive Director', 'ccial'),
+        __('Program Director', 'ccial') => __('Program Director', 'ccial'),
+        __('Board Member', 'ccial') => __('Board Member', 'ccial'),
+        __('Regional Coordinator', 'ccial') => __('Regional Coordinator', 'ccial'),
+        __('Camp Director', 'ccial') => __('Camp Director', 'ccial'),
+        __('Training Coordinator', 'ccial') => __('Training Coordinator', 'ccial'),
+        __('Youth Coordinator', 'ccial') => __('Youth Coordinator', 'ccial'),
+        __('Development Director', 'ccial') => __('Development Director', 'ccial'),
+        __('Communications Director', 'ccial') => __('Communications Director', 'ccial'),
+        __('Other', 'ccial') => __('Other', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=cargo_an', 'acf_load_cargos_an');
+
+/**
+ * ACF Field: Load organization types
+ */
+function acf_load_tipos_organizacion($field) {
+    $field['choices'] = array(
+        __('National Association', 'ccial') => __('National Association', 'ccial'),
+        __('Regional Office', 'ccial') => __('Regional Office', 'ccial'),
+        __('Local Chapter', 'ccial') => __('Local Chapter', 'ccial'),
+        __('Camp Site', 'ccial') => __('Camp Site', 'ccial'),
+        __('Training Center', 'ccial') => __('Training Center', 'ccial'),
+        __('Headquarters', 'ccial') => __('Headquarters', 'ccial'),
+        __('Field Office', 'ccial') => __('Field Office', 'ccial'),
+        __('Partner Organization', 'ccial') => __('Partner Organization', 'ccial'),
+        __('Affiliate', 'ccial') => __('Affiliate', 'ccial'),
+        __('Other', 'ccial') => __('Other', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=tipo_organizacion', 'acf_load_tipos_organizacion');
+
+/**
+ * ACF Field: Load member status
+ */
+function acf_load_estado_miembro($field) {
+    $field['choices'] = array(
+        __('Active', 'ccial') => __('Active', 'ccial'),
+        __('Inactive', 'ccial') => __('Inactive', 'ccial'),
+        __('Honorary', 'ccial') => __('Honorary', 'ccial'),
+        __('Emeritus', 'ccial') => __('Emeritus', 'ccial'),
+        __('Suspended', 'ccial') => __('Suspended', 'ccial'),
+        __('Pending', 'ccial') => __('Pending', 'ccial'),
+        __('Probationary', 'ccial') => __('Probationary', 'ccial'),
+        __('Retired', 'ccial') => __('Retired', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=estado_miembro', 'acf_load_estado_miembro');
+
+/**
+ * ACF Field: Load contact types
+ */
+function acf_load_tipos_contacto($field) {
+    $field['choices'] = array(
+        __('Email', 'ccial') => __('Email', 'ccial'),
+        __('Phone', 'ccial') => __('Phone', 'ccial'),
+        __('Mobile', 'ccial') => __('Mobile', 'ccial'),
+        __('WhatsApp', 'ccial') => __('WhatsApp', 'ccial'),
+        __('Telegram', 'ccial') => __('Telegram', 'ccial'),
+        __('Skype', 'ccial') => __('Skype', 'ccial'),
+        __('Zoom', 'ccial') => __('Zoom', 'ccial'),
+        __('Facebook', 'ccial') => __('Facebook', 'ccial'),
+        __('Instagram', 'ccial') => __('Instagram', 'ccial'),
+        __('LinkedIn', 'ccial') => __('LinkedIn', 'ccial'),
+        __('Twitter', 'ccial') => __('Twitter', 'ccial'),
+        __('Website', 'ccial') => __('Website', 'ccial'),
+        __('Office Address', 'ccial') => __('Office Address', 'ccial'),
+        __('Home Address', 'ccial') => __('Home Address', 'ccial'),
+        __('Other', 'ccial') => __('Other', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=tipo_contacto', 'acf_load_tipos_contacto');
+
+/**
+ * ACF Field: Load academic achievement status
+ */
+function acf_load_estado_logro_academia($field) {
+    $field['choices'] = array(
+        __('Completed', 'ccial') => __('Completed', 'ccial'),
+        __('In Progress', 'ccial') => __('In Progress', 'ccial'),
+        __('Enrolled', 'ccial') => __('Enrolled', 'ccial'),
+        __('Certified', 'ccial') => __('Certified', 'ccial'),
+        __('Graduated', 'ccial') => __('Graduated', 'ccial'),
+        __('Pending Review', 'ccial') => __('Pending Review', 'ccial'),
+        __('Failed', 'ccial') => __('Failed', 'ccial'),
+        __('Withdrawn', 'ccial') => __('Withdrawn', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=estado_logro_academia', 'acf_load_estado_logro_academia');
+
+/**
+ * ACF Field: Load priority levels
+ */
+function acf_load_niveles_prioridad($field) {
+    $field['choices'] = array(
+        __('Low', 'ccial') => __('Low', 'ccial'),
+        __('Medium', 'ccial') => __('Medium', 'ccial'),
+        __('High', 'ccial') => __('High', 'ccial'),
+        __('Critical', 'ccial') => __('Critical', 'ccial'),
+        __('Urgent', 'ccial') => __('Urgent', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=nivel_prioridad', 'acf_load_niveles_prioridad');
+
+/**
+ * ACF Field: Load visibility options
+ */
+function acf_load_opciones_visibilidad($field) {
+    $field['choices'] = array(
+        __('Public', 'ccial') => __('Public', 'ccial'),
+        __('Private', 'ccial') => __('Private', 'ccial'),
+        __('Members Only', 'ccial') => __('Members Only', 'ccial'),
+        __('Staff Only', 'ccial') => __('Staff Only', 'ccial'),
+        __('Administrators Only', 'ccial') => __('Administrators Only', 'ccial'),
+        __('Hidden', 'ccial') => __('Hidden', 'ccial')
+    );
+    return $field;
+}
+add_filter('acf/load_field/name=opcion_visibilidad', 'acf_load_opciones_visibilidad');
+
+// Include additional functionality files Andry Javier  88036789
 // require_once get_stylesheet_directory() . '/inc/custom-post-types.php';
 // require_once get_stylesheet_directory() . '/inc/custom-taxonomies.php';
 require_once get_stylesheet_directory() . '/inc/directory-cpt.php';

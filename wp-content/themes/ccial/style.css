@@ -1,7 +1,7 @@
 /*
-Theme Name: CCIAL Theme
-Description: Child theme for Avada - Custom theme for CCIAL with enhanced functionality
-Author: CCIAL Development Team
+Theme Name: CCI AL Theme
+Description: Child theme for Avada - Custom theme for CCI AL with enhanced functionality
+Author: CCI AL Development Team
 Author URI: https://ccial.org
 Template: Avada
 Version: 1.0.0
@@ -18,10 +18,41 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 @import url("../Avada/style.css");
 
-/* Custom styles for CCIAL theme */
+/* ==================
+   CSS Variables Definition
+   ================== */
+
+:root {
+    /* Font Families */
+    --font-family-primary: "Source Serif 4", iowan old style, apple garamond, baskerville, times new roman, droid serif, times, source serif pro, serif;
+    --font-family-secondary: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Color Variables (using Avada's color system) */
+    --ccial-primary-color: var(--awb-color1, #1b6b4d);
+    --ccial-secondary-color: var(--awb-color4, #c9924a);
+    --ccial-accent-color: var(--awb-color6, #c9924a);
+    --ccial-text-color: var(--awb-color8, #333);
+    --ccial-background-color: var(--awb-color4, #f8f6f0);
+    /* Border Radius */
+    --border-radius-shaded: 8px;
+    --border-radius-small: 4px;
+    /* Spacing */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+    --spacing-xlarge: 3rem;
+    /* Shadows */
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.16);
+}
 
 
-/* SVG handling and display - Frontend only */
+/* Custom styles for CCI AL theme */
+
+
+/* ==================
+   SVG handling and display - Frontend only
+   ================== */
 
 
 /* Target only frontend SVG elements, not admin */
@@ -328,10 +359,9 @@ pre {
 }
 
 .highlighted strong {
-    font-family: "Crimson Pro";
+    font-family: var(--font-family-secondary);
     text-transform: uppercase;
-    letter-spacing: -0.05rem;
-    color: black;
+    letter-spacing: 0.05rem;
 }
 
 
@@ -377,7 +407,8 @@ pre {
     font-size: 0.9em;
 }
 
-.checks ul li::marker {
+.checks ul li::marker,
+ul.checks li::marker {
     color: var(--awb-color6);
     font-family: "Font Awesome 5 Free", "FontAwesome";
     font-weight: unset;
@@ -390,7 +421,8 @@ pre {
     padding-left: 0.5rem !important;
 }
 
-.finger ul li::marker {
+.finger ul li::marker,
+ul.finger li::marker {
     color: var(--awb-color6);
     font-family: "Font Awesome 5 Free", "FontAwesome";
     font-weight: unset;
@@ -505,6 +537,53 @@ pre {
     white-space: nowrap !important;
     word-wrap: normal !important;
     overflow-wrap: normal !important;
+}
+
+
+/* ==================
+   Blockquote styling
+   ================== */
+
+.fusion-body blockquote {
+    position: relative;
+    margin: var(--spacing-large) 0;
+    padding: 1.5rem 2rem 1.5rem 3rem;
+    background: linear-gradient(135deg, #f8f6f0 0%, #f5f2ea 100%);
+    border-left: 4px solid var(--ccial-secondary-color);
+    border-radius: var(--border-radius-shaded);
+    font-style: italic;
+    color: var(--ccial-text-color);
+    box-shadow: var(--shadow-light);
+}
+
+.fusion-body blockquote::before {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-style: normal;
+    content: "\f10d ";
+    position: absolute;
+    top: 0.5rem;
+    left: 1.4rem;
+    font-size: 3rem;
+    color: var(--ccial-accent-color);
+    opacity: 0.5;
+    line-height: 1;
+}
+
+.fusion-body blockquote p {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.fusion-body blockquote p::before {
+    content: "---------";
+    color: transparent;
+    opacity: 0;
+}
+
+.fusion-body blockquote p:last-child {
+    margin-bottom: 0;
 }
 
 
@@ -717,7 +796,7 @@ H2 {
 
 .fusion-image-wrapper .fusion-rollover {
     background-image: linear-gradient( to top, rgba(0, 0, 0, 0.25) 0, rgba(0, 0, 0, 0.25) 100%);
-    border-radius: 4px;
+    border-radius: var(--border-radius-shaded);
 }
 
 .fusion-image-wrapper:hover .fusion-rollover {
@@ -850,12 +929,6 @@ table.woocommerce-table thead tr th {
     background-color: var(--awb-color4);
 }
 
-.highlighted strong {
-    font-family: "Crimson Pro";
-    text-transform: uppercase;
-    letter-spacing: -0.05rem;
-}
-
 .checks ul li::marker {
     color: var(--awb-color6);
     font-family: "Font Awesome 5 Free", "FontAwesome";
@@ -900,4 +973,17 @@ table.woocommerce-table thead tr th {
 
 .modal-title {
     color: white !important;
+}
+
+.archivo-cards img {
+    border-radius: var(--border-radius-shaded) !important;
+}
+
+.archivo-cards .entry-title {
+    font-size: clamp(1.5rem, calc(1.25rem + 1.25vw), 2.25rem) !important;
+}
+
+.archivo-cards .fusion-single-line-meta {
+    font-family: var(--font-family-secondary);
+    text-transform: uppercase;
 }

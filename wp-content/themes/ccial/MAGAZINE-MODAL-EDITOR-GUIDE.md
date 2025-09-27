@@ -1,6 +1,6 @@
 # Magazine Modal Editor Guide
 
-This guide provides step-by-step instructions for editors to set up and use the magazine modal functionality on the CCIAL website.
+This guide provides step-by-step instructions for editors to set up and use the magazine modal functionality on the CCI AL website.
 
 ## Overview
 

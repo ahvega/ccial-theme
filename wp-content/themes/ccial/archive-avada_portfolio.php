@@ -2,7 +2,7 @@
 /**
  * Academy Archive Template
  * 
- * @package CCIAL
+ * @package CCI AL
  * @version 1.0.0
  * @since 1.0.0
  */
@@ -16,7 +16,7 @@ get_header(); ?>
         <div class="academy-header">
             <h1 class="academy-title"><?php _e('Academy', 'ccial'); ?></h1>
             <p class="academy-description">
-                <?php _e('Explore our comprehensive academic resources: Diplomados, Talleres, IFIs, and Textbooks designed for camp ministry development.', 'ccial'); ?>
+                <?php _e('Explore our comprehensive academic resources: Diplomas, Workshops, IFIs, and Textbooks designed for camp ministry development.', 'ccial'); ?>
             </p>
         </div>
         

@@ -80,3 +80,5 @@ local-config.php
 wp-content/mu-plugins/local-dev.php
 renderedoutput.html
 .htaccess
+.htpasswd
+*.md

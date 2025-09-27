@@ -1,31 +1,1191 @@
-# Copyright (C) 2025 CCIAL Development Team
+# Copyright (C) 2025 CCI AL Development Team
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: CCIAL Theme 1.0.0\n"
-"Report-Msgid-Bugs-To: https://ccial.org\n"
-"POT-Creation-Date: 2025-02-09 17:26+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: CCI AL Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ccial\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"POT-Creation-Date: 2025-09-17T12:25:02+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: ccial\n"
 
-#: functions.php:89
-msgid "Developed with ❤️ for CCIAL"
+#. Theme Name of the theme
+#: style.css
+msgid "CCI AL Theme"
 msgstr ""
 
-#: inc/magazine-modal.php:159
-msgid "Revista Hoguera vol: "
+#. Description of the theme
+#: style.css
+msgid "Child theme for Avada - Custom theme for CCI AL with enhanced functionality"
 msgstr ""
 
-#: functions.php:95
-msgid "CCIAL Sidebar"
+#. Author of the theme
+#: style.css
+msgid "CCI AL Development Team"
 msgstr ""
 
-#: functions.php:96
-msgid "Add widgets here to appear in your sidebar."
+#. Author URI of the theme
+#: style.css
+msgid "https://ccial.org"
+msgstr ""
+
+#: archive-avada_portfolio.php:17
+msgid "Academy"
+msgstr ""
+
+#: archive-avada_portfolio.php:19
+msgid "Explore our comprehensive academic resources: Diplomas, Workshops, IFIs, and Textbooks designed for camp ministry development."
+msgstr ""
+
+#: archive-avada_portfolio.php:28
+msgid "Category:"
+msgstr ""
+
+#: archive-avada_portfolio.php:30
+msgid "All Categories"
+msgstr ""
+
+#: archive-avada_portfolio.php:49
+msgid "Competency:"
+msgstr ""
+
+#: archive-avada_portfolio.php:51
+msgid "All Competencies"
+msgstr ""
+
+#: archive-avada_portfolio.php:70
+msgid "Topic:"
+msgstr ""
+
+#: archive-avada_portfolio.php:72
+msgid "All Topics"
+msgstr ""
+
+#: archive-avada_portfolio.php:91
+#: archive-ccial_directory.php:69
+msgid "Filter"
+msgstr ""
+
+#: archive-avada_portfolio.php:93
+#: archive-ccial_directory.php:71
+msgid "Reset"
+msgstr ""
+
+#: archive-avada_portfolio.php:160
+#: archive-ccial_directory.php:126
+msgid "View Details"
+msgstr ""
+
+#: archive-avada_portfolio.php:174
+#: archive-ccial_directory.php:140
+msgid "Previous"
+msgstr ""
+
+#: archive-avada_portfolio.php:175
+#: archive-ccial_directory.php:141
+msgid "Next"
+msgstr ""
+
+#: archive-avada_portfolio.php:184
+msgid "No academic resources found"
+msgstr ""
+
+#: archive-avada_portfolio.php:185
+msgid "Try adjusting your filters or check back later for new resources."
+msgstr ""
+
+#: archive-ccial_directory.php:17
+msgid "Directory"
+msgstr ""
+
+#: archive-ccial_directory.php:19
+msgid "Explore our network of National Associations and Camp Sites across Latin America."
+msgstr ""
+
+#: archive-ccial_directory.php:28
+msgid "Type:"
+msgstr ""
+
+#: archive-ccial_directory.php:30
+msgid "All Types"
+msgstr ""
+
+#: archive-ccial_directory.php:48
+msgid "Country:"
+msgstr ""
+
+#: archive-ccial_directory.php:50
+msgid "All Countries"
+msgstr ""
+
+#: archive-ccial_directory.php:150
+msgid "No directory entries found"
+msgstr ""
+
+#: archive-ccial_directory.php:151
+msgid "Try adjusting your filters or check back later for new entries."
+msgstr ""
+
+#: functions.php:113
+msgid "Developed with ❤️ for CCI AL"
+msgstr ""
+
+#: functions.php:313
+#: inc/directory-cpt.php:187
+msgid "Argentina"
+msgstr ""
+
+#: functions.php:314
+#: inc/directory-cpt.php:188
+msgid "Bolivia"
+msgstr ""
+
+#: functions.php:315
+#: inc/directory-cpt.php:189
+msgid "Brazil"
+msgstr ""
+
+#: functions.php:316
+msgid "Belize"
+msgstr ""
+
+#: functions.php:317
+#: inc/directory-cpt.php:190
+msgid "Chile"
+msgstr ""
+
+#: functions.php:318
+#: inc/directory-cpt.php:191
+msgid "Colombia"
+msgstr ""
+
+#: functions.php:319
+#: inc/directory-cpt.php:192
+msgid "Costa Rica"
+msgstr ""
+
+#: functions.php:320
+msgid "Cuba"
+msgstr ""
+
+#: functions.php:321
+msgid "Dominican Republic"
+msgstr ""
+
+#: functions.php:322
+#: inc/directory-cpt.php:193
+msgid "Ecuador"
+msgstr ""
+
+#: functions.php:323
+#: inc/directory-cpt.php:194
+msgid "El Salvador"
+msgstr ""
+
+#: functions.php:324
+#: inc/directory-cpt.php:195
+msgid "Guatemala"
+msgstr ""
+
+#: functions.php:325
+msgid "Guyana"
+msgstr ""
+
+#: functions.php:326
+msgid "Haiti"
+msgstr ""
+
+#: functions.php:327
+#: inc/directory-cpt.php:196
+msgid "Honduras"
+msgstr ""
+
+#: functions.php:328
+msgid "Jamaica"
+msgstr ""
+
+#: functions.php:329
+#: inc/directory-cpt.php:197
+msgid "Mexico"
+msgstr ""
+
+#: functions.php:330
+#: inc/directory-cpt.php:198
+msgid "Nicaragua"
+msgstr ""
+
+#: functions.php:331
+#: inc/directory-cpt.php:199
+msgid "Panama"
+msgstr ""
+
+#: functions.php:332
+#: inc/directory-cpt.php:200
+msgid "Paraguay"
+msgstr ""
+
+#: functions.php:333
+#: inc/directory-cpt.php:201
+msgid "Peru"
+msgstr ""
+
+#: functions.php:334
+msgid "Puerto Rico"
+msgstr ""
+
+#: functions.php:335
+msgid "Suriname"
+msgstr ""
+
+#: functions.php:336
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: functions.php:337
+#: inc/directory-cpt.php:202
+msgid "Uruguay"
+msgstr ""
+
+#: functions.php:338
+#: inc/directory-cpt.php:203
+msgid "Venezuela"
+msgstr ""
+
+#: functions.php:341
+msgid "Canada"
+msgstr ""
+
+#: functions.php:342
+msgid "United States"
+msgstr ""
+
+#: functions.php:345
+msgid "Spain"
+msgstr ""
+
+#: functions.php:346
+msgid "France"
+msgstr ""
+
+#: functions.php:347
+msgid "Italy"
+msgstr ""
+
+#: functions.php:348
+msgid "Portugal"
+msgstr ""
+
+#: functions.php:349
+msgid "Germany"
+msgstr ""
+
+#: functions.php:350
+msgid "United Kingdom"
+msgstr ""
+
+#: functions.php:351
+msgid "Netherlands"
+msgstr ""
+
+#: functions.php:352
+msgid "Belgium"
+msgstr ""
+
+#: functions.php:353
+msgid "Switzerland"
+msgstr ""
+
+#: functions.php:354
+msgid "Austria"
+msgstr ""
+
+#: functions.php:355
+msgid "Ireland"
+msgstr ""
+
+#: functions.php:356
+msgid "Sweden"
+msgstr ""
+
+#: functions.php:357
+msgid "Norway"
+msgstr ""
+
+#: functions.php:358
+msgid "Denmark"
+msgstr ""
+
+#: functions.php:359
+msgid "Finland"
+msgstr ""
+
+#: functions.php:362
+msgid "China"
+msgstr ""
+
+#: functions.php:363
+msgid "Japan"
+msgstr ""
+
+#: functions.php:364
+msgid "South Korea"
+msgstr ""
+
+#: functions.php:365
+msgid "India"
+msgstr ""
+
+#: functions.php:366
+msgid "Thailand"
+msgstr ""
+
+#: functions.php:367
+msgid "Singapore"
+msgstr ""
+
+#: functions.php:368
+msgid "Malaysia"
+msgstr ""
+
+#: functions.php:369
+msgid "Philippines"
+msgstr ""
+
+#: functions.php:370
+msgid "Indonesia"
+msgstr ""
+
+#: functions.php:371
+msgid "Vietnam"
+msgstr ""
+
+#: functions.php:372
+msgid "Taiwan"
+msgstr ""
+
+#: functions.php:373
+msgid "Hong Kong"
+msgstr ""
+
+#: functions.php:376
+msgid "South Africa"
+msgstr ""
+
+#: functions.php:377
+msgid "Egypt"
+msgstr ""
+
+#: functions.php:378
+msgid "Nigeria"
+msgstr ""
+
+#: functions.php:379
+msgid "Kenya"
+msgstr ""
+
+#: functions.php:380
+msgid "Morocco"
+msgstr ""
+
+#: functions.php:381
+msgid "Tunisia"
+msgstr ""
+
+#: functions.php:382
+msgid "Ghana"
+msgstr ""
+
+#: functions.php:383
+msgid "Ethiopia"
+msgstr ""
+
+#: functions.php:386
+msgid "Australia"
+msgstr ""
+
+#: functions.php:387
+msgid "New Zealand"
+msgstr ""
+
+#: functions.php:388
+msgid "Fiji"
+msgstr ""
+
+#: functions.php:391
+msgid "Russia"
+msgstr ""
+
+#: functions.php:392
+msgid "Turkey"
+msgstr ""
+
+#: functions.php:393
+msgid "Israel"
+msgstr ""
+
+#: functions.php:394
+msgid "Saudi Arabia"
+msgstr ""
+
+#: functions.php:395
+msgid "United Arab Emirates"
+msgstr ""
+
+#: functions.php:396
+msgid "Qatar"
+msgstr ""
+
+#: functions.php:397
+msgid "Kuwait"
+msgstr ""
+
+#: functions.php:398
+msgid "Bahrain"
+msgstr ""
+
+#: functions.php:399
+msgid "Oman"
+msgstr ""
+
+#: functions.php:400
+msgid "Jordan"
+msgstr ""
+
+#: functions.php:401
+msgid "Lebanon"
+msgstr ""
+
+#: functions.php:404
+msgid "Other Country"
+msgstr ""
+
+#: functions.php:416
+msgid "Diploma"
+msgstr ""
+
+#: functions.php:417
+#: functions.php:488
+msgid "Workshop"
+msgstr ""
+
+#: functions.php:418
+msgid "IFI Level 1"
+msgstr ""
+
+#: functions.php:419
+msgid "IFI Level 2"
+msgstr ""
+
+#: functions.php:420
+msgid "IFI Level 3"
+msgstr ""
+
+#: functions.php:421
+#: functions.php:490
+msgid "Textbook Course"
+msgstr ""
+
+#: functions.php:422
+msgid "Certification"
+msgstr ""
+
+#: functions.php:423
+msgid "Specialization"
+msgstr ""
+
+#: functions.php:434
+#: functions.php:469
+msgid "Biblical Counseling"
+msgstr ""
+
+#: functions.php:435
+#: functions.php:470
+msgid "Program Design"
+msgstr ""
+
+#: functions.php:436
+#: functions.php:471
+#: inc/academy-cpt.php:284
+msgid "Curriculum Design"
+msgstr ""
+
+#: functions.php:437
+#: functions.php:472
+msgid "Experimental Education"
+msgstr ""
+
+#: functions.php:438
+msgid "Leadership Development"
+msgstr ""
+
+#: functions.php:439
+#: functions.php:460
+#: inc/academy-cpt.php:303
+msgid "Team Building"
+msgstr ""
+
+#: functions.php:440
+#: functions.php:475
+#: inc/academy-cpt.php:286
+msgid "Personal Evangelism"
+msgstr ""
+
+#: functions.php:441
+#: functions.php:459
+msgid "Camp Ministry"
+msgstr ""
+
+#: functions.php:442
+#: functions.php:466
+#: inc/academy-cpt.php:309
+msgid "Youth Ministry"
+msgstr ""
+
+#: functions.php:443
+#: functions.php:467
+#: inc/academy-cpt.php:310
+msgid "Christian Education"
+msgstr ""
+
+#: functions.php:444
+#: functions.php:468
+#: inc/academy-cpt.php:311
+msgid "Discipleship"
+msgstr ""
+
+#: functions.php:445
+#: functions.php:465
+#: inc/academy-cpt.php:308
+msgid "Community Development"
+msgstr ""
+
+#: functions.php:446
+#: functions.php:462
+#: inc/academy-cpt.php:305
+msgid "Spiritual Accompaniment"
+msgstr ""
+
+#: functions.php:447
+#: functions.php:463
+#: inc/academy-cpt.php:306
+msgid "Outdoor Recreation"
+msgstr ""
+
+#: functions.php:448
+#: functions.php:476
+#: inc/academy-cpt.php:285
+msgid "Recreation with Purpose"
+msgstr ""
+
+#: functions.php:461
+#: inc/academy-cpt.php:304
+msgid "Evangelism"
+msgstr ""
+
+#: functions.php:464
+#: inc/academy-cpt.php:307
+msgid "Leader Training"
+msgstr ""
+
+#: functions.php:473
+#: inc/academy-cpt.php:287
+msgid "Leadership"
+msgstr ""
+
+#: functions.php:474
+#: inc/academy-cpt.php:288
+msgid "Team Development"
+msgstr ""
+
+#: functions.php:487
+msgid "Diploma Program"
+msgstr ""
+
+#: functions.php:489
+msgid "IFI Training"
+msgstr ""
+
+#: functions.php:491
+msgid "Online Course"
+msgstr ""
+
+#: functions.php:492
+msgid "Seminar"
+msgstr ""
+
+#: functions.php:493
+msgid "Conference"
+msgstr ""
+
+#: functions.php:494
+msgid "Retreat"
+msgstr ""
+
+#: functions.php:495
+msgid "Certification Program"
+msgstr ""
+
+#: functions.php:496
+msgid "Specialization Course"
+msgstr ""
+
+#: functions.php:507
+msgid "President"
+msgstr ""
+
+#: functions.php:508
+msgid "Vice President"
+msgstr ""
+
+#: functions.php:509
+msgid "Secretary"
+msgstr ""
+
+#: functions.php:510
+msgid "Treasurer"
+msgstr ""
+
+#: functions.php:511
+msgid "Executive Director"
+msgstr ""
+
+#: functions.php:512
+#: inc/academy-cpt.php:280
+msgid "Program Director"
+msgstr ""
+
+#: functions.php:513
+msgid "Board Member"
+msgstr ""
+
+#: functions.php:514
+msgid "Regional Coordinator"
+msgstr ""
+
+#: functions.php:515
+msgid "Camp Director"
+msgstr ""
+
+#: functions.php:516
+msgid "Training Coordinator"
+msgstr ""
+
+#: functions.php:517
+msgid "Youth Coordinator"
+msgstr ""
+
+#: functions.php:518
+msgid "Development Director"
+msgstr ""
+
+#: functions.php:519
+msgid "Communications Director"
+msgstr ""
+
+#: functions.php:520
+#: functions.php:540
+#: functions.php:583
+msgid "Other"
+msgstr ""
+
+#: functions.php:531
+#: inc/directory-cpt.php:172
+msgid "National Association"
+msgstr ""
+
+#: functions.php:532
+msgid "Regional Office"
+msgstr ""
+
+#: functions.php:533
+msgid "Local Chapter"
+msgstr ""
+
+#: functions.php:534
+#: inc/directory-cpt.php:173
+msgid "Camp Site"
+msgstr ""
+
+#: functions.php:535
+msgid "Training Center"
+msgstr ""
+
+#: functions.php:536
+msgid "Headquarters"
+msgstr ""
+
+#: functions.php:537
+msgid "Field Office"
+msgstr ""
+
+#: functions.php:538
+msgid "Partner Organization"
+msgstr ""
+
+#: functions.php:539
+msgid "Affiliate"
+msgstr ""
+
+#: functions.php:551
+msgid "Active"
+msgstr ""
+
+#: functions.php:552
+msgid "Inactive"
+msgstr ""
+
+#: functions.php:553
+msgid "Honorary"
+msgstr ""
+
+#: functions.php:554
+msgid "Emeritus"
+msgstr ""
+
+#: functions.php:555
+msgid "Suspended"
+msgstr ""
+
+#: functions.php:556
+msgid "Pending"
+msgstr ""
+
+#: functions.php:557
+msgid "Probationary"
+msgstr ""
+
+#: functions.php:558
+msgid "Retired"
+msgstr ""
+
+#: functions.php:569
+msgid "Email"
+msgstr ""
+
+#: functions.php:570
+msgid "Phone"
+msgstr ""
+
+#: functions.php:571
+msgid "Mobile"
+msgstr ""
+
+#: functions.php:572
+msgid "WhatsApp"
+msgstr ""
+
+#: functions.php:573
+msgid "Telegram"
+msgstr ""
+
+#: functions.php:574
+msgid "Skype"
+msgstr ""
+
+#: functions.php:575
+msgid "Zoom"
+msgstr ""
+
+#: functions.php:576
+msgid "Facebook"
+msgstr ""
+
+#: functions.php:577
+msgid "Instagram"
+msgstr ""
+
+#: functions.php:578
+msgid "LinkedIn"
+msgstr ""
+
+#: functions.php:579
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:580
+msgid "Website"
+msgstr ""
+
+#: functions.php:581
+msgid "Office Address"
+msgstr ""
+
+#: functions.php:582
+msgid "Home Address"
+msgstr ""
+
+#: functions.php:594
+msgid "Completed"
+msgstr ""
+
+#: functions.php:595
+msgid "In Progress"
+msgstr ""
+
+#: functions.php:596
+msgid "Enrolled"
+msgstr ""
+
+#: functions.php:597
+msgid "Certified"
+msgstr ""
+
+#: functions.php:598
+msgid "Graduated"
+msgstr ""
+
+#: functions.php:599
+msgid "Pending Review"
+msgstr ""
+
+#: functions.php:600
+msgid "Failed"
+msgstr ""
+
+#: functions.php:601
+msgid "Withdrawn"
+msgstr ""
+
+#: functions.php:612
+msgid "Low"
+msgstr ""
+
+#: functions.php:613
+msgid "Medium"
+msgstr ""
+
+#: functions.php:614
+msgid "High"
+msgstr ""
+
+#: functions.php:615
+msgid "Critical"
+msgstr ""
+
+#: functions.php:616
+msgid "Urgent"
+msgstr ""
+
+#: functions.php:627
+msgid "Public"
+msgstr ""
+
+#: functions.php:628
+msgid "Private"
+msgstr ""
+
+#: functions.php:629
+msgid "Members Only"
+msgstr ""
+
+#: functions.php:630
+msgid "Staff Only"
+msgstr ""
+
+#: functions.php:631
+msgid "Administrators Only"
+msgstr ""
+
+#: functions.php:632
+msgid "Hidden"
+msgstr ""
+
+#: inc/academy-cpt.php:29
+msgctxt "Post type general name"
+msgid "Academy"
+msgstr ""
+
+#: inc/academy-cpt.php:30
+msgctxt "Post type singular name"
+msgid "Academic Resource"
+msgstr ""
+
+#: inc/academy-cpt.php:31
+msgctxt "Admin Menu text"
+msgid "Academy"
+msgstr ""
+
+#: inc/academy-cpt.php:32
+msgctxt "Add New on Toolbar"
+msgid "Academic Resource"
+msgstr ""
+
+#: inc/academy-cpt.php:33
+msgctxt "Academic Resource"
+msgid "Add New"
+msgstr ""
+
+#: inc/academy-cpt.php:83
+msgctxt "Taxonomy General Name"
+msgid "Academic Categories"
+msgstr ""
+
+#: inc/academy-cpt.php:84
+msgctxt "Taxonomy Singular Name"
+msgid "Academic Category"
+msgstr ""
+
+#: inc/academy-cpt.php:128
+msgctxt "Taxonomy General Name"
+msgid "Competencies"
+msgstr ""
+
+#: inc/academy-cpt.php:129
+msgctxt "Taxonomy Singular Name"
+msgid "Competency"
+msgstr ""
+
+#: inc/academy-cpt.php:173
+msgctxt "Taxonomy General Name"
+msgid "Topics"
+msgstr ""
+
+#: inc/academy-cpt.php:174
+msgctxt "Taxonomy Singular Name"
+msgid "Topic"
+msgstr ""
+
+#: inc/academy-cpt.php:218
+msgid "Diplomas"
+msgstr ""
+
+#: inc/academy-cpt.php:219
+msgid "Academic degree programs with sequential levels"
+msgstr ""
+
+#: inc/academy-cpt.php:221
+msgid "Biblical Counseling in Camps"
+msgstr ""
+
+#: inc/academy-cpt.php:222
+msgid "Camp Program Design"
+msgstr ""
+
+#: inc/academy-cpt.php:223
+msgid "Biblical Curriculum Design in Camps"
+msgstr ""
+
+#: inc/academy-cpt.php:224
+msgid "Experimental Education and Recreation with Purpose"
+msgstr ""
+
+#: inc/academy-cpt.php:228
+msgid "Workshops"
+msgstr ""
+
+#: inc/academy-cpt.php:229
+msgid "Elective workshops that can be taken individually"
+msgstr ""
+
+#: inc/academy-cpt.php:231
+msgid "Workshops - Counseling"
+msgstr ""
+
+#: inc/academy-cpt.php:232
+msgid "Workshops - Program Design"
+msgstr ""
+
+#: inc/academy-cpt.php:233
+msgid "Workshops - Curriculum Design"
+msgstr ""
+
+#: inc/academy-cpt.php:234
+msgid "Workshops - Experimental Education"
+msgstr ""
+
+#: inc/academy-cpt.php:238
+msgid "Instructor Training Institutes"
+msgstr ""
+
+#: inc/academy-cpt.php:239
+msgid "Intensive 17-day instructor certification events"
+msgstr ""
+
+#: inc/academy-cpt.php:241
+msgid "IFI-1"
+msgstr ""
+
+#: inc/academy-cpt.php:242
+msgid "IFI-2"
+msgstr ""
+
+#: inc/academy-cpt.php:243
+msgid "IFI-3"
+msgstr ""
+
+#: inc/academy-cpt.php:247
+msgid "Textbooks"
+msgstr ""
+
+#: inc/academy-cpt.php:248
+msgid "Core textbooks used as \"in-depth courses\""
+msgstr ""
+
+#: inc/academy-cpt.php:250
+msgid "Building Relationships"
+msgstr ""
+
+#: inc/academy-cpt.php:251
+msgid "Facilitating Growth"
+msgstr ""
+
+#: inc/academy-cpt.php:252
+msgid "Programming Camps"
+msgstr ""
+
+#: inc/academy-cpt.php:253
+msgid "Creating Biblical Encounters in Community"
+msgstr ""
+
+#: inc/academy-cpt.php:254
+msgid "Training Puzzle Facilitators"
+msgstr ""
+
+#: inc/academy-cpt.php:279
+msgid "Confidant"
+msgstr ""
+
+#: inc/academy-cpt.php:281
+msgid "Bible Teacher"
+msgstr ""
+
+#: inc/academy-cpt.php:282
+msgid "Experience Facilitator"
+msgstr ""
+
+#: inc/academy-cpt.php:283
+msgid "Counseling"
+msgstr ""
+
+#: inc/academy-cpt.php:295
+msgid "Competency: %s"
+msgstr ""
+
+#: inc/academy-cpt.php:302
+msgid "Camp"
+msgstr ""
+
+#: inc/academy-cpt.php:318
+msgid "Topic: %s"
+msgstr ""
+
+#: inc/academy-cpt.php:352
+msgid "Resource Name"
+msgstr ""
+
+#: inc/academy-cpt.php:353
+msgid "Category"
+msgstr ""
+
+#: inc/academy-cpt.php:354
+msgid "Competencies"
+msgstr ""
+
+#: inc/academy-cpt.php:355
+#: inc/directory-cpt.php:246
+msgid "Date"
+msgstr ""
+
+#: inc/directory-cpt.php:21
+msgctxt "Post type general name"
+msgid "Directory"
+msgstr ""
+
+#: inc/directory-cpt.php:22
+msgctxt "Post type singular name"
+msgid "Directory Entry"
+msgstr ""
+
+#: inc/directory-cpt.php:23
+msgctxt "Admin Menu text"
+msgid "Directory"
+msgstr ""
+
+#: inc/directory-cpt.php:24
+msgctxt "Add New on Toolbar"
+msgid "Directory Entry"
+msgstr ""
+
+#: inc/directory-cpt.php:25
+msgctxt "Directory Entry"
+msgid "Add New"
+msgstr ""
+
+#: inc/directory-cpt.php:76
+msgctxt "Taxonomy General Name"
+msgid "Directory Types"
+msgstr ""
+
+#: inc/directory-cpt.php:77
+msgctxt "Taxonomy Singular Name"
+msgid "Directory Type"
+msgstr ""
+
+#: inc/directory-cpt.php:121
+msgctxt "Taxonomy General Name"
+msgid "Countries/Regions"
+msgstr ""
+
+#: inc/directory-cpt.php:122
+msgctxt "Taxonomy Singular Name"
+msgid "Country/Region"
+msgstr ""
+
+#: inc/directory-cpt.php:180
+msgid "Directory entry type: %s"
+msgstr ""
+
+#: inc/directory-cpt.php:210
+msgid "Country/Region: %s"
+msgstr ""
+
+#: inc/directory-cpt.php:243
+msgid "Entry Name"
+msgstr ""
+
+#: inc/directory-cpt.php:244
+msgid "Type"
+msgstr ""
+
+#: inc/directory-cpt.php:245
+#: single-ccial_directory.php:74
+msgid "Country/Region"
+msgstr ""
+
+#: inc/magazine-modal.php:161
+msgid "Hoguera Magazine vol: "
+msgstr ""
+
+#: single-avada_portfolio.php:67
+msgid "Academic Category"
+msgstr ""
+
+#: single-avada_portfolio.php:75
+msgid "Competencies Developed"
+msgstr ""
+
+#: single-avada_portfolio.php:87
+msgid "Related Topics"
+msgstr ""
+
+#: single-avada_portfolio.php:99
+#: single-ccial_directory.php:82
+msgid "Description"
+msgstr ""
+
+#: single-avada_portfolio.php:109
+msgid "← Previous Resource"
+msgstr ""
+
+#: single-avada_portfolio.php:112
+msgid "Next Resource →"
+msgstr ""
+
+#: single-ccial_directory.php:66
+msgid "Directory Type"
 msgstr ""

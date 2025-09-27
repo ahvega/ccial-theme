@@ -1,4 +1,4 @@
-# CCIAL Theme Typescale System
+# CCI AL Theme Typescale System
 
 ## Overview
 

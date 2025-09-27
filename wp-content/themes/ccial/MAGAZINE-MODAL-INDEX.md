@@ -148,4 +148,4 @@ This documentation is maintained alongside the code. When the magazine modal fun
 
 **Last Updated:** February 2025  
 **Version:** 1.1.0  
-**Theme:** CCIAL Child Theme
+**Theme:** CCI AL Child Theme

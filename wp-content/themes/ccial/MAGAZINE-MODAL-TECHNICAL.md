@@ -1,6 +1,6 @@
 # Magazine Modal Technical Documentation
 
-This document provides technical details for developers working with the magazine modal functionality in the CCIAL theme.
+This document provides technical details for developers working with the magazine modal functionality in the CCI AL theme.
 
 ## Architecture Overview
 
@@ -34,7 +34,7 @@ wp-content/themes/ccial/
 ### Class Structure
 
 ```php
-class CCIAL_Magazine_Modal {
+class CCI_AL_Magazine_Modal {
     public function init()
     public function modalview_shortcode($atts)
     public function ajax_get_magazine_embed()
@@ -111,7 +111,7 @@ class CCIAL_Magazine_Modal {
 ### Object Structure
 
 ```javascript
-var CCIALMagazineModal = {
+var CCI_ALMagazineModal = {
     currentAttachmentId: null,
     init: function(),
     bindEvents: function(),

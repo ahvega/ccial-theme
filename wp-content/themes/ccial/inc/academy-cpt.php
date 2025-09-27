@@ -2,7 +2,7 @@
 /**
  * Academy Custom Post Type - Redefined from Avada Portfolio
  * 
- * @package CCIAL
+ * @package CCI AL
  * @version 1.0.0
  * @since 1.0.0
  */
@@ -215,7 +215,7 @@ function ccial_setup_academy_initial_data() {
     $academic_categories = array(
         // Main Categories
         'diplomados' => array(
-            'name' => __('Diplomados', 'ccial'),
+            'name' => __('Diplomas', 'ccial'),
             'description' => __('Academic degree programs with sequential levels', 'ccial'),
             'children' => array(
                 'consejeria_biblica' => __('Biblical Counseling in Camps', 'ccial'),
@@ -225,7 +225,7 @@ function ccial_setup_academy_initial_data() {
             )
         ),
         'talleres' => array(
-            'name' => __('Talleres', 'ccial'),
+            'name' => __('Workshops', 'ccial'),
             'description' => __('Elective workshops that can be taken individually', 'ccial'),
             'children' => array(
                 'talleres_consejeria' => __('Workshops - Counseling', 'ccial'),
@@ -235,7 +235,7 @@ function ccial_setup_academy_initial_data() {
             )
         ),
         'ifis' => array(
-            'name' => __('Institutos de Formación de Instructores', 'ccial'),
+            'name' => __('Instructor Training Institutes', 'ccial'),
             'description' => __('Intensive 17-day instructor certification events', 'ccial'),
             'children' => array(
                 'ifi_1' => __('IFI-1', 'ccial'),
@@ -244,7 +244,7 @@ function ccial_setup_academy_initial_data() {
             )
         ),
         'libros_texto' => array(
-            'name' => __('Libros de Texto', 'ccial'),
+            'name' => __('Textbooks', 'ccial'),
             'description' => __('Core textbooks used as "in-depth courses"', 'ccial'),
             'children' => array(
                 'construyendo_relaciones' => __('Building Relationships', 'ccial'),
@@ -434,8 +434,8 @@ function ccial_update_avada_portfolio_class() {
     remove_action('init', array('Avada_Portfolio', 'init'));
     
     // Add our custom Academy class
-    if (!class_exists('CCIAL_Academy')) {
-        class CCIAL_Academy {
+    if (!class_exists('CCI_AL_Academy')) {
+        class CCI_AL_Academy {
             public function __construct() {
                 add_action('init', array($this, 'init'));
             }
@@ -466,7 +466,7 @@ function ccial_update_avada_portfolio_class() {
             }
         }
         
-        new CCIAL_Academy();
+        new CCI_AL_Academy();
     }
 }
 add_action('init', 'ccial_update_avada_portfolio_class', 5);

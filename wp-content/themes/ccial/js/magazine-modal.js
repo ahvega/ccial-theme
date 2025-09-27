@@ -4,7 +4,7 @@
  * Handles click interception, attachment ID resolution, AJAX calls,
  * and modal integration for magazine archive functionality.
  * 
- * @package CCIAL
+ * @package CCI AL
  * @version 1.0.0
  * @since 1.0.0
  */
@@ -74,6 +74,13 @@
 
             if (!attachmentId) {
                 this.showError('Could not determine magazine issue.');
+                return;
+            }
+
+            // Check if modal exists before proceeding
+            var $modal = $('.fusion-modal.magazine');
+            if ($modal.length === 0) {
+                console.error('Magazine modal not found. Please create a modal element named "magazine" in Avada.');
                 return;
             }
 
@@ -378,7 +385,12 @@
             var $modal = $('.fusion-modal.magazine');
 
             if ($modal.length === 0) {
-                console.warn('Magazine modal not found. Please create a modal element named "magazine" in Avada.');
+                // Only show warning if we're on a page that should have the modal
+                // Check if there are any magazine-modal:// links on the page
+                var $modalLinks = $('a[href^="magazine-modal://"]');
+                if ($modalLinks.length > 0) {
+                    console.warn('Magazine modal not found. Please create a modal element named "magazine" in Avada.');
+                }
             }
         },
 

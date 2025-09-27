@@ -1,4 +1,4 @@
-# CCIAL Theme
+# CCI AL Theme
 
 [![WordPress](https://img.shields.io/badge/WordPress-5.0%2B-blue.svg)](https://wordpress.org/)
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-purple.svg)](https://php.net/)
@@ -9,7 +9,7 @@
 [![Translation](https://img.shields.io/badge/Translation-Ready-yellow.svg)](#translation)
 [![Security](https://img.shields.io/badge/Security-Hardened-red.svg)](#security-features)
 
-A custom child theme for the Avada WordPress theme, specifically designed for CCIAL.
+A custom child theme for the Avada WordPress theme, specifically designed for CCI AL.
 
 ## 📋 Table of Contents
 
@@ -29,7 +29,7 @@ A custom child theme for the Avada WordPress theme, specifically designed for CC
 
 ## Description
 
-CCIAL Theme is a child theme based on the popular Avada theme, providing enhanced functionality and customization options while maintaining the robust foundation of the parent theme.
+CCI AL Theme is a child theme based on the popular Avada theme, providing enhanced functionality and customization options while maintaining the robust foundation of the parent theme.
 
 ## Features
 
@@ -42,12 +42,18 @@ CCIAL Theme is a child theme based on the popular Avada theme, providing enhance
 - **SVG Support**: Full SVG file handling with security and display optimizations
 - **Page Excerpts**: Enables excerpt fields for pages
 - **Magazine Modal System**: Interactive magazine viewer with Calameo integration
+- **Academy Content Management**: Custom CPT for academic programs (Diplomados, Talleres, IFIs, Libros)
+- **Member Directory System**: Custom CPT for national associations and camp sites
+- **Who-is-Who Functionality**: Member profile management with ACF integration
 
 ## Requirements
 
 - WordPress 5.0 or higher
 - PHP 7.4 or higher
 - Avada parent theme (must be installed and activated)
+- Advanced Custom Fields Pro (for Academy and Member management)
+- ARMember Lite (for membership management)
+- WPML (for multilingual support)
 
 ## Installation
 
@@ -184,7 +190,7 @@ Uncomment and modify the relevant section in `functions.php`:
 
 ## Support
 
-For support and customization requests, please contact the CCIAL development team.
+For support and customization requests, please contact the CCI AL development team.
 
 ## License
 

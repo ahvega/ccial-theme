@@ -2,7 +2,7 @@
 /**
  * Directory Archive Template
  * 
- * @package CCIAL
+ * @package CCI AL
  * @version 1.0.0
  * @since 1.0.0
  */
