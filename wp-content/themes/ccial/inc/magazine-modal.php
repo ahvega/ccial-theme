@@ -5,7 +5,7 @@
  * Implements "click cover → open modal with embedded Calameo viewer" flow
  * for magazine archive presentation on WordPress site using Avada theme.
  * 
- * @package CCIAL
+ * @package CCI AL
  * @version 1.0.0
  * @since 1.0.0
  */
@@ -18,7 +18,12 @@ if (!defined('ABSPATH')) {
 /**
  * Magazine Modal Class
  */
-class CCIAL_Magazine_Modal {
+class CCI_AL_Magazine_Modal {
+    
+    /**
+     * Track if shortcode is used on current page
+     */
+    private $shortcode_used = false;
     
     /**
      * Initialize the magazine modal functionality
@@ -49,6 +54,9 @@ class CCIAL_Magazine_Modal {
         
         // Alternative: Process shortcodes in content areas
         add_filter('the_content', array($this, 'process_content_shortcodes'), 20);
+        
+        // Track if shortcode is used on current page
+        add_action('wp', array($this, 'check_shortcode_usage'));
     }
     
     /**
@@ -58,6 +66,9 @@ class CCIAL_Magazine_Modal {
      * @return string Special URL for frontend JS to intercept
      */
     public function modalview_shortcode($atts) {
+        // Mark that shortcode is being used so scripts get enqueued
+        $this->shortcode_used = true;
+        
         $atts = shortcode_atts(array(
             'id' => 'auto'
         ), $atts, 'modalview');
@@ -158,7 +169,7 @@ class CCIAL_Magazine_Modal {
         // Create translatable title with filename (without extension)
         $filename = basename(get_attached_file($attachment_id));
         $filename_without_ext = pathinfo($filename, PATHINFO_FILENAME);
-        $title_prefix = __('Revista Hoguera vol: ', 'ccial');
+        $title_prefix = __('Hoguera Magazine vol: ', 'ccial');
         $formatted_title = $title_prefix . $filename_without_ext;
         
         wp_send_json_success(array(
@@ -169,6 +180,43 @@ class CCIAL_Magazine_Modal {
     }
     
     /**
+     * Check if shortcode is used on current page
+     */
+    public function check_shortcode_usage() {
+        global $post;
+        
+        if (!$post) {
+            return;
+        }
+        
+        // Check if shortcode is present in post content
+        if (has_shortcode($post->post_content, 'modalview')) {
+            $this->shortcode_used = true;
+            return;
+        }
+        
+        // Check if shortcode is present in Avada elements (fusion_builder)
+        if (strpos($post->post_content, '[fusion_') !== false) {
+            // Check for shortcode in Avada elements
+            if (strpos($post->post_content, 'modalview') !== false) {
+                $this->shortcode_used = true;
+                return;
+            }
+        }
+        
+        // Check in page meta fields (for Avada page options)
+        $page_options = get_post_meta($post->ID, 'pyre_page_options', true);
+        if ($page_options && is_array($page_options)) {
+            foreach ($page_options as $key => $value) {
+                if (is_string($value) && strpos($value, 'modalview') !== false) {
+                    $this->shortcode_used = true;
+                    return;
+                }
+            }
+        }
+    }
+    
+    /**
      * Enqueue scripts and styles
      */
     public function enqueue_scripts() {
@@ -176,6 +224,33 @@ class CCIAL_Magazine_Modal {
         if (is_admin()) {
             return;
         }
+        
+        // Check if shortcode is used on current page (fallback check)
+        if (!$this->shortcode_used) {
+            global $post;
+            if ($post && (
+                has_shortcode($post->post_content, 'modalview') ||
+                strpos($post->post_content, 'modalview') !== false
+            )) {
+                $this->shortcode_used = true;
+            }
+        }
+        
+        // Check if magazine modal exists on the page (reliable fallback)
+        if (!$this->shortcode_used) {
+            // Check if there's a magazine modal element in the page content
+            global $post;
+            if ($post && strpos($post->post_content, 'fusion_modal') !== false && 
+                strpos($post->post_content, 'magazine') !== false) {
+                $this->shortcode_used = true;
+            }
+        }
+        
+        // Only enqueue if shortcode is used or modal exists
+        if (!$this->shortcode_used) {
+            return;
+        }
+        
         
         // Enqueue the magazine modal script
         wp_enqueue_script(
@@ -255,4 +330,4 @@ class CCIAL_Magazine_Modal {
 }
 
 // Initialize the magazine modal functionality
-new CCIAL_Magazine_Modal();
+new CCI_AL_Magazine_Modal();
