@@ -987,3 +987,10 @@ table.woocommerce-table thead tr th {
     font-family: var(--font-family-secondary);
     text-transform: uppercase;
 }
+
+.display-counter,
+.unit {
+    font-family: var(--font-family-secondary);
+    font-weight: 900;
+    letter-spacing: -.125rem !important;
+}
