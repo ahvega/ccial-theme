@@ -641,3 +641,132 @@ add_filter('acf/load_field/name=opcion_visibilidad', 'acf_load_opciones_visibili
 require_once get_stylesheet_directory() . '/inc/directory-cpt.php';
 require_once get_stylesheet_directory() . '/inc/academy-cpt.php';
 require_once get_stylesheet_directory() . '/inc/magazine-modal.php';
+
+/**
+ * ACF Image Shortcode
+ * 
+ * Displays ACF image fields with flexible options for size, linking, and styling.
+ * Particularly useful for Avada theme nested columns where direct ACF field insertion fails.
+ * Supports both post fields and user profile fields.
+ * 
+ * Usage: 
+ * - Default (post author's profile): [acf_image field="foto" size="medium" class="custom-class"]
+ * - Specific user profile: [acf_image field="foto" user_id="123" size="medium"]
+ * - Current user profile: [acf_image field="foto" user_id="current" size="medium"]
+ * - Post fields only: [acf_image field="foto" post_id="123" size="medium"]
+ * 
+ * @param array $atts Shortcode attributes
+ * @return string HTML output
+ */
+add_shortcode('acf_image', function ($atts) {
+    $a = shortcode_atts([
+        'field'     => '',       // ACF field name or key
+        'post_id'   => '',       // defaults to current post. Use "option" for ACF Options
+        'user_id'   => '',       // user ID for user profile fields. Use "current" for current user
+        'size'      => 'full',   // any registered size (thumbnail, medium, large, full, custom)
+        'class'     => '',       // extra classes for <img>
+        'link'      => 'none',   // none|file|attachment
+        'alt_field' => '',       // optional: ACF text field to override alt text
+        'fallback'  => '',       // URL to a fallback image if empty
+        'lazy'      => 'true',   // lazy load attribute
+    ], $atts, 'acf_image');
+
+    if (empty($a['field'])) {
+        return '<!-- ACF Image Shortcode: No field specified -->';
+    }
+
+    // Determine context: user profile or post
+    if (!empty($a['user_id'])) {
+        // User profile context (explicit user_id provided)
+        if ($a['user_id'] === 'current') {
+            $user_id = get_current_user_id();
+        } else {
+            $user_id = intval($a['user_id']);
+        }
+        
+        if (!$user_id) {
+            return '<!-- ACF Image Shortcode: Invalid user ID -->';
+        }
+        
+        $img = get_field($a['field'], 'user_' . $user_id);
+        $alt_field_context = 'user_' . $user_id;
+    } else {
+        // Default: try post author's user profile first, then post fields
+        $post_id = $a['post_id'] ?: get_queried_object_id();
+        $post = get_post($post_id);
+        
+        if ($post && $post->post_author) {
+            // Try to get field from post author's user profile first
+            $img = get_field($a['field'], 'user_' . $post->post_author);
+            $alt_field_context = 'user_' . $post->post_author;
+            
+            // If no image found in user profile, try post fields
+            if (empty($img)) {
+                $img = get_field($a['field'], $post_id);
+                $alt_field_context = $post_id;
+            }
+        } else {
+            // Fallback to post fields only
+            $img = get_field($a['field'], $post_id);
+            $alt_field_context = $post_id;
+        }
+    }
+
+    // Normalize to attachment ID + alt
+    $attachment_id = null;
+    $alt = '';
+
+    if ($a['alt_field']) {
+        $custom_alt = get_field($a['alt_field'], $alt_field_context);
+        if (!empty($custom_alt)) $alt = $custom_alt;
+    }
+
+    if (is_array($img)) {
+        // image array (ACF return = array)
+        $attachment_id = isset($img['ID']) ? intval($img['ID']) : 0;
+        if (!$alt && !empty($img['alt'])) $alt = $img['alt'];
+    } elseif (is_numeric($img)) {
+        // image id (ACF return = id)
+        $attachment_id = intval($img);
+    } elseif (is_string($img) && filter_var($img, FILTER_VALIDATE_URL)) {
+        // image url (ACF return = url)
+        $url = esc_url($img);
+        $alt = $alt ?: '';
+        $loading = ($a['lazy'] === 'false') ? '' : ' loading="lazy"';
+        $class   = $a['class'] ? ' class="'.esc_attr($a['class']).'"' : '';
+        $img_html = '<img src="'.$url.'" alt="'.esc_attr($alt).'"'.$class.$loading.' />';
+        return $img_html;
+    }
+
+    // If we have an attachment id, use wp_get_attachment_image()
+    if ($attachment_id) {
+        $attrs = [
+            'class'   => $a['class'],
+            'loading' => ($a['lazy'] === 'false') ? 'eager' : 'lazy',
+        ];
+        if ($alt !== '') $attrs['alt'] = $alt;
+
+        $img_html = wp_get_attachment_image($attachment_id, $a['size'], false, $attrs);
+
+        // Optional wrapping link
+        if ($a['link'] === 'file') {
+            $href = wp_get_attachment_url($attachment_id);
+            $img_html = '<a href="'.esc_url($href).'" target="_blank" rel="noopener">'.$img_html.'</a>';
+        } elseif ($a['link'] === 'attachment') {
+            $href = get_attachment_link($attachment_id);
+            $img_html = '<a href="'.esc_url($href).'">'.$img_html.'</a>';
+        }
+
+        return $img_html;
+    }
+
+    // Fallback URL if no image set
+    if (!empty($a['fallback'])) {
+        $url = esc_url($a['fallback']);
+        $loading = ($a['lazy'] === 'false') ? '' : ' loading="lazy"';
+        $class   = $a['class'] ? ' class="'.esc_attr($a['class']).'"' : '';
+        return '<img src="'.$url.'" alt="'.esc_attr($alt).'"'.$class.$loading.' />';
+    }
+
+    return '<!-- ACF Image Shortcode: No image found for field "'.$a['field'].'" -->';
+});
