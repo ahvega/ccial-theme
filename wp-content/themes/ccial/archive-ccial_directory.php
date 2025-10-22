@@ -33,7 +33,7 @@ get_header(); ?>
                                 'taxonomy' => 'directory_type',
                                 'hide_empty' => false,
                             ));
-                            
+
                             if ($directory_types && !is_wp_error($directory_types)) {
                                 foreach ($directory_types as $type) {
                                     $selected = isset($_GET['directory_type']) && $_GET['directory_type'] === $type->slug ? 'selected' : '';

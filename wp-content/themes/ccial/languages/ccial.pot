@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-17T12:25:02+00:00\n"
+"POT-Creation-Date: 2025-10-07T18:14:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ccial\n"
@@ -510,7 +510,7 @@ msgstr ""
 
 #: functions.php:436
 #: functions.php:471
-#: inc/academy-cpt.php:284
+#: inc/academy-cpt.php:289
 msgid "Curriculum Design"
 msgstr ""
 
@@ -525,13 +525,13 @@ msgstr ""
 
 #: functions.php:439
 #: functions.php:460
-#: inc/academy-cpt.php:303
+#: inc/academy-cpt.php:308
 msgid "Team Building"
 msgstr ""
 
 #: functions.php:440
 #: functions.php:475
-#: inc/academy-cpt.php:286
+#: inc/academy-cpt.php:291
 msgid "Personal Evangelism"
 msgstr ""
 
@@ -542,63 +542,63 @@ msgstr ""
 
 #: functions.php:442
 #: functions.php:466
-#: inc/academy-cpt.php:309
+#: inc/academy-cpt.php:314
 msgid "Youth Ministry"
 msgstr ""
 
 #: functions.php:443
 #: functions.php:467
-#: inc/academy-cpt.php:310
+#: inc/academy-cpt.php:315
 msgid "Christian Education"
 msgstr ""
 
 #: functions.php:444
 #: functions.php:468
-#: inc/academy-cpt.php:311
+#: inc/academy-cpt.php:316
 msgid "Discipleship"
 msgstr ""
 
 #: functions.php:445
 #: functions.php:465
-#: inc/academy-cpt.php:308
+#: inc/academy-cpt.php:313
 msgid "Community Development"
 msgstr ""
 
 #: functions.php:446
 #: functions.php:462
-#: inc/academy-cpt.php:305
+#: inc/academy-cpt.php:310
 msgid "Spiritual Accompaniment"
 msgstr ""
 
 #: functions.php:447
 #: functions.php:463
-#: inc/academy-cpt.php:306
+#: inc/academy-cpt.php:311
 msgid "Outdoor Recreation"
 msgstr ""
 
 #: functions.php:448
 #: functions.php:476
-#: inc/academy-cpt.php:285
+#: inc/academy-cpt.php:290
 msgid "Recreation with Purpose"
 msgstr ""
 
 #: functions.php:461
-#: inc/academy-cpt.php:304
+#: inc/academy-cpt.php:309
 msgid "Evangelism"
 msgstr ""
 
 #: functions.php:464
-#: inc/academy-cpt.php:307
+#: inc/academy-cpt.php:312
 msgid "Leader Training"
 msgstr ""
 
 #: functions.php:473
-#: inc/academy-cpt.php:287
+#: inc/academy-cpt.php:292
 msgid "Leadership"
 msgstr ""
 
 #: functions.php:474
-#: inc/academy-cpt.php:288
+#: inc/academy-cpt.php:293
 msgid "Team Development"
 msgstr ""
 
@@ -655,7 +655,7 @@ msgid "Executive Director"
 msgstr ""
 
 #: functions.php:512
-#: inc/academy-cpt.php:280
+#: inc/academy-cpt.php:285
 msgid "Program Director"
 msgstr ""
 
@@ -920,173 +920,173 @@ msgctxt "Academic Resource"
 msgid "Add New"
 msgstr ""
 
-#: inc/academy-cpt.php:83
+#: inc/academy-cpt.php:88
 msgctxt "Taxonomy General Name"
 msgid "Academic Categories"
 msgstr ""
 
-#: inc/academy-cpt.php:84
+#: inc/academy-cpt.php:89
 msgctxt "Taxonomy Singular Name"
 msgid "Academic Category"
 msgstr ""
 
-#: inc/academy-cpt.php:128
+#: inc/academy-cpt.php:133
 msgctxt "Taxonomy General Name"
 msgid "Competencies"
 msgstr ""
 
-#: inc/academy-cpt.php:129
+#: inc/academy-cpt.php:134
 msgctxt "Taxonomy Singular Name"
 msgid "Competency"
 msgstr ""
 
-#: inc/academy-cpt.php:173
+#: inc/academy-cpt.php:178
 msgctxt "Taxonomy General Name"
 msgid "Topics"
 msgstr ""
 
-#: inc/academy-cpt.php:174
+#: inc/academy-cpt.php:179
 msgctxt "Taxonomy Singular Name"
 msgid "Topic"
 msgstr ""
 
-#: inc/academy-cpt.php:218
+#: inc/academy-cpt.php:223
 msgid "Diplomas"
 msgstr ""
 
-#: inc/academy-cpt.php:219
+#: inc/academy-cpt.php:224
 msgid "Academic degree programs with sequential levels"
 msgstr ""
 
-#: inc/academy-cpt.php:221
+#: inc/academy-cpt.php:226
 msgid "Biblical Counseling in Camps"
 msgstr ""
 
-#: inc/academy-cpt.php:222
+#: inc/academy-cpt.php:227
 msgid "Camp Program Design"
 msgstr ""
 
-#: inc/academy-cpt.php:223
+#: inc/academy-cpt.php:228
 msgid "Biblical Curriculum Design in Camps"
 msgstr ""
 
-#: inc/academy-cpt.php:224
+#: inc/academy-cpt.php:229
 msgid "Experimental Education and Recreation with Purpose"
 msgstr ""
 
-#: inc/academy-cpt.php:228
+#: inc/academy-cpt.php:233
 msgid "Workshops"
 msgstr ""
 
-#: inc/academy-cpt.php:229
+#: inc/academy-cpt.php:234
 msgid "Elective workshops that can be taken individually"
 msgstr ""
 
-#: inc/academy-cpt.php:231
+#: inc/academy-cpt.php:236
 msgid "Workshops - Counseling"
 msgstr ""
 
-#: inc/academy-cpt.php:232
+#: inc/academy-cpt.php:237
 msgid "Workshops - Program Design"
 msgstr ""
 
-#: inc/academy-cpt.php:233
+#: inc/academy-cpt.php:238
 msgid "Workshops - Curriculum Design"
 msgstr ""
 
-#: inc/academy-cpt.php:234
+#: inc/academy-cpt.php:239
 msgid "Workshops - Experimental Education"
 msgstr ""
 
-#: inc/academy-cpt.php:238
+#: inc/academy-cpt.php:243
 msgid "Instructor Training Institutes"
 msgstr ""
 
-#: inc/academy-cpt.php:239
+#: inc/academy-cpt.php:244
 msgid "Intensive 17-day instructor certification events"
 msgstr ""
 
-#: inc/academy-cpt.php:241
+#: inc/academy-cpt.php:246
 msgid "IFI-1"
 msgstr ""
 
-#: inc/academy-cpt.php:242
+#: inc/academy-cpt.php:247
 msgid "IFI-2"
 msgstr ""
 
-#: inc/academy-cpt.php:243
+#: inc/academy-cpt.php:248
 msgid "IFI-3"
 msgstr ""
 
-#: inc/academy-cpt.php:247
+#: inc/academy-cpt.php:252
 msgid "Textbooks"
 msgstr ""
 
-#: inc/academy-cpt.php:248
+#: inc/academy-cpt.php:253
 msgid "Core textbooks used as \"in-depth courses\""
 msgstr ""
 
-#: inc/academy-cpt.php:250
+#: inc/academy-cpt.php:255
 msgid "Building Relationships"
 msgstr ""
 
-#: inc/academy-cpt.php:251
+#: inc/academy-cpt.php:256
 msgid "Facilitating Growth"
 msgstr ""
 
-#: inc/academy-cpt.php:252
+#: inc/academy-cpt.php:257
 msgid "Programming Camps"
 msgstr ""
 
-#: inc/academy-cpt.php:253
+#: inc/academy-cpt.php:258
 msgid "Creating Biblical Encounters in Community"
 msgstr ""
 
-#: inc/academy-cpt.php:254
+#: inc/academy-cpt.php:259
 msgid "Training Puzzle Facilitators"
 msgstr ""
 
-#: inc/academy-cpt.php:279
+#: inc/academy-cpt.php:284
 msgid "Confidant"
 msgstr ""
 
-#: inc/academy-cpt.php:281
+#: inc/academy-cpt.php:286
 msgid "Bible Teacher"
 msgstr ""
 
-#: inc/academy-cpt.php:282
+#: inc/academy-cpt.php:287
 msgid "Experience Facilitator"
 msgstr ""
 
-#: inc/academy-cpt.php:283
+#: inc/academy-cpt.php:288
 msgid "Counseling"
 msgstr ""
 
-#: inc/academy-cpt.php:295
+#: inc/academy-cpt.php:300
 msgid "Competency: %s"
 msgstr ""
 
-#: inc/academy-cpt.php:302
+#: inc/academy-cpt.php:307
 msgid "Camp"
 msgstr ""
 
-#: inc/academy-cpt.php:318
+#: inc/academy-cpt.php:323
 msgid "Topic: %s"
 msgstr ""
 
-#: inc/academy-cpt.php:352
+#: inc/academy-cpt.php:384
 msgid "Resource Name"
 msgstr ""
 
-#: inc/academy-cpt.php:353
+#: inc/academy-cpt.php:385
 msgid "Category"
 msgstr ""
 
-#: inc/academy-cpt.php:354
+#: inc/academy-cpt.php:386
 msgid "Competencies"
 msgstr ""
 
-#: inc/academy-cpt.php:355
+#: inc/academy-cpt.php:387
 #: inc/directory-cpt.php:246
 msgid "Date"
 msgstr ""
@@ -1149,6 +1149,7 @@ msgid "Entry Name"
 msgstr ""
 
 #: inc/directory-cpt.php:244
+#: inc/user-export-api.php:405
 msgid "Type"
 msgstr ""
 
@@ -1157,8 +1158,124 @@ msgstr ""
 msgid "Country/Region"
 msgstr ""
 
-#: inc/magazine-modal.php:161
+#: inc/directory-cpt.php:395
+msgid "Invalid post ID."
+msgstr ""
+
+#: inc/directory-cpt.php:399
+msgid "Post is not published."
+msgstr ""
+
+#: inc/magazine-modal.php:172
 msgid "Hoguera Magazine vol: "
+msgstr ""
+
+#: inc/user-export-api.php:96
+msgid "Sorry, you are not allowed to export users."
+msgstr ""
+
+#: inc/user-export-api.php:128
+msgid "No users found matching the criteria."
+msgstr ""
+
+#: inc/user-export-api.php:362
+#: inc/user-export-api.php:363
+#: inc/user-export-api.php:383
+msgid "Export Users"
+msgstr ""
+
+#: inc/user-export-api.php:376
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: inc/user-export-api.php:386
+msgid "REST API Endpoints"
+msgstr ""
+
+#: inc/user-export-api.php:387
+msgid "Use these endpoints to export user data via REST API:"
+msgstr ""
+
+#: inc/user-export-api.php:389
+msgid "CSV Export"
+msgstr ""
+
+#: inc/user-export-api.php:392
+msgid "JSON Export"
+msgstr ""
+
+#: inc/user-export-api.php:395
+msgid "User List (JSON)"
+msgstr ""
+
+#: inc/user-export-api.php:400
+msgid "Parameters"
+msgstr ""
+
+#: inc/user-export-api.php:404
+msgid "Parameter"
+msgstr ""
+
+#: inc/user-export-api.php:406
+#: single-avada_portfolio.php:99
+#: single-ccial_directory.php:82
+msgid "Description"
+msgstr ""
+
+#: inc/user-export-api.php:407
+msgid "Example"
+msgstr ""
+
+#: inc/user-export-api.php:414
+msgid "Export format (csv or json)"
+msgstr ""
+
+#: inc/user-export-api.php:420
+msgid "Comma-separated user roles"
+msgstr ""
+
+#: inc/user-export-api.php:426
+msgid "Include user meta fields"
+msgstr ""
+
+#: inc/user-export-api.php:432
+msgid "Custom meta fields to include"
+msgstr ""
+
+#: inc/user-export-api.php:440
+msgid "Authentication"
+msgstr ""
+
+#: inc/user-export-api.php:441
+msgid "This endpoint requires authentication. Use one of these methods:"
+msgstr ""
+
+#: inc/user-export-api.php:443
+msgid "Application Passwords (WordPress 5.6+)"
+msgstr ""
+
+#: inc/user-export-api.php:444
+msgid "Basic Authentication plugin"
+msgstr ""
+
+#: inc/user-export-api.php:445
+msgid "JWT Authentication plugin"
+msgstr ""
+
+#: inc/user-export-api.php:446
+msgid "OAuth plugin"
+msgstr ""
+
+#: inc/user-export-api.php:451
+msgid "Quick Export Links"
+msgstr ""
+
+#: inc/user-export-api.php:454
+msgid "Download CSV Export"
+msgstr ""
+
+#: inc/user-export-api.php:457
+msgid "View JSON Export"
 msgstr ""
 
 #: single-avada_portfolio.php:67
@@ -1171,11 +1288,6 @@ msgstr ""
 
 #: single-avada_portfolio.php:87
 msgid "Related Topics"
-msgstr ""
-
-#: single-avada_portfolio.php:99
-#: single-ccial_directory.php:82
-msgid "Description"
 msgstr ""
 
 #: single-avada_portfolio.php:109

@@ -55,8 +55,13 @@ function ccial_redefine_portfolio_as_academy() {
     // Update the post type object with new labels
     $portfolio_post_type->labels = (object) $labels;
     
-    // Update the rewrite slug
-    $portfolio_post_type->rewrite = array('slug' => 'academy');
+    // Keep original rewrite rules - we'll handle URLs manually
+    // $portfolio_post_type->rewrite = array(
+    //     'slug' => 'academy',
+    //     'with_front' => false,
+    //     'feeds' => true,
+    //     'pages' => true
+    // );
     
     // Update the menu icon
     $portfolio_post_type->menu_icon = 'dashicons-book-alt';
@@ -340,6 +345,68 @@ function ccial_academy_flush_rewrite_rules() {
 add_action('after_switch_theme', 'ccial_academy_flush_rewrite_rules');
 
 /**
+ * Add custom rewrite rules for Academy (multilingual support)
+ */
+function ccial_add_academy_rewrite_rules() {
+    // Add rewrite rule for academy archive (English)
+    add_rewrite_rule(
+        '^academy/?$',
+        'index.php?post_type=avada_portfolio',
+        'top'
+    );
+    
+    // Add rewrite rule for academia archive (Spanish)
+    add_rewrite_rule(
+        '^academia/?$',
+        'index.php?post_type=avada_portfolio',
+        'top'
+    );
+    
+    // Add rewrite rule for academy pagination (English)
+    add_rewrite_rule(
+        '^academy/page/([0-9]+)/?$',
+        'index.php?post_type=avada_portfolio&paged=$matches[1]',
+        'top'
+    );
+    
+    // Add rewrite rule for academia pagination (Spanish)
+    add_rewrite_rule(
+        '^academia/page/([0-9]+)/?$',
+        'index.php?post_type=avada_portfolio&paged=$matches[1]',
+        'top'
+    );
+    
+    // Add rewrite rule for academy category archives (English)
+    add_rewrite_rule(
+        '^academy/([^/]+)/?$',
+        'index.php?post_type=avada_portfolio&portfolio_category=$matches[1]',
+        'top'
+    );
+    
+    // Add rewrite rule for academia category archives (Spanish)
+    add_rewrite_rule(
+        '^academia/([^/]+)/?$',
+        'index.php?post_type=avada_portfolio&portfolio_category=$matches[1]',
+        'top'
+    );
+    
+    // Add rewrite rule for academy category pagination (English)
+    add_rewrite_rule(
+        '^academy/([^/]+)/page/([0-9]+)/?$',
+        'index.php?post_type=avada_portfolio&portfolio_category=$matches[1]&paged=$matches[2]',
+        'top'
+    );
+    
+    // Add rewrite rule for academia category pagination (Spanish)
+    add_rewrite_rule(
+        '^academia/([^/]+)/page/([0-9]+)/?$',
+        'index.php?post_type=avada_portfolio&portfolio_category=$matches[1]&paged=$matches[2]',
+        'top'
+    );
+}
+add_action('init', 'ccial_add_academy_rewrite_rules', 20);
+
+/**
  * Add custom columns to Academy admin list
  */
 function ccial_add_academy_admin_columns($columns) {
@@ -427,46 +494,250 @@ function ccial_handle_academy_column_sorting($query) {
 add_action('pre_get_posts', 'ccial_handle_academy_column_sorting');
 
 /**
- * Update Avada Portfolio class to work with Academy
+ * Add Academy-specific functionality
  */
-function ccial_update_avada_portfolio_class() {
-    // Remove the original Avada Portfolio class instantiation
-    remove_action('init', array('Avada_Portfolio', 'init'));
+function ccial_add_academy_functionality() {
+    // Add Academy-specific CSS classes
+    add_filter('body_class', 'ccial_academy_body_classes');
     
-    // Add our custom Academy class
-    if (!class_exists('CCI_AL_Academy')) {
-        class CCI_AL_Academy {
-            public function __construct() {
-                add_action('init', array($this, 'init'));
-            }
-            
-            public function init() {
-                // Add any Academy-specific functionality here
-                add_filter('awb_content_tag_class', array($this, 'academy_content_class'));
-                add_action('pre_get_posts', array($this, 'academy_query_modifications'));
-            }
-            
-            public function academy_content_class($classes) {
-                if (is_singular('avada_portfolio')) {
-                    $classes[] = 'academy-single';
-                }
-                if (is_post_type_archive('avada_portfolio')) {
-                    $classes[] = 'academy-archive';
-                }
-                return $classes;
-            }
-            
-            public function academy_query_modifications($query) {
-                if (!is_admin() && $query->is_main_query()) {
-                    if (is_post_type_archive('avada_portfolio')) {
-                        // Set posts per page for academy archive
-                        $query->set('posts_per_page', 12);
-                    }
-                }
-            }
-        }
+    // Modify academy archive query
+    add_action('pre_get_posts', 'ccial_academy_query_modifications');
+}
+
+function ccial_academy_body_classes($classes) {
+    if (is_singular('avada_portfolio')) {
+        $classes[] = 'academy-single';
+    }
+    if (is_post_type_archive('avada_portfolio')) {
+        $classes[] = 'academy-archive';
+    }
+    if (is_tax('portfolio_category')) {
+        $classes[] = 'academy-category-archive';
         
-        new CCI_AL_Academy();
+        // Add specific category class
+        $term = get_queried_object();
+        if ($term) {
+            $classes[] = 'academy-category-' . $term->slug;
+        }
+    }
+    return $classes;
+}
+
+function ccial_academy_query_modifications($query) {
+    if (!is_admin() && $query->is_main_query()) {
+        if (is_post_type_archive('avada_portfolio') || is_tax('portfolio_category')) {
+            // Set posts per page for academy archive and category archives
+            $query->set('posts_per_page', 12);
+            
+            // Only add language filtering if we have a specific language request
+            $request_uri = $_SERVER['REQUEST_URI'];
+            if (strpos($request_uri, '/academia/') !== false) {
+                // This is a Spanish request - let WPML handle the filtering
+                if (function_exists('icl_object_id')) {
+                    // WPML will handle language filtering automatically
+                    // We don't need to add meta_query here
+                }
+            }
+            // For English requests, let the default behavior work
+        }
     }
 }
-add_action('init', 'ccial_update_avada_portfolio_class', 5);
+
+add_action('init', 'ccial_add_academy_functionality');
+
+/**
+ * Custom URL generation for Academy in both languages
+ */
+function ccial_academy_post_type_link($post_link, $post) {
+    if ($post->post_type === 'avada_portfolio') {
+        // Get current language
+        $current_lang = get_locale();
+        
+        // Determine the slug based on language
+        if (strpos($current_lang, 'es') === 0) {
+            // Spanish
+            $slug = 'academia';
+        } else {
+            // English (default)
+            $slug = 'academy';
+        }
+        
+        // Generate the new URL
+        $post_link = home_url($slug . '/' . $post->post_name . '/');
+    }
+    return $post_link;
+}
+add_filter('post_type_link', 'ccial_academy_post_type_link', 10, 2);
+
+/**
+ * Custom archive URL generation for Academy
+ */
+function ccial_academy_archive_link($link, $post_type) {
+    if ($post_type === 'avada_portfolio') {
+        // Get current language
+        $current_lang = get_locale();
+        
+        // Determine the slug based on language
+        if (strpos($current_lang, 'es') === 0) {
+            // Spanish
+            $slug = 'academia';
+        } else {
+            // English (default)
+            $slug = 'academy';
+        }
+        
+        // Generate the new archive URL
+        $link = home_url($slug . '/');
+    }
+    return $link;
+}
+add_filter('post_type_archive_link', 'ccial_academy_archive_link', 10, 2);
+
+/**
+ * Custom taxonomy archive URL generation for Academy categories
+ */
+function ccial_academy_taxonomy_link($termlink, $term, $taxonomy) {
+    if ($taxonomy === 'portfolio_category') {
+        // Get current language
+        $current_lang = get_locale();
+        
+        // Determine the slug based on language
+        if (strpos($current_lang, 'es') === 0) {
+            // Spanish
+            $slug = 'academia';
+        } else {
+            // English (default)
+            $slug = 'academy';
+        }
+        
+        // Generate the new taxonomy archive URL
+        $termlink = home_url($slug . '/' . $term->slug . '/');
+    }
+    return $termlink;
+}
+add_filter('term_link', 'ccial_academy_taxonomy_link', 10, 3);
+
+/**
+ * Add custom query vars for Academy URLs
+ */
+function ccial_academy_query_vars($vars) {
+    $vars[] = 'academy_page';
+    $vars[] = 'academia_page';
+    return $vars;
+}
+add_filter('query_vars', 'ccial_academy_query_vars');
+
+/**
+ * Handle Academy URL parsing and language detection
+ */
+function ccial_academy_parse_request($wp) {
+    // Check if this is an academy/academia request
+    if (isset($wp->query_vars['academy_page']) || isset($wp->query_vars['academia_page'])) {
+        $wp->query_vars['post_type'] = 'avada_portfolio';
+        $wp->query_vars['is_archive'] = true;
+        $wp->query_vars['is_post_type_archive'] = true;
+    }
+}
+add_action('parse_request', 'ccial_academy_parse_request');
+
+/**
+ * Detect language from URL and set context (simplified)
+ */
+function ccial_academy_detect_language_from_url() {
+    $request_uri = $_SERVER['REQUEST_URI'];
+    
+    // Only set language context for WPML if it's active
+    if (function_exists('icl_object_id')) {
+        // Check if this is an academia (Spanish) request
+        if (strpos($request_uri, '/academia/') !== false) {
+            // Set WPML language context
+            add_filter('wpml_current_language', function() {
+                return 'es';
+            });
+        }
+        
+        // Check if this is an academy (English) request
+        if (strpos($request_uri, '/academy/') !== false) {
+            // Set WPML language context
+            add_filter('wpml_current_language', function() {
+                return 'en';
+            });
+        }
+    }
+}
+add_action('init', 'ccial_academy_detect_language_from_url', 5);
+
+/**
+ * Alternative approach: Use WP_Query to get posts by language
+ * This works regardless of the multilingual plugin being used
+ */
+function ccial_academy_get_posts_by_language($language = 'en') {
+    $args = array(
+        'post_type' => 'avada_portfolio',
+        'post_status' => 'publish',
+        'posts_per_page' => 12,
+        'meta_query' => array()
+    );
+    
+    // Check for different multilingual plugins
+    if (function_exists('icl_object_id')) {
+        // WPML
+        $args['meta_query'][] = array(
+            'key' => 'wpml_language',
+            'value' => $language,
+            'compare' => '='
+        );
+    } elseif (function_exists('pll_get_post_language')) {
+        // Polylang
+        $args['lang'] = $language;
+    } else {
+        // Fallback: check for custom language meta
+        $args['meta_query'][] = array(
+            'relation' => 'OR',
+            array(
+                'key' => 'language',
+                'value' => $language,
+                'compare' => '='
+            ),
+            array(
+                'key' => 'language',
+                'compare' => 'NOT EXISTS'
+            )
+        );
+    }
+    
+    return new WP_Query($args);
+}
+
+/**
+ * Debug function to check what posts are being returned (disabled by default)
+ */
+function ccial_academy_debug_posts() {
+    // Debug function disabled to prevent interference
+    // Uncomment the code below if you need to debug
+    /*
+    if (current_user_can('administrator') && isset($_GET['debug_academy'])) {
+        $request_uri = $_SERVER['REQUEST_URI'];
+        $language = (strpos($request_uri, '/academia/') !== false) ? 'es' : 'en';
+        
+        echo '<div style="background: #f0f0f0; padding: 20px; margin: 20px; border: 1px solid #ccc;">';
+        echo '<h3>Academy Debug Info</h3>';
+        echo '<p><strong>Request URI:</strong> ' . $request_uri . '</p>';
+        echo '<p><strong>Detected Language:</strong> ' . $language . '</p>';
+        
+        $query = ccial_academy_get_posts_by_language($language);
+        echo '<p><strong>Posts Found:</strong> ' . $query->found_posts . '</p>';
+        
+        if ($query->have_posts()) {
+            echo '<ul>';
+            while ($query->have_posts()) {
+                $query->the_post();
+                echo '<li>' . get_the_title() . ' (ID: ' . get_the_ID() . ')</li>';
+            }
+            echo '</ul>';
+        }
+        echo '</div>';
+    }
+    */
+}
+// add_action('wp_footer', 'ccial_academy_debug_posts');

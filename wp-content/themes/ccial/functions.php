@@ -641,6 +641,7 @@ add_filter('acf/load_field/name=opcion_visibilidad', 'acf_load_opciones_visibili
 require_once get_stylesheet_directory() . '/inc/directory-cpt.php';
 require_once get_stylesheet_directory() . '/inc/academy-cpt.php';
 require_once get_stylesheet_directory() . '/inc/magazine-modal.php';
+require_once get_stylesheet_directory() . '/inc/user-export-api.php';
 
 /**
  * ACF Image Shortcode

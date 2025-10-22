@@ -47,6 +47,14 @@ wp-content/debug.log
 # Project-specific directories
 .source/
 .strategy/
+examples/
+wp-content/plugins/advanced-custom-fields-pro/
+wp-content/themes/Avada/
+wp-content/themes/Avada-Child-Theme/
+postman/
+recursos-an/.htaccess
+recursos-an/.htpasswd
+
 
 # OS Files
 .DS_Store
