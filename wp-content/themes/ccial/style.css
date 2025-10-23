@@ -45,6 +45,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
     --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
     --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
     --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.16);
+    /* Highlighted strong text variables */
+    --highlighted-strong-font-family: var(--font-family-secondary);
+    --highlighted-strong-text-transform: uppercase;
+    --highlighted-strong-letter-spacing: 0.05rem;
+    --highlighted-strong-color: inherit;
 }
 
 
@@ -363,7 +368,7 @@ modern lh implementation for line height margins
 
 :root {
     /* optional global rhythm tweak */
-    --flow-gap: 1lh;
+    --flow-gap: .8lh;
     /* used for paragraphs/lists if you want */
 }
 
@@ -571,9 +576,10 @@ ol) {
 }
 
 .highlighted strong {
-    font-family: var(--font-family-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
+    font-family: var(--highlighted-strong-font-family);
+    text-transform: var(--highlighted-strong-text-transform);
+    letter-spacing: var(--highlighted-strong-letter-spacing);
+    color: var(--highlighted-strong-color);
 }
 
 
@@ -796,6 +802,20 @@ ul.finger li::marker {
 
 .fusion-body blockquote p:last-child {
     margin-bottom: 0;
+}
+
+
+/* Override highlighted strong variables specifically for blockquotes */
+
+.fusion-body blockquote {
+    --highlighted-strong-font-family: var(--font-family-primary);
+    --highlighted-strong-text-transform: none;
+    --highlighted-strong-letter-spacing: normal;
+    --highlighted-strong-color: var(--ccial-accent-color);
+}
+
+.fusion-body blockquote p strong {
+    opacity: 0.75;
 }
 
 
