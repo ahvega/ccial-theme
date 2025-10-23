@@ -35,6 +35,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
     /* Border Radius */
     --border-radius-shaded: 8px;
     --border-radius-small: 4px;
+    --button-radius: 50rem;
     /* Spacing */
     --spacing-small: 0.5rem;
     --spacing-medium: 1rem;
@@ -350,10 +351,221 @@ pre {
 }
 
 
+/* 
+modern lh implementation for line height margins
+*/
+
+
+/* ===== Vertical rhythm for headings ===== */
+
+
+/* Base flow spacing for generic blocks */
+
+:root {
+    /* optional global rhythm tweak */
+    --flow-gap: 1lh;
+    /* used for paragraphs/lists if you want */
+}
+
+
+/* Paragraphs & lists: consistent spacing */
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+table,
+figure {
+    margin-block: 0;
+    /* reset */
+    margin-block-end: var(--flow-gap);
+}
+
+
+/* Headings: larger space above, tighter below */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    /* reset all */
+}
+
+
+/* Top/Bottom spacing per level (multiples of its own line-height) */
+
+h1 {
+    margin-block: calc(2lh) calc(0.75lh);
+}
+
+h2 {
+    margin-block: calc(1.75lh) calc(0.65lh);
+}
+
+h3 {
+    margin-block: calc(1.5lh) calc(0.6lh);
+}
+
+h4 {
+    margin-block: calc(1.25lh) calc(0.5lh);
+}
+
+h5 {
+    margin-block: calc(1lh) calc(0.5lh);
+}
+
+h6 {
+    margin-block: calc(1lh) calc(0.5lh);
+}
+
+
+/* Remove top margin when a heading is the first element in a container */
+
+article> :is(h1,
+h2,
+h3,
+h4,
+h5,
+h6):first-child,
+section> :is(h1,
+h2,
+h3,
+h4,
+h5,
+h6):first-child,
+.card> :is(h1,
+h2,
+h3,
+h4,
+h5,
+h6):first-child {
+    margin-block-start: 0;
+}
+
+
+/* If a heading follows another heading, tighten the gap */
+
+:is(h1,
+h2,
+h3,
+h4,
+h5)+ :is(h2,
+h3,
+h4,
+h5,
+h6) {
+    margin-block-start: 0.25lh;
+}
+
+:is(h2,
+h3,
+h4,
+h5,
+h6)+ :is(h2,
+h3,
+h4,
+h5,
+h6) {
+    margin-block-start: 0.35lh;
+}
+
+
+/* If a heading follows a small meta line (eyebrow/kicker), keep it snug */
+
+.small,
+.eyebrow,
+.kicker {
+    margin: 0;
+}
+
+.small+ :is(h1,
+h2,
+h3,
+h4,
+h5,
+h6),
+.eyebrow+ :is(h1,
+h2,
+h3,
+h4,
+h5,
+h6),
+.kicker+ :is(h1,
+h2,
+h3,
+h4,
+h5,
+h6) {
+    margin-block-start: 0.25lh;
+}
+
+
+/* When a heading is immediately followed by a list, keep the bond tight */
+
+:is(h1,
+h2,
+h3,
+h4,
+h5,
+h6)+ :is(ul,
+ol) {
+    margin-block-start: 0.35lh;
+}
+
+
+/* Mobile tweak: slightly reduce top margins to tighten the stack */
+
+@media (max-width: 768px) {
+    h1 {
+        margin-block-start: calc(1.6lh);
+    }
+    h2 {
+        margin-block-start: calc(1.4lh);
+    }
+    h3 {
+        margin-block-start: calc(1.2lh);
+    }
+    h4,
+    h5,
+    h6 {
+        margin-block-start: calc(1lh);
+    }
+}
+
+
+/* Optional: if you need a fallback where `lh` isn't supported */
+
+@supports not (margin-block-start: 1lh) {
+    /* Use the element's line-height value as a custom property if desired,
+       or approximate with ems (assuming your line-height values above). */
+    h1 {
+        margin-block: 2em 0.75em;
+    }
+    h2 {
+        margin-block: 1.75em 0.65em;
+    }
+    h3 {
+        margin-block: 1.5em 0.6em;
+    }
+    h4 {
+        margin-block: 1.25em 0.5em;
+    }
+    h5,
+    h6 {
+        margin-block: 1em 0.5em;
+    }
+}
+
+
 /* Add your custom CSS here */
 
 :root {
-    --border-radius-shaded: .125rem;
+    --border-radius-shaded: 0.125rem;
     --box-shaded: 0px 0px 3px 2px rgba(0, 0, 0, 0.175), 2px 0px 6px 4px rgba(0, 0, 0, 0.1), 0px 2px 9px 6px rgba(0, 0, 0, 0.075);
     --text-shade: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
@@ -991,7 +1203,7 @@ table.woocommerce-table thead tr th {
 .unit {
     font-family: var(--font-family-secondary);
     font-weight: 900;
-    letter-spacing: -.125rem !important;
+    letter-spacing: -0.125rem !important;
 }
 
 .woocommerce .woocommerce-container {
@@ -1027,359 +1239,147 @@ table.woocommerce-table thead tr th {
 
 /* Set default page background */
 
-body {
+body,
+#main {
     background-color: var(--awb-color3) !important;
 }
 
 
-/* Default border-radius for all columns */
+/* -------------------------------------------------
+     Images (exclude site logos)
+     ------------------------------------------------- */
 
-.fusion-column,
-.fusion-column-inner,
-.fusion-builder-column,
-.fusion-builder-column-inner,
-.fusion-layout-column,
-.fusion-layout-column-inner {
-    border-radius: 4px !important;
+
+/* Round most images */
+
+img {
+    border-radius: var(--border-radius-small);
 }
 
 
-/* Default border-radius for all boxes/cards/containers */
+/* Don't round logos */
 
-.fusion-box,
-.fusion-box-shadow,
-.fusion-content-box,
-.fusion-content-boxes,
-.fusion-pricing-table,
-.fusion-pricing-column,
-.fusion-pricing-row,
-.fusion-person,
-.fusion-person-inner,
-.fusion-portfolio,
-.fusion-portfolio-inner,
-.fusion-image-wrapper,
-.fusion-image-frame,
-.fusion-flip-box,
-.fusion-flip-box-wrapper,
-.fusion-counters-box,
-.fusion-counter-box,
-.fusion-testimonials,
-.fusion-testimonial,
-.fusion-accordion,
-.fusion-accordian,
-.fusion-tabs,
-.fusion-tab,
-.fusion-modal,
-.fusion-modal-content,
-.fusion-popover,
-.fusion-popover-content,
-.fusion-alert,
-.fusion-alert-box,
-.fusion-progress-bar,
-.fusion-progress-bar-wrapper,
+.fusion-logo img,
+.site-logo img,
+.fusion-standard-logo,
+.fusion-sticky-logo,
+.fusion-retina-logo {
+    border-radius: 0 !important;
+}
+
+
+/* Avada image frame: clip children to the radius */
+
+.fusion-imageframe,
+.fusion-imageframe img {
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    /* ensures corners clip correctly */
+}
+
+
+/* WooCommerce gallery thumbs & featured images */
+
+.woocommerce div.product div.images img,
+.woocommerce ul.products li.product a img,
+.woocommerce-product-gallery__image img {
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+}
+
+
+/* -------------------------------------------------
+     Form fields (exclude buttons)
+     ------------------------------------------------- */
+
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not( [type="image"]),
+select,
+textarea {
+    border-radius: var(--border-radius-small);
+}
+
+
+/* Avada / Woo enhanced selects (Select2) */
+
+.select2-container .select2-selection,
+.woocommerce .select2-container .select2-selection {
+    border-radius: var(--border-radius-small);
+}
+
+
+/* Keep buttons independent (Avada + Woo) */
+
+button,
+.button,
 .fusion-button,
-.fusion-button-wrapper,
-.fusion-separator,
-.fusion-separator-border,
-.fusion-title,
-.fusion-title-wrapper,
-.fusion-blog,
-.fusion-blog-wrapper,
-.fusion-events,
-.fusion-events-wrapper,
-.fusion-recent-posts,
-.fusion-recent-posts-wrapper,
-.fusion-recent-works,
-.fusion-recent-works-wrapper,
-.fusion-social-networks,
-.fusion-social-networks-wrapper,
-.fusion-social-links,
-.fusion-social-links-wrapper,
-.fusion-social-icons,
-.fusion-social-icons-wrapper,
-.fusion-contact-info,
-.fusion-contact-info-wrapper,
-.fusion-contact-form,
-.fusion-contact-form-wrapper,
-.fusion-gmap,
-.fusion-gmap-wrapper,
-.fusion-layer-slider,
-.fusion-layer-slider-wrapper,
-.fusion-rev-slider,
-.fusion-rev-slider-wrapper,
-.fusion-elastic-slider,
-.fusion-elastic-slider-wrapper,
-.fusion-flexslider,
-.fusion-flexslider-wrapper,
-.fusion-post-slider,
-.fusion-post-slider-wrapper,
-.fusion-image-carousel,
-.fusion-image-carousel-wrapper,
-.fusion-featured-products-slider,
-.fusion-featured-products-slider-wrapper,
-.fusion-products-slider,
-.fusion-products-slider-wrapper,
-.fusion-clients,
-.fusion-clients-wrapper,
-.fusion-menu,
-.fusion-menu-wrapper,
-.fusion-menu-item,
-.fusion-menu-item-wrapper,
-.fusion-dropdown-menu,
-.fusion-dropdown-menu-wrapper,
-.fusion-megamenu,
-.fusion-megamenu-wrapper,
-.fusion-menu-anchor,
-.fusion-menu-anchor-wrapper,
-.fusion-menu-text,
-.fusion-menu-text-wrapper,
-.fusion-menu-icon,
-.fusion-menu-icon-wrapper,
-.fusion-menu-image,
-.fusion-menu-image-wrapper,
-.fusion-menu-badge,
-.fusion-menu-badge-wrapper,
-.fusion-menu-cart,
-.fusion-menu-cart-wrapper,
-.fusion-menu-cart-icon,
-.fusion-menu-cart-icon-wrapper,
-.fusion-menu-cart-text,
-.fusion-menu-cart-text-wrapper,
-.fusion-menu-cart-counter,
-.fusion-menu-cart-counter-wrapper,
-.fusion-menu-cart-content,
-.fusion-menu-cart-content-wrapper,
-.fusion-menu-cart-item,
-.fusion-menu-cart-item-wrapper,
-.fusion-menu-cart-total,
-.fusion-menu-cart-total-wrapper,
-.fusion-menu-cart-buttons,
-.fusion-menu-cart-buttons-wrapper,
-.fusion-menu-cart-button,
-.fusion-menu-cart-button-wrapper,
-.fusion-menu-cart-checkout,
-.fusion-menu-cart-checkout-wrapper,
-.fusion-menu-cart-view-cart,
-.fusion-menu-cart-view-cart-wrapper,
-.fusion-menu-cart-empty,
-.fusion-menu-cart-empty-wrapper,
-.fusion-menu-cart-empty-message,
-.fusion-menu-cart-empty-message-wrapper,
-.fusion-menu-cart-empty-icon,
-.fusion-menu-cart-empty-icon-wrapper,
-.fusion-menu-cart-empty-text,
-.fusion-menu-cart-empty-text-wrapper,
-.fusion-menu-cart-empty-button,
-.fusion-menu-cart-empty-button-wrapper,
-.fusion-menu-cart-empty-link,
-.fusion-menu-cart-empty-link-wrapper,
-.fusion-menu-cart-empty-image,
-.fusion-menu-cart-empty-image-wrapper,
-.fusion-menu-cart-empty-title,
-.fusion-menu-cart-empty-title-wrapper,
-.fusion-menu-cart-empty-description,
-.fusion-menu-cart-empty-description-wrapper,
-.fusion-menu-cart-empty-price,
-.fusion-menu-cart-empty-price-wrapper,
-.fusion-menu-cart-empty-quantity,
-.fusion-menu-cart-empty-quantity-wrapper,
-.fusion-menu-cart-empty-remove,
-.fusion-menu-cart-empty-remove-wrapper,
-.fusion-menu-cart-empty-edit,
-.fusion-menu-cart-empty-edit-wrapper,
-.fusion-menu-cart-empty-update,
-.fusion-menu-cart-empty-update-wrapper,
-.fusion-menu-cart-empty-apply,
-.fusion-menu-cart-empty-apply-wrapper,
-.fusion-menu-cart-empty-clear,
-.fusion-menu-cart-empty-clear-wrapper,
-.fusion-menu-cart-empty-continue,
-.fusion-menu-cart-empty-continue-wrapper,
-.fusion-menu-cart-empty-checkout,
-.fusion-menu-cart-empty-checkout-wrapper,
-.fusion-menu-cart-empty-view-cart,
-.fusion-menu-cart-empty-view-cart-wrapper,
-.fusion-menu-cart-empty-mini-cart,
-.fusion-menu-cart-empty-mini-cart-wrapper,
-.fusion-menu-cart-empty-side-cart,
-.fusion-menu-cart-empty-side-cart-wrapper,
-.fusion-menu-cart-empty-dropdown,
-.fusion-menu-cart-empty-dropdown-wrapper,
-.fusion-menu-cart-empty-modal,
-.fusion-menu-cart-empty-modal-wrapper,
-.fusion-menu-cart-empty-popup,
-.fusion-menu-cart-empty-popup-wrapper,
-.fusion-menu-cart-empty-overlay,
-.fusion-menu-cart-empty-overlay-wrapper,
-.fusion-menu-cart-empty-backdrop,
-.fusion-menu-cart-empty-backdrop-wrapper,
-.fusion-menu-cart-empty-container,
-.fusion-menu-cart-empty-container-wrapper,
-.fusion-menu-cart-empty-wrapper,
-.fusion-menu-cart-empty-wrapper-wrapper,
-.fusion-menu-cart-empty-inner,
-.fusion-menu-cart-empty-inner-wrapper,
-.fusion-menu-cart-empty-content,
-.fusion-menu-cart-empty-content-wrapper,
-.fusion-menu-cart-empty-header,
-.fusion-menu-cart-empty-header-wrapper,
-.fusion-menu-cart-empty-body,
-.fusion-menu-cart-empty-body-wrapper,
-.fusion-menu-cart-empty-footer,
-.fusion-menu-cart-empty-footer-wrapper,
-.fusion-menu-cart-empty-section,
-.fusion-menu-cart-empty-section-wrapper,
-.fusion-menu-cart-empty-divider,
-.fusion-menu-cart-empty-divider-wrapper,
-.fusion-menu-cart-empty-spacer,
-.fusion-menu-cart-empty-spacer-wrapper,
-.fusion-menu-cart-empty-gutter,
-.fusion-menu-cart-empty-gutter-wrapper,
-.fusion-menu-cart-empty-margin,
-.fusion-menu-cart-empty-margin-wrapper,
-.fusion-menu-cart-empty-padding,
-.fusion-menu-cart-empty-padding-wrapper,
-.fusion-menu-cart-empty-border,
-.fusion-menu-cart-empty-border-wrapper,
-.fusion-menu-cart-empty-shadow,
-.fusion-menu-cart-empty-shadow-wrapper,
-.fusion-menu-cart-empty-background,
-.fusion-menu-cart-empty-background-wrapper,
-.fusion-menu-cart-empty-overlay,
-.fusion-menu-cart-empty-overlay-wrapper,
-.fusion-menu-cart-empty-backdrop,
-.fusion-menu-cart-empty-backdrop-wrapper,
-.fusion-menu-cart-empty-container,
-.fusion-menu-cart-empty-container-wrapper,
-.fusion-menu-cart-empty-wrapper,
-.fusion-menu-cart-empty-wrapper-wrapper,
-.fusion-menu-cart-empty-inner,
-.fusion-menu-cart-empty-inner-wrapper,
-.fusion-menu-cart-empty-content,
-.fusion-menu-cart-empty-content-wrapper,
-.fusion-menu-cart-empty-header,
-.fusion-menu-cart-empty-header-wrapper,
-.fusion-menu-cart-empty-body,
-.fusion-menu-cart-empty-body-wrapper,
-.fusion-menu-cart-empty-footer,
-.fusion-menu-cart-empty-footer-wrapper,
-.fusion-menu-cart-empty-section,
-.fusion-menu-cart-empty-section-wrapper,
-.fusion-menu-cart-empty-divider,
-.fusion-menu-cart-empty-divider-wrapper,
-.fusion-menu-cart-empty-spacer,
-.fusion-menu-cart-empty-spacer-wrapper,
-.fusion-menu-cart-empty-gutter,
-.fusion-menu-cart-empty-gutter-wrapper,
-.fusion-menu-cart-empty-margin,
-.fusion-menu-cart-empty-margin-wrapper,
-.fusion-menu-cart-empty-padding,
-.fusion-menu-cart-empty-padding-wrapper,
-.fusion-menu-cart-empty-border,
-.fusion-menu-cart-empty-border-wrapper,
-.fusion-menu-cart-empty-shadow,
-.fusion-menu-cart-empty-shadow-wrapper,
-.fusion-menu-cart-empty-background,
-.fusion-menu-cart-empty-background-wrapper,
-.card,
-.card-inner,
-.book,
-.book-inner,
-.panel,
-.panel-body,
-.panel-header,
-.panel-footer,
-.panel-title,
-.panel-content,
-.panel-wrapper,
-.panel-inner,
-.panel-container,
-.panel-section,
-.panel-divider,
-.panel-spacer,
-.panel-gutter,
-.panel-margin,
-.panel-padding,
-.panel-border,
-.panel-shadow,
-.panel-background,
-.panel-overlay,
-.panel-backdrop,
-.panel-container,
-.panel-wrapper,
-.panel-inner,
-.panel-content,
-.panel-header,
-.panel-body,
-.panel-footer,
-.panel-section,
-.panel-divider,
-.panel-spacer,
-.panel-gutter,
-.panel-margin,
-.panel-padding,
-.panel-border,
-.panel-shadow,
-.panel-background,
-.panel-overlay,
-.panel-backdrop,
-.widget,
-.widget-inner,
-.widget-content,
-.widget-header,
-.widget-body,
-.widget-footer,
-.widget-title,
-.widget-wrapper,
-.widget-container,
-.widget-section,
-.widget-divider,
-.widget-spacer,
-.widget-gutter,
-.widget-margin,
-.widget-padding,
-.widget-border,
-.widget-shadow,
-.widget-background,
-.widget-overlay,
-.widget-backdrop,
-.widget-container,
-.widget-wrapper,
-.widget-inner,
-.widget-content,
-.widget-header,
-.widget-body,
-.widget-footer,
-.widget-section,
-.widget-divider,
-.widget-spacer,
-.widget-gutter,
-.widget-margin,
-.widget-padding,
-.widget-border,
-.widget-shadow,
-.widget-background,
-.widget-overlay,
-.widget-backdrop {
-    border-radius: 4px !important;
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.woocommerce a.button,
+.woocommerce button.button {
+    border-radius: var(--button-radius, 50rem);
+    /* or whatever you use for buttons */
 }
 
 
-/* Default border-radius for images (excluding logos and avatars) */
+/* -------------------------------------------------
+     Common “boxes” / cards / panels in Avada
+     (low specificity using :where to avoid fights)
+     ------------------------------------------------- */
 
-img:not(.logo):not(.avatar):not(.logo img):not(.avatar img):not([class*="logo"]):not([class*="avatar"]):not([id*="logo"]):not([id*="avatar"]) {
-    border-radius: 4px !important;
+:where( .fusion-content-boxes .content-box-wrapper,
+.fusion-blog-layout-grid .fusion-post-wrapper,
+.fusion-recent-posts .columns,
+.fusion-portfolio .fusion-portfolio-wrapper,
+.fusion-person,
+.fusion-testimonials .testimonial,
+.fusion-carousel .fusion-carousel-item .fusion-carousel-item-wrapper,
+.fusion-tabs .tab-content,
+.fusion-accordian .panel,
+
+/* Avada uses both spellings in some versions */
+
+.fusion-accordion .panel,
+.fusion-toggle .toggle-content,
+.fusion-alert,
+.fusion-slider-container .tfs-slider,
+.fusion-pricing-table,
+.fusion-pricing-table .panel,
+.fusion-video,
+.fusion-image-hotspots .image) {
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    /* clips child media & backgrounds to corners */
 }
 
 
-/* Specific exclusions for logo and avatar classes/IDs */
+/* -------------------------------------------------
+     Utility: opt-out per element when needed
+     ------------------------------------------------- */
 
-img[class*="logo"],
-img[id*="logo"],
-img[class*="avatar"],
-img[id*="avatar"],
-.logo img,
-.avatar img,
-.site-logo img {
-    border-radius: unset !important;
+.no-radius {
+    border-radius: 0 !important;
+    overflow: visible !important;
+}
+
+.para-boxes h3 {
+    letter-spacing: -0.05rem;
+}
+
+.rounded-corners img {
+    border-radius: var(--border-radius-small);
+}
+
+body,
+main,
+#main {
+    background-color: var(--awb-color3) !important;
+}
+
+.para-boxes h3 {
+    letter-spacing: -.05rem;
+}
+
+.rounded-corners img {
+    border-radius: var(--border-radius-small);
 }
