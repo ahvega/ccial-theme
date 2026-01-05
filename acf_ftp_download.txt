@@ -1,0 +1,6 @@
+open 82.197.83.250
+u301806732.ccial.org
+YdM@~~dOIH^v?D2i
+cd /public_html/wp-content/plugins/advanced-custom-fields-pro
+mget *
+bye
