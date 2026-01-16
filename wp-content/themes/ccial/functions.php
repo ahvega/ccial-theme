@@ -655,11 +655,12 @@ require_once get_stylesheet_directory() . '/inc/user-export-api.php';
  * - Specific user profile: [acf_image field="foto" user_id="123" size="medium"]
  * - Current user profile: [acf_image field="foto" user_id="current" size="medium"]
  * - Post fields only: [acf_image field="foto" post_id="123" size="medium"]
+ * - Return URL only (for Avada image elements): [acf_image field="foto" return="url"]
  * 
  * @param array $atts Shortcode attributes
- * @return string HTML output
+ * @return string HTML output or URL string depending on 'return' parameter
  */
-add_shortcode('acf_image', function ($atts) {
+function ccial_acf_image_shortcode($atts) {
     $a = shortcode_atts([
         'field'     => '',       // ACF field name or key
         'post_id'   => '',       // defaults to current post. Use "option" for ACF Options
@@ -670,6 +671,7 @@ add_shortcode('acf_image', function ($atts) {
         'alt_field' => '',       // optional: ACF text field to override alt text
         'fallback'  => '',       // URL to a fallback image if empty
         'lazy'      => 'true',   // lazy load attribute
+        'return'    => 'html',   // html|url - return full HTML img tag or just the URL
     ], $atts, 'acf_image');
 
     if (empty($a['field'])) {
@@ -732,6 +734,12 @@ add_shortcode('acf_image', function ($atts) {
     } elseif (is_string($img) && filter_var($img, FILTER_VALIDATE_URL)) {
         // image url (ACF return = url)
         $url = esc_url($img);
+        
+        // If return="url", just return the URL
+        if ($a['return'] === 'url') {
+            return $url;
+        }
+        
         $alt = $alt ?: '';
         $loading = ($a['lazy'] === 'false') ? '' : ' loading="lazy"';
         $class   = $a['class'] ? ' class="'.esc_attr($a['class']).'"' : '';
@@ -741,6 +749,14 @@ add_shortcode('acf_image', function ($atts) {
 
     // If we have an attachment id, use wp_get_attachment_image()
     if ($attachment_id) {
+        // If return="url", get the image URL instead of HTML
+        if ($a['return'] === 'url') {
+            $image_url = wp_get_attachment_image_url($attachment_id, $a['size']);
+            if ($image_url) {
+                return esc_url($image_url);
+            }
+        }
+        
         $attrs = [
             'class'   => $a['class'],
             'loading' => ($a['lazy'] === 'false') ? 'eager' : 'lazy',
@@ -764,10 +780,109 @@ add_shortcode('acf_image', function ($atts) {
     // Fallback URL if no image set
     if (!empty($a['fallback'])) {
         $url = esc_url($a['fallback']);
+        
+        // If return="url", just return the URL
+        if ($a['return'] === 'url') {
+            return $url;
+        }
+        
         $loading = ($a['lazy'] === 'false') ? '' : ' loading="lazy"';
         $class   = $a['class'] ? ' class="'.esc_attr($a['class']).'"' : '';
         return '<img src="'.$url.'" alt="'.esc_attr($alt).'"'.$class.$loading.' />';
     }
 
     return '<!-- ACF Image Shortcode: No image found for field "'.$a['field'].'" -->';
-});
+}
+// Register the shortcode
+add_shortcode('acf_image', 'ccial_acf_image_shortcode');
+
+/**
+ * Prevent escaping of acf_image shortcode output
+ * This ensures the HTML is not double-encoded by themes/plugins
+ * Fixes issue where shortcode output is being HTML-escaped
+ */
+add_filter('do_shortcode_tag', function($output, $tag, $attr) {
+    if ($tag === 'acf_image') {
+        // Decode any HTML entities that might have been added by escaping
+        // This fixes the issue where <img> tags are being escaped to &lt;img&gt;
+        $decoded = html_entity_decode($output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        // If decoding changed something, return decoded version
+        if ($decoded !== $output) {
+            return $decoded;
+        }
+        return $output;
+    }
+    return $output;
+}, 99, 3); // High priority to run after other filters
+
+/**
+ * Ensure shortcode output is not escaped in content
+ * Process shortcodes and decode any escaped HTML from acf_image shortcode
+ */
+add_filter('the_content', function($content) {
+    // Process shortcodes early to prevent escaping
+    if (has_shortcode($content, 'acf_image')) {
+        // Ensure shortcodes are processed
+        $content = do_shortcode($content);
+        
+        // Fix double-encoded HTML from acf_image shortcode
+        // Pattern: &lt;img src=&quot;...&quot; ... /&gt; should become <img src="..." ... />
+        $content = preg_replace_callback(
+            '/&lt;img\s+([^&]*?src=&quot;([^&]*?)&quot;[^&]*?)\s*\/&gt;/i',
+            function($matches) {
+                // Decode the attributes
+                $attrs = html_entity_decode($matches[1], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                return '<img ' . $attrs . ' />';
+            },
+            $content
+        );
+    }
+    return $content;
+}, 8); // Priority 8 to run before most other filters
+
+/**
+ * Additional filter to prevent escaping in widget text and other contexts
+ */
+add_filter('widget_text', function($content) {
+    if (has_shortcode($content, 'acf_image')) {
+        $content = do_shortcode($content);
+    }
+    return $content;
+}, 8);
+
+/**
+ * Fix escaped acf_image shortcode output in final HTML
+ * Uses output buffering to catch and fix escaped HTML before it's sent to browser
+ */
+add_action('template_redirect', function() {
+    if (!is_admin()) {
+        ob_start(function($buffer) {
+            // Fix escaped img tags from acf_image shortcode that appear in src attributes
+            // Pattern: <img ... src="&lt;img src=&quot;...&quot; ... /&gt;" ...>
+            $buffer = preg_replace_callback(
+                '/<img([^>]*?)\s+src=["\'](&lt;img\s+[^&]*?src=&quot;([^&]*?)&quot;[^&]*?\/&gt;)["\']([^>]*?)>/i',
+                function($matches) {
+                    // Extract the actual image URL
+                    $url = html_entity_decode($matches[3], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                    $before_attrs = $matches[1];
+                    $after_attrs = $matches[4];
+                    // Return proper img tag with the actual URL
+                    return '<img' . $before_attrs . ' src="' . esc_url($url) . '"' . $after_attrs . '>';
+                },
+                $buffer
+            );
+            
+            // Also fix cases where escaped img tags appear as content (not in attributes)
+            $buffer = preg_replace_callback(
+                '/&lt;img\s+([^&]*?src=&quot;([^&]*?)&quot;[^&]*?)\s*\/&gt;/i',
+                function($matches) {
+                    $attrs = html_entity_decode($matches[1], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                    return '<img ' . $attrs . ' />';
+                },
+                $buffer
+            );
+            
+            return $buffer;
+        });
+    }
+}, 1);
