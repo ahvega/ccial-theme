@@ -18,6 +18,10 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 @import url("../Avada/style.css");
 
+/* import custom font Inter Tight from Google Fonts all weights and styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 /* ==================
    CSS Variables Definition
    ================== */
@@ -402,6 +406,7 @@ h4,
 h5,
 h6 {
     margin: 0;
+    text-wrap: balance;
 }
 
 h1 {
@@ -622,6 +627,9 @@ h4)+p {
     margin-block-end: 0 !important;
 }
 
+.author-name p {
+    font-weight: 800 !important;
+}
 
 /* Keep your original heading top margins if you're using them */
 
@@ -678,7 +686,8 @@ h4)+p {
     --text-shade: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
-.highlighted strong {
+.highlighted strong,
+.highlighted b {
     font-family: var(--highlighted-strong-font-family);
     text-transform: var(--highlighted-strong-text-transform);
     letter-spacing: var(--highlighted-strong-letter-spacing);
@@ -917,7 +926,8 @@ ul.finger li::marker {
     --highlighted-strong-color: var(--ccial-accent-color);
 }
 
-.fusion-body blockquote p strong {
+.fusion-body blockquote p strong,
+.fusion-body blockquote p b {
     opacity: 0.75;
 }
 
