@@ -90,3 +90,8 @@ renderedoutput.html
 .htaccess
 .htpasswd
 *.md
+
+# Scripts with credentials
+copy-acf-plugin.py
+copy-acf-plugin.ps1
+acf_ftp_download.txt
