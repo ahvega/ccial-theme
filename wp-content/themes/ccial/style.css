@@ -382,6 +382,11 @@ p {
     margin: 0;
 }
 
+p+p,
+#contenido p+p {
+    margin-block-start: 1lh !important;
+}
+
 
 /* Lists & common blocks (keep generic rhythm) */
 
@@ -1516,3 +1521,17 @@ main,
 .rounded-corners img {
     border-radius: var(--border-radius-small);
 }
+
+.fusion-body blockquote p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.fusion-post-content p + p, .post-content p + p, .fusion-text p + p {
+    margin-block-start: unset !important;
+    margin-block: 1lh 0 !important;
+}
+
+a.fusion-button.button-flat.fusion-button-default-size.button-default.fusion-button-default.button-2.fusion-button-default-span.fusion-button-default-type {
+    margin-block: 2rem 3rem;
+}
+
