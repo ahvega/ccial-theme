@@ -1535,3 +1535,23 @@ a.fusion-button.button-flat.fusion-button-default-size.button-default.fusion-but
     margin-block: 2rem 3rem;
 }
 
+.fusion-text.author-box p {
+  margin-block: 0 !important;
+}
+
+.author-box i {
+    color: var(--ccial-accent-color) !important;
+    opacity: .75;
+}
+
+.extracto {
+  margin-top: 2rem !important;
+}
+
+.hc-foto img {
+    border-radius: 500px;
+}
+
+.hc-excerpt {
+   padding: 1rem; 
+}

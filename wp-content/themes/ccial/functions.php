@@ -695,7 +695,7 @@ function ccial_acf_image_shortcode($atts) {
         $alt_field_context = 'user_' . $user_id;
     } else {
         // Default: try post author's user profile first, then post fields
-        $post_id = $a['post_id'] ?: get_queried_object_id();
+        $post_id = $a['post_id'] ?: get_the_ID();
         $post = get_post($post_id);
         
         if ($post && $post->post_author) {
