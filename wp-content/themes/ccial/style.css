@@ -1,3 +1,16 @@
+/* Squircle-style buttons and form fields with var(--button-radius) */
+button, .button, input[type="button"], input[type="submit"], input[type="reset"],
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select, textarea {
+    border-radius: var(--button-radius, 18px);
+    corner-shape: squircle !important;
+    /* For a more squircle effect, you can use a higher border-radius or use clip-path if needed */
+    /* Example with clip-path for a squircle (optional, comment out if not needed): */
+    /* clip-path: path('M0.5,10 Q0.5,0.5 10,0.5 Q19.5,0.5 19.5,10 Q19.5,19.5 10,19.5 Q0.5,19.5 0.5,10 Z'); */
+}
+/* Ensure all form textareas have 8px border radius */
+textarea {
+    border-radius: 8px !important;
+}
 /*
 Theme Name: CCI AL Theme
 Description: Child theme for Avada - Custom theme for CCI AL with enhanced functionality
@@ -38,8 +51,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
     --ccial-background-color: var(--awb-color4, #f8f6f0);
     /* Border Radius */
     --border-radius-shaded: 8px;
-    --border-radius-small: 4px;
-    --button-radius: 50rem;
+    --border-radius-small: 8px;
+    --button-radius: 18px;
     /* Spacing */
     --spacing-small: 0.5rem;
     --spacing-medium: 1rem;
@@ -861,6 +874,7 @@ ul.finger li::marker {
     white-space: nowrap !important;
     word-wrap: normal !important;
     overflow-wrap: normal !important;
+    corner-shape: squircle !important;
 }
 
 
@@ -1138,6 +1152,7 @@ H2 {
     border-radius: var(--border-radius-shaded);
     box-shadow: var(--box-shaded);
     box-shadow: 2px 4px 8px 0px lightslategray;
+    corner-shape: squircle !important;
 }
 
 .fusion-content-widget-area .fusion-tabs-widget .fusion-tabs-nav ul li.active a {
@@ -1195,7 +1210,7 @@ textarea {
     color: #000;
     font-weight: 500;
     background-color: #dedede;
-    border-radius: 50px;
+    border-radius: 31.5px;
 }
 
 .cart-collaterals .shipping-coupon .coupon #avada_coupon_code,
@@ -1260,10 +1275,11 @@ table.woocommerce-table thead tr th {
     font-weight: 700;
 }
 
+
 .avada-myaccount-user .view-cart a {
     text-transform: uppercase;
     font-weight: 500;
-    border-radius: 50px;
+    border-radius: var(--button-radius, 31.5px);
     color: var(--awb-color6);
 }
 
@@ -1272,7 +1288,7 @@ table.woocommerce-table thead tr th {
 }
 
 .crossfade-images {
-    border-radius: 18px;
+    border-radius: var(--button-radius, 18px);
 }
 
 .cart-loading i {
@@ -1391,12 +1407,14 @@ body,
 /* Round most images */
 
 img {
-    border-radius: var(--border-radius-small);
+    border-radius: 8px;
 }
 
 
 /* Don't round logos */
 
+.logo, .fusion-logo,
+.logo img,
 .fusion-logo img,
 .site-logo img,
 .fusion-standard-logo,
@@ -1405,12 +1423,19 @@ img {
     border-radius: 0 !important;
 }
 
+/* Avatar images: keep fully round */
+.hc-foto img {
+    border-radius: 500px !important;
+    corner-shape: squircle;
+}
+
 
 /* Avada image frame: clip children to the radius */
 
 .fusion-imageframe,
 .fusion-imageframe img {
     border-radius: var(--border-radius-small);
+    corner-shape: squircle;
     overflow: hidden;
     /* ensures corners clip correctly */
 }
@@ -1455,7 +1480,7 @@ input[type="submit"],
 input[type="reset"],
 .woocommerce a.button,
 .woocommerce button.button {
-    border-radius: var(--button-radius, 50rem);
+    border-radius: var(--button-radius, 31.5px);
     /* or whatever you use for buttons */
 }
 
@@ -1549,9 +1574,14 @@ a.fusion-button.button-flat.fusion-button-default-size.button-default.fusion-but
 }
 
 .hc-foto img {
-    border-radius: 500px;
+    /* border-radius: 500px;  Deactivated pill shape for .hc-foto img */
+    corner-shape: squircle !important;
 }
 
 .hc-excerpt {
    padding: 1rem; 
+}
+
+.fusion-date-box.updated, .fusion-image-wrapper {
+    border-radius: 8px;
 }

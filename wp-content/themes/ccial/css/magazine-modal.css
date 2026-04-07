@@ -89,7 +89,7 @@
 }
 
 .magazine-error .alert {
-    border-radius: 8px;
+    /* border-radius: 8px;  Deactivated pill shape for .magazine-error .alert */
     border: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     background-color: #3d1a1a;
