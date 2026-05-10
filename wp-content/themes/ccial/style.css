@@ -1,16 +1,3 @@
-/* Squircle-style buttons and form fields with var(--button-radius) */
-button, .button, input[type="button"], input[type="submit"], input[type="reset"],
-input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select, textarea {
-    border-radius: var(--button-radius, 18px);
-    corner-shape: squircle !important;
-    /* For a more squircle effect, you can use a higher border-radius or use clip-path if needed */
-    /* Example with clip-path for a squircle (optional, comment out if not needed): */
-    /* clip-path: path('M0.5,10 Q0.5,0.5 10,0.5 Q19.5,0.5 19.5,10 Q19.5,19.5 10,19.5 Q0.5,19.5 0.5,10 Z'); */
-}
-/* Ensure all form textareas have 8px border radius */
-textarea {
-    border-radius: 8px !important;
-}
 /*
 Theme Name: CCI AL Theme
 Description: Child theme for Avada - Custom theme for CCI AL with enhanced functionality
@@ -1584,4 +1571,18 @@ a.fusion-button.button-flat.fusion-button-default-size.button-default.fusion-but
 
 .fusion-date-box.updated, .fusion-image-wrapper {
     border-radius: 8px;
+}
+
+/* Squircle-style buttons and form fields with var(--button-radius) */
+button, .button, input[type="button"], input[type="submit"], input[type="reset"],
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select, textarea {
+    border-radius: var(--button-radius, 18px);
+    corner-shape: squircle !important;
+    /* For a more squircle effect, you can use a higher border-radius or use clip-path if needed */
+    /* Example with clip-path for a squircle (optional, comment out if not needed): */
+    /* clip-path: path('M0.5,10 Q0.5,0.5 10,0.5 Q19.5,0.5 19.5,10 Q19.5,19.5 10,19.5 Q0.5,19.5 0.5,10 Z'); */
+}
+/* Ensure all form textareas have 8px border radius */
+textarea {
+    border-radius: 8px !important;
 }
